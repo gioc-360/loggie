@@ -1,6 +1,6 @@
 # Loggie tokenomics
 
-**At $4.99 a month, a student who records about five calls a week costs about $1.83 to serve, a 63% gross margin. The margin stays above 60% up to about six recorded calls a week.**
+**At $4.99 a month, a student who records about 24 calls a month (five or six a week) costs about $1.91 to serve, a 62% gross margin. The margin stays above 60% up to about six recorded calls a week.**
 
 Sources: Nebius Token Factory's published model catalog (checked live on 2026-10-30), and Loggie's own usage log, which records the tokens, cost and latency of every cloud request the app makes (`src/hikyaku/usage.js`). The log covers 16 days of daily use, 2026-10-14 to 2026-10-29, by one heavy user who is also a developer.
 
@@ -58,28 +58,28 @@ C_{\text{inference}} = 30\,b + R\,k
 |---|---|---:|---|
 | $b$ | background cost per day: sorting about 45 emails and chats, next moves, ranking, small tasks, ongoing workspace updates | $0.0235 | measured |
 | $k$ | cost per recorded call: notes $0.0130 + quote check $0.0171 + filing $0.0025 + name check $0.0009 | $0.0335 | measured |
-| $R$ | recorded calls per month; 5 a week | 21.7 | assumption |
+| $R$ | recorded calls per month; about 5.5 a week | 24 | assumption |
 | $s$ | web search (Tavily), about 50 searches at $0.008 | $0.40 | estimate |
 | $P$ | price | $4.99 | plan |
 
 So
 
 ```math
-C_{\text{inference}} = 30(0.0235) + 21.7(0.0335) = 0.71 + 0.73 = \$1.43
+C_{\text{inference}} = 30(0.0235) + 24(0.0335) = 0.71 + 0.80 = \$1.51
 ```
 
 ```math
-\text{margin} = \frac{P - C_{\text{inference}} - s}{P} = \frac{4.99 - 1.43 - 0.40}{4.99} \approx 63\%
+\text{margin} = \frac{P - C_{\text{inference}} - s}{P} = \frac{4.99 - 1.51 - 0.40}{4.99} \approx 62\%
 ```
 
 | Line | Per month |
 |---|---:|
 | Background (sorting, next moves, ranking) | $0.71 |
-| 22 recorded calls | $0.73 |
+| 24 recorded calls | $0.80 |
 | Web search, estimated | $0.40 |
-| **Cost to serve** | **$1.83** |
+| **Cost to serve** | **$1.91** |
 | Price | $4.99 |
-| **Gross margin** | **$3.16, 63%** |
+| **Gross margin** | **$3.08, 62%** |
 
 One-time workspace setup, run once when a user first connects their mail, cost $0.67 and is left out of the monthly figure.
 
@@ -96,7 +96,7 @@ R_{\max} = \frac{(1-m)\,P - s - 30\,b}{k}
 | Target margin | Max recorded calls a month | About a week |
 |---:|---:|---:|
 | 60% | 26.6 | 6.1 |
-| 63% | 22.1 | 5.1 |
+| 62% | 23.6 | 5.4 |
 | 50% | 41.5 | 9.6 |
 
 Each extra recorded call costs about 3.4 cents, so a heavier user lowers the margin gradually: 10 calls a week still leaves about 49%.

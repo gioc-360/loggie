@@ -59,7 +59,7 @@ Every request also runs at temperature 0 and its answer is saved on the Mac unde
 | Nemotron 3 Super response time | 1.4 to 3.9 s on 30 of 34 calls |
 | Background cost, measured over 16 days of real mail and chats | $0.024 a day: sorting about 45 messages, next moves, ranking |
 | Cost per recorded call, measured | about $0.034: notes on Ultra $0.013, the quote check $0.017, filing $0.003, names $0.001 |
-| A month for a student recording 5 calls a week | about $1.83 to serve with web search, a 63% margin at $4.99 ([full cost model](docs/tokenomics.md)) |
+| A month for a student recording about 24 calls | about $1.51 of inference and $1.91 to serve with web search: a 62% margin at $4.99 ([full cost model](docs/tokenomics.md)) |
 
 ## For judges: testing Loggie
 
