@@ -1,0 +1,61 @@
+{
+  "id": "F4",
+  "now": "2026-10-26T13:00:00Z",
+  "macZone": "America/New_York",
+  "settings": {},
+  "status": "granted",
+  "typed": "email lee my availability tomorrow",
+  "line": "My availability tomorrow",
+  "email": "",
+  "emailAt": null,
+  "draft": "Hi,\n\n[your times]\n\nBest,",
+  "events": [
+    {
+      "start": "2026-10-27T14:00:00Z",
+      "end": "2026-10-27T15:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-27T14:00:00Z",
+      "end": "2026-10-27T15:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Work",
+      "account": "iCloud"
+    },
+    {
+      "start": "2026-10-27T14:30:00Z",
+      "end": "2026-10-27T16:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [
+        "person@example.com"
+      ],
+      "calendar": "Calendar",
+      "account": "gc@example.edu"
+    }
+  ],
+  "throws": null,
+  "expect": {
+    "asked": "typed",
+    "window": {
+      "days": [
+        "2026-10-27"
+      ],
+      "startMinute": 540,
+      "endMinute": 1020,
+      "minutes": 30
+    },
+    "read": "read",
+    "text": "Tue Oct 27: 9 to 10am, 12 to 5pm ET",
+    "how": "line",
+    "note": "",
+    "body": "Hi,\n\nTue Oct 27: 9 to 10am, 12 to 5pm ET\n\nBest,",
+    "readerCalls": 1
+  }
+}

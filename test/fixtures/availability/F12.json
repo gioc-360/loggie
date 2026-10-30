@@ -1,0 +1,117 @@
+{
+  "id": "F12",
+  "now": "2026-10-20T16:21:00Z",
+  "macZone": "America/New_York",
+  "settings": {},
+  "status": "granted",
+  "typed": "reply to jamie: thanks, I'll send it by 5pm",
+  "line": "Thanks, I'll send it by 5pm",
+  "email": "Can you send the deck before the meeting?",
+  "emailAt": null,
+  "draft": "Hi Jamie,\n\nThanks, I'll send it by 5pm.\n\nBest,",
+  "events": [
+    {
+      "start": "2026-10-23T15:15:00Z",
+      "end": "2026-10-23T16:30:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-23T15:15:00Z",
+      "end": "2026-10-23T16:30:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Work",
+      "account": "iCloud"
+    },
+    {
+      "start": "2026-10-23T17:00:00Z",
+      "end": "2026-10-23T19:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Work",
+      "account": "iCloud"
+    },
+    {
+      "start": "2026-10-23T19:15:00Z",
+      "end": "2026-10-23T20:45:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-23T19:15:00Z",
+      "end": "2026-10-23T20:45:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Work",
+      "account": "iCloud"
+    },
+    {
+      "start": "2026-10-23T20:30:00Z",
+      "end": "2026-10-23T20:55:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [
+        "person@example.com"
+      ],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-23T21:00:00Z",
+      "end": "2026-10-23T21:30:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-23T21:00:00Z",
+      "end": "2026-10-23T21:30:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Work",
+      "account": "iCloud"
+    },
+    {
+      "start": "2026-10-24T00:00:00Z",
+      "end": "2026-10-24T01:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-24T00:00:00Z",
+      "end": "2026-10-24T01:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Work",
+      "account": "iCloud"
+    }
+  ],
+  "throws": null,
+  "expect": {
+    "asked": null,
+    "window": null,
+    "read": null,
+    "text": "",
+    "how": null,
+    "note": "",
+    "body": "Hi Jamie,\n\nThanks, I'll send it by 5pm.\n\nBest,",
+    "readerCalls": 0
+  }
+}

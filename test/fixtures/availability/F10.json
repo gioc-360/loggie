@@ -1,0 +1,41 @@
+{
+  "id": "F10",
+  "now": "2026-10-23T22:00:00Z",
+  "macZone": "America/New_York",
+  "settings": {},
+  "status": "granted",
+  "typed": "email kim my availability friday",
+  "line": "My availability friday",
+  "email": "",
+  "emailAt": null,
+  "draft": "Hi,\n\n[your times]\n\nBest,",
+  "events": [
+    {
+      "start": "2026-10-30T14:00:00Z",
+      "end": "2026-10-30T15:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    }
+  ],
+  "throws": null,
+  "expect": {
+    "asked": "typed",
+    "window": {
+      "days": [
+        "2026-10-30"
+      ],
+      "startMinute": 540,
+      "endMinute": 1020,
+      "minutes": 30
+    },
+    "read": "read",
+    "text": "Fri Oct 30: 9 to 10am, 11am to 5pm ET",
+    "how": "line",
+    "note": "",
+    "body": "Hi,\n\nFri Oct 30: 9 to 10am, 11am to 5pm ET\n\nBest,",
+    "readerCalls": 1
+  }
+}

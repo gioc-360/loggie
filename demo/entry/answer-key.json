@@ -1,0 +1,71 @@
+{
+  "moves": [
+    {
+      "id": "M1",
+      "source": "call",
+      "stream": "Larkspur Logistics",
+      "thread_id": null,
+      "kind": "prep",
+      "quote": "Send me a one page teardown of our driver handoff screen before the application closes on October thirtieth.",
+      "must_include": [
+        "teardown"
+      ],
+      "must_not_include": [
+        "Ravi"
+      ],
+      "slot_required": false
+    },
+    {
+      "id": "M2",
+      "source": "inbox",
+      "stream": "Ops Case Competition",
+      "thread_id": "th-case-pitch",
+      "kind": "invite",
+      "quote": "Could you offer me a time for a thirty minute run-through of the pitch this week?",
+      "must_include": [
+        "Ravi"
+      ],
+      "must_not_include": [
+        "Marguerite"
+      ],
+      "slot_required": true
+    },
+    {
+      "id": "M3",
+      "source": "inbox",
+      "stream": "Supply Chain Analytics",
+      "thread_id": "th-scm-topic",
+      "kind": "reply",
+      "quote": "Please tell me which of the three topics you want for your project: the port delay model, the returns forecast, or the supplier risk map.",
+      "must_include": [
+        "topic"
+      ],
+      "must_not_include": [
+        "Ravi"
+      ],
+      "slot_required": false
+    },
+    {
+      "id": "M4",
+      "source": "inbox",
+      "stream": "Alumni Mentoring",
+      "thread_id": "th-mentor-note",
+      "kind": "read",
+      "quote": "The short guide below is worth reading before any interview in logistics.",
+      "must_include": [],
+      "must_not_include": [],
+      "slot_required": false
+    },
+    {
+      "id": "M5",
+      "source": "inbox",
+      "stream": "Harbor Street Housing",
+      "thread_id": "th-housing-addendum",
+      "kind": "wait",
+      "quote": "Could you countersign and send me the final copy when you have it?",
+      "must_include": [],
+      "must_not_include": [],
+      "slot_required": false
+    }
+  ]
+}

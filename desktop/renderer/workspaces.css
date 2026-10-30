@@ -1,0 +1,181 @@
+/* The Workspaces tab and the move rows, in the mock-up's look (jess-frontend-prototype-i WorkspacePages.tsx,
+   styles.css). Replaces runway.css. The shared signs (.ws-icon, .ws-act, .ws-marks) are used by Today too. */
+.ws-icon { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.ws-icon.is-spin { animation: ws-spin 1s linear infinite; }
+@keyframes ws-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .ws-icon.is-spin { animation: none; } .ws-marks, .ws-tri { transition: none; } }
+
+.ws-view { display: grid; gap: 12px; font-size: 12px; color: var(--ink); }
+.ws-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.ws-title { margin: 0; font-size: 20px; line-height: 24px; font-weight: 700; letter-spacing: -.02em; }
+.ws-status { flex: 1; min-width: 0; margin: 0; color: var(--muted); font-size: 11px; }
+.ws-head .ws-refresh { background: transparent; }
+.ws-head .ws-refresh:hover { background: var(--blue-soft); }
+.ws-refresh, .ws-back, .ws-actions button, .ws-park-pick button, .ws-name-edit button { min-height: 25px; border-radius: 7px; padding: 4px 10px; font-size: 11px; font-weight: 600; border: 1px solid transparent; background: var(--blue-soft); color: var(--blue-ink); cursor: pointer; }
+.ws-back { display: inline-flex; align-items: center; gap: 4px; background: transparent; padding-left: 2px; }
+.ws-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.ws-actions button.is-on { background: var(--blue-ink); color: #fff; }
+.ws-actions .ws-dismiss.is-armed, .ws-actions .ws-delete.is-armed { background: var(--red-soft); color: var(--danger); }
+.ws-park-pick, .ws-name-edit { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.ws-park-pick input, .ws-name-edit input { border: 1px solid var(--line); border-radius: 7px; padding: 4px 8px; font: inherit; background: #fff; color: var(--ink); }
+.ws-name-edit input { flex: 1; min-width: 160px; }
+.ws-settings { display: grid; gap: 8px; padding: 10px 12px; border-radius: 10px; background: var(--soft); }
+.ws-empty { margin: 0; color: var(--muted); }
+
+/* The list: one row per workspace. */
+.ws-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ws-row { width: 100%; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.7fr) 88px 78px; gap: 12px; align-items: center; text-align: left; min-height: 39px; padding: 9px 16px; border: 0; border-radius: 12px; background: #fff; color: var(--ink); cursor: pointer; font: inherit; }
+.ws-row:hover { box-shadow: inset 3px 0 0 var(--blue-soft); }
+.ws-row:focus-visible { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
+.ws-row .ws-name { display: flex; gap: 8px; align-items: baseline; min-width: 0; }
+.ws-row .ws-label { font-size: 12px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ws-row .ws-goal { color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ws-due-col { color: var(--text-secondary); font-size: 11px; white-space: nowrap; }
+.ws-count { color: var(--blue-ink); font-size: 11px; font-weight: 600; white-space: nowrap; }
+.ws-new { flex: none; color: var(--blue-ink); font-size: 10px; font-weight: 600; white-space: nowrap; }
+@media (max-width: 620px) { .ws-row { grid-template-columns: minmax(0, 1fr) auto auto; } .ws-row .ws-goal { display: none; } }
+.ws-stake { font-size: 10px; color: var(--blue-ink); }
+/* A found workspace nobody kept yet (first-run-polish B4.8): the row's tag, and the band on its page. */
+.ws-found-new { font-size: 10px; color: var(--blue-ink); }
+.ws-found, .ws-read-yes { display: grid; gap: 4px; padding: 10px 12px; border-radius: 10px; background: var(--blue-soft); }
+.ws-found-head { margin: 0; font-weight: 600; }
+.ws-found .ws-actions, .ws-read-yes .ws-actions { margin-top: 4px; }
+
+/* One workspace's page. */
+.ws-focus { display: grid; gap: 10px; padding: 14px 16px; border-radius: 12px; background: #fff; }
+.ws-card-head { display: flex; align-items: center; gap: 8px; }
+.ws-card-title { flex: 1; min-width: 0; margin: 0; font-size: 15px; font-weight: 600; }
+.ws-more { flex: none; width: 28px; height: 28px; border-radius: 8px; border: 0; background: transparent; color: var(--muted); display: grid; place-items: center; cursor: pointer; }
+.ws-more:hover, .ws-more[aria-expanded="true"] { background: var(--blue-soft); color: var(--blue-ink); }
+.ws-goal-line { margin: -4px 0 0; color: var(--text-secondary); font-size: 11px; }
+.ws-summary { margin: 0; line-height: 1.5; }
+.ws-label-line { margin: 4px 0 0; font-size: 10px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.ws-news { margin: 0; padding-left: 16px; display: grid; gap: 2px; color: var(--text-secondary); }
+.ws-waiting { margin: 0; font-weight: 600; }
+.ws-hint { margin: 0; color: var(--muted); }
+.ws-voice { margin: 0; }
+
+/* Moves and drafts to send. */
+.ws-moves, .ws-to-send { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.ws-move { display: grid; gap: 6px; padding: 5px 0; border-top: 1px solid var(--line); }
+.ws-move-top { display: flex; align-items: center; gap: 6px; min-height: 30px; }
+.ws-move-open { all: unset; flex: 1; min-width: 0; display: flex; gap: 6px; align-items: baseline; cursor: pointer; border-radius: 6px; }
+.ws-move-open:hover .ws-move-title { text-decoration: underline; text-underline-offset: 3px; }
+.ws-move-open:focus-visible { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
+.ws-tri { flex: none; font-size: 9px; color: var(--muted); transition: transform .12s; }
+.ws-move-open[aria-expanded="true"] .ws-tri { transform: rotate(90deg); }
+.ws-move-title { min-width: 0; overflow-wrap: anywhere; }
+.ws-due { flex: none; display: inline-flex; align-items: center; gap: 3px; font-size: 10px; padding: 2px 6px; border-radius: 6px; background: var(--blue-soft); color: var(--blue-ink); font-variant-numeric: tabular-nums; }
+.ws-due.is-late { background: var(--red-soft); color: var(--danger); }
+.ws-due .ws-icon { width: 11px; height: 11px; }
+.ws-marks { flex: none; display: inline-flex; gap: 3px; opacity: 0; transition: opacity .12s; }
+.ws-move:hover .ws-marks, .ws-move:focus-within .ws-marks { opacity: 1; }
+.ws-act, .ws-go { flex: none; width: 28px; height: 28px; border-radius: 50%; padding: 0; display: grid; place-items: center; cursor: pointer; border: 1px solid var(--line); background: #fff; color: var(--ink); }
+.ws-act:hover { border-color: var(--blue-ink); }
+.ws-go { background: var(--blue-soft); border-color: transparent; color: var(--blue-ink); }
+.ws-go.is-off { background: transparent; border-color: var(--line); color: var(--muted); cursor: not-allowed; }
+.ws-act:focus-visible, .ws-go:focus-visible, .ws-say:focus-visible, .ws-date:focus-visible { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
+.ws-line { display: flex; gap: 6px; align-items: center; margin-left: 15px; }
+.ws-say { flex: 1; min-width: 0; border: 1px solid var(--line); border-radius: 16px; padding: 6px 11px; font: inherit; background: #fff; color: var(--ink); }
+.ws-date { border: 1px solid var(--line); border-radius: 6px; padding: 3px 6px; font: inherit; background: #fff; color: var(--ink); }
+.ws-row-status { display: flex; align-items: center; gap: 5px; margin: 0 0 0 15px; color: var(--muted); }
+.ws-row-status.is-failed { color: var(--danger); }
+.ws-detail { margin-left: 15px; padding: 6px 10px; border-left: 2px solid var(--line); display: grid; gap: 6px; }
+.ws-detail-who { display: flex; align-items: center; gap: 6px; margin: 0; color: var(--muted); }
+.ws-bubble { justify-self: start; max-width: 46ch; display: grid; gap: 2px; padding: 6px 10px; border-radius: 12px 12px 12px 4px; background: var(--soft); }
+.ws-bubble.is-mine { justify-self: end; border-radius: 12px 12px 4px 12px; background: var(--blue-soft); }
+.ws-when { color: var(--muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.ws-callnote { display: flex; gap: 6px; align-items: flex-start; margin: 0; color: var(--muted); }
+.ws-open-call { display: inline-flex; align-items: center; gap: 6px; padding: 0; border: 0; background: none; color: var(--blue-ink); font: inherit; font-weight: 600; text-align: left; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.ws-do { flex: none; border: 1px solid transparent; background: var(--blue-soft); color: var(--blue-ink); border-radius: 7px; font-size: 11px; font-weight: 600; padding: 3px 10px; min-height: 25px; cursor: pointer; }
+.ws-send, .ws-retired { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.ws-move.is-unsure, .ws-move.is-unsure:hover { background: #fffde7; border-radius: 8px; }
+.ws-retired-fold > summary { cursor: pointer; color: var(--muted); padding: 2px 0; }
+.ws-retired-fold[open] > summary { margin-bottom: 4px; }
+.ws-dates { margin: -4px 0 0; color: var(--text-secondary); font-size: 11px; }
+
+/* Reply on a To do move, one row for Workspaces and Today (reply-row.js, loggie-reply-yes mock a): the yes on the row
+   in the soft blue of a question (never red), Always filled; then one still status line. Nothing moves. */
+.reply-row { display: grid; gap: 8px; margin: 2px 0 4px 15px; }
+.today-card .reply-row { margin-left: 0; }
+.reply-row .ws-row-status { margin-left: 0; }
+.reply-row.is-ready .ws-row-status { color: #2e7d4f; }
+.reply-muted { color: var(--muted); }
+.reply-said { margin: 0; padding: 6px 11px; border: 1px solid var(--line); border-radius: 16px; background: #fff; color: var(--text-secondary); overflow-wrap: anywhere; }
+.reply-yes, .reply-hold { display: grid; gap: 8px; padding: 10px 12px; border-radius: 10px; }
+.reply-yes { background: var(--blue-soft); }
+.reply-yes p, .reply-hold p { margin: 0; color: var(--text-secondary); line-height: 1.45; }
+.reply-hold { background: #fff7e0; }
+.reply-hold p { color: #6b4e00; }
+.reply-hold .ws-line { margin-left: 0; }
+.reply-time { flex: 1; min-width: 0; border: 1px solid #e0b84a; border-radius: 16px; padding: 6px 11px; font: inherit; background: #fff; color: var(--ink); }
+.reply-answers { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.reply-offer { color: var(--text-secondary); }
+.reply-primary, .reply-second, .reply-quiet { flex: none; min-height: 28px; padding: 5px 12px; border-radius: 8px; font: inherit; font-weight: 600; cursor: pointer; transition: none; }
+.reply-primary { border: 1px solid var(--blue-ink); background: var(--blue-ink); color: #fff; }
+.reply-second { border: 1px solid #c9d3f3; background: #fff; color: var(--blue-ink); }
+.reply-quiet { border: 0; padding: 5px 4px; background: transparent; color: var(--muted); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.reply-primary:focus-visible, .reply-second:focus-visible, .reply-quiet:focus-visible, .reply-time:focus-visible { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
+
+/* New workspace (loggie-new-workspace): the name box under the header, what the look found, the people to keep. Still
+   end states only, no motion (Loggie has none). */
+.ws-new-box { margin: 10px 0 4px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface, #fff); display: grid; gap: 8px; }
+.ws-new-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.ws-new-name { flex: 1; min-width: 180px; border: 1px solid var(--line); border-radius: 7px; padding: 5px 9px; font: inherit; background: #fff; color: var(--ink); }
+.ws-new-look, .ws-new-cancel, .ws-new-save { min-height: 25px; border-radius: 7px; padding: 4px 10px; font-size: 11px; font-weight: 600; border: 1px solid transparent; background: var(--blue-soft); color: var(--blue-ink); cursor: pointer; }
+.ws-new-cancel { background: transparent; }
+.ws-new-save { justify-self: start; }
+.ws-new-look:disabled, .ws-new-save:disabled { opacity: 0.6; cursor: default; }
+.ws-new-found { margin: 0; font-size: 12px; color: var(--ink); }
+.ws-new-hint { margin: 0; font-size: 11px; color: var(--muted); }
+.ws-new-error { margin: 0; font-size: 11px; color: #b3261e; }
+.ws-new-people { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.ws-new-person { display: flex; align-items: baseline; gap: 8px; font-size: 12px; cursor: pointer; min-width: 0; }
+.ws-new-person input { margin: 0; align-self: center; }
+.ws-new-who { font-weight: 600; color: var(--ink); }
+.ws-new-at { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.ws-new-count { margin-left: auto; color: var(--muted); font-size: 11px; white-space: nowrap; }
+
+/* Retire (loggie-workspaces-integration F1): the open-moves choice under the "..." row, the "Retired · n" fold under
+   the list, and a retired workspace's read-only page. Muted, still, no new color. */
+.ws-retire-choice { display: grid; gap: 6px; padding: 8px 0 2px; }
+.ws-retire-choice p { margin: 0; font-size: 12px; color: var(--ink); }
+.ws-actions .ws-cancel, .ws-actions .ws-retire, .ws-actions .ws-delete { background: transparent; }
+.ws-muted { color: var(--muted); font-size: 11px; }
+.ws-retired-fold { margin-top: 6px; }
+.ws-retired-fold summary { cursor: pointer; color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.ws-retired-list { margin-top: 8px; }
+.ws-row.is-retired { background: transparent; color: var(--text-secondary); }
+.ws-row.is-retired .ws-label { font-weight: 600; }
+.ws-focus.is-retired .ws-card-title { color: var(--text-secondary); }
+.ws-bring-back { min-height: 25px; border-radius: 7px; padding: 4px 10px; font-size: 11px; font-weight: 600; border: 0; background: var(--blue-soft); color: var(--blue-ink); cursor: pointer; }
+.ws-recordings { list-style: none; margin: 0; padding: 0; display: grid; }
+.ws-recording { display: grid; grid-template-columns: 70px minmax(0, 1fr) auto; align-items: center; gap: 0 12px; min-height: 32px; font-size: 12px; border-top: 1px solid var(--line); }
+.ws-recording-when { color: var(--muted); }
+.ws-recording-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ws-recording { grid-template-columns: 70px minmax(0, 1fr) auto; }
+.ws-recording-right { display: inline-flex; align-items: center; gap: 8px; }
+.ws-recording-steps { grid-column: 2 / -1; margin: -4px 0 4px; font-size: 11px; color: var(--muted); }
+.ws-recording .mr-picker, .ws-recording .mr-payoff { grid-column: 1 / -1; }
+.ws-recording-open { all: unset; cursor: pointer; color: var(--text-secondary); font-size: 12px; }
+/* File here (F4): each New line with the shared chip on its right; the picker and the result line under it. */
+.ws-news-line { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; min-height: 30px; }
+.ws-news-text { flex: 1; min-width: 0; }
+.ws-also { margin: -2px 0 2px 15px; font-size: 11px; color: var(--muted); }
+.ws-pick { color: var(--blue-ink); font-size: 11px; }
+.ws-for { margin: -2px 0 0; font-size: 11px; color: var(--text-secondary); }
+.ws-for-from { color: var(--muted); }
+.ws-for-yes { all: unset; cursor: pointer; color: var(--blue-ink); font-weight: 600; }
+
+/* The More row as icons (2026-10-29), the Meetings head's way: a mark, its name on hover; the goal one line. */
+.ws-actions .ws-icon-act, .goal-change { width: 30px; min-height: 28px; padding: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 7px; border: 1px solid transparent; background: transparent; color: var(--blue-ink); cursor: pointer; }
+.ws-actions .ws-icon-act:hover, .goal-change:hover { background: var(--blue-soft); }
+.ws-actions .ws-icon-act.is-on { background: var(--blue-ink); color: #fff; }
+.ws-actions .ws-delete.ws-icon-act { margin-left: auto; color: var(--muted); }
+.ws-icon-act .ws-icon { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.ws-icon-act:focus-visible { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
+.goal-line { display: flex; align-items: center; gap: 6px; }
+.goal-text { margin: 0; font-size: 14px; font-weight: 600; color: var(--ink); }
+details.ws-settings { display: block; padding: 0; background: transparent; }
+details.ws-settings[open] { display: grid; gap: 8px; padding: 10px 12px; background: var(--soft); }
+.ws-settings-head { cursor: pointer; color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }

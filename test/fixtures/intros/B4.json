@@ -1,0 +1,75 @@
+{
+  "id": "B4",
+  "threads": [
+    {
+      "id": "outlook:4",
+      "sourceType": "manual",
+      "subject": "Club budget",
+      "latestTimestamp": "2026-10-07T11:05:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-401",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Grace Liu <gliu@city.example>",
+          "cc": "",
+          "subject": "Club budget",
+          "timestamp": "2026-10-06T14:30:00Z",
+          "body": "Hi Grace, who decides on the spring event budget this year?"
+        },
+        {
+          "id": "apple-mail-402",
+          "conversation": null,
+          "from": "Grace Liu <gliu@city.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "RE: Club budget",
+          "timestamp": "2026-10-07T11:05:00Z",
+          "body": "Hi Gio,\nThat moved to the finance office this fall. Please feel free to contact Ana Ruiz <ana.ruiz@city.example> about the budget, she is expecting questions this month.\nGrace"
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "gliu@city.example"
+      ],
+      "timestamp": "2026-10-06T14:30:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Email Ana Ruiz",
+        "kind": "email",
+        "thread": 1,
+        "to": "Ana Ruiz",
+        "ask": "",
+        "quote": "Please feel free to contact Ana Ruiz",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [
+      {
+        "thread": "outlook:4",
+        "name": "Ana Ruiz",
+        "address": "ana.ruiz@city.example",
+        "shape": "body"
+      }
+    ],
+    "move": {
+      "kind": "email",
+      "to": "Ana Ruiz",
+      "address": "ana.ruiz@city.example"
+    }
+  }
+}

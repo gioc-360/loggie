@@ -1,0 +1,75 @@
+{
+  "id": "B1",
+  "threads": [
+    {
+      "id": "outlook:1",
+      "sourceType": "manual",
+      "subject": "Thank you",
+      "latestTimestamp": "2026-10-16T20:55:10Z",
+      "messages": [
+        {
+          "id": "apple-mail-101",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Jordan Reyes <jreyes@bank.example>",
+          "cc": "",
+          "subject": "Thank you",
+          "timestamp": "2026-10-14T15:00:00Z",
+          "body": "Thanks again for Monday, Jordan. Is there anyone on the tech side you'd suggest I learn from?"
+        },
+        {
+          "id": "apple-mail-102",
+          "conversation": null,
+          "from": "Reyes, Jordan <jreyes@bank.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "RE: Thank you",
+          "timestamp": "2026-10-16T20:55:10Z",
+          "body": "Hi Gio! I'm still waiting on my contact from the tech space, but have you connected before with Dana Okafor: dana.okafor@bank.example<mailto:dana.okafor@bank.example> She's on our data team and very approachable.\n\nBest,\nJordan"
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "jreyes@bank.example"
+      ],
+      "timestamp": "2026-10-14T15:00:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Email Dana Okafor",
+        "kind": "email",
+        "thread": 1,
+        "to": "Dana Okafor",
+        "ask": "",
+        "quote": "have you connected before with Dana Okafor",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [
+      {
+        "thread": "outlook:1",
+        "name": "Dana Okafor",
+        "address": "dana.okafor@bank.example",
+        "shape": "body"
+      }
+    ],
+    "move": {
+      "kind": "email",
+      "to": "Dana Okafor",
+      "address": "dana.okafor@bank.example"
+    }
+  }
+}

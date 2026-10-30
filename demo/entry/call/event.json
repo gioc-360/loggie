@@ -1,0 +1,14 @@
+{
+  "title": "Coffee chat - Omar Castellano",
+  "start": "2026-10-13T15:00:00-04:00",
+  "emails": [
+    "omar.castellano@larkspur.example"
+  ],
+  "names": "Omar Castellano",
+  "attendees": "Omar Castellano",
+  "me": "Nadia",
+  "with": "Omar Castellano",
+  "category": "one-on-one",
+  "workstream": "Larkspur Logistics",
+  "synthetic": "made by make-call.py with macOS say (Samantha as Nadia Feldman, Daniel as Omar Castellano); invented people"
+}

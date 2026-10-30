@@ -1,0 +1,73 @@
+{
+  "id": "D1",
+  "threads": [
+    {
+      "id": "outlook:13",
+      "sourceType": "manual",
+      "subject": "Mentor program",
+      "latestTimestamp": "2026-09-11T12:00:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-1101",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Club Mentoring <mentoring@club.example>",
+          "cc": "",
+          "subject": "Mentor program",
+          "timestamp": "2026-09-10T12:00:00Z",
+          "body": "Hi, I'd like to join the mentor program this term."
+        },
+        {
+          "id": "apple-mail-1102",
+          "conversation": null,
+          "from": "Club Mentoring <mentoring@club.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "RE: Mentor program",
+          "timestamp": "2026-09-11T12:00:00Z",
+          "body": "Welcome to the program! Please reach out to any of this term's mentors:\nAna Ruiz <ana.ruiz@club.example>\nMarcus Bell <mbell@club.example>\nPriya Shah <pshah@club.example>\nDev Patel <dpatel@club.example>\nKim Lee <klee@club.example>"
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "mentoring@club.example"
+      ],
+      "timestamp": "2026-09-10T12:00:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Email Ana Ruiz",
+        "kind": "email",
+        "thread": 1,
+        "to": "Ana Ruiz",
+        "ask": "",
+        "quote": "Please reach out to any of this term's mentors:",
+        "steps": []
+      },
+      {
+        "title": "Email Marcus Bell",
+        "kind": "email",
+        "thread": 1,
+        "to": "Marcus Bell",
+        "ask": "",
+        "quote": "Please reach out to any of this term's mentors:",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [],
+    "move": null
+  }
+}

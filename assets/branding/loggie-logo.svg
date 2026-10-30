@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-27 0 630 630" width="630" height="630">
+  <!-- The Loggie L: two rounded bars, a third blue where they cross. The crossing is its own shape because its blue is
+       darker than any see-through mix of the two bar blues can make (measured on the target, 2026-10-28). -->
+  <path fill="#8ebcfd" d="M0 108A108 108 0 0 1 216 108V447.4A165.8 165.8 0 0 1 75.4 611.3A147.2 147.2 0 0 1 0 482.8Z"/>
+  <path fill="#81b1fe" d="M468 414A108 108 0 0 1 468 630H147.2A147.2 147.2 0 0 1 36.4 579.7A180.4 180.4 0 0 1 216.2 414Z"/>
+  <path fill="#3076fd" d="M216 414V447.4A165.8 165.8 0 0 1 75.4 611.3A147.2 147.2 0 0 1 36.4 579.7A180.4 180.4 0 0 1 216.2 414Z"/>
+</svg>

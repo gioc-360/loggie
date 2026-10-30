@@ -1,0 +1,90 @@
+/* The mock-up's colors on the old token names, and its tab look (jess-frontend-prototype-i styles.css:8-29, :42-46).
+   Scoped to the panel. Yellow stays only on guesses and not-sure (spec.md N7). */
+.panel-page {
+  --paper: #f8f8fa; --surface: #fff; --ink: #25272d; --muted: #8f929c; --line: #e2e4e9;
+  --pink: #4656b9; --soft-pink: #ffebee;
+  --text-secondary: #4a4d59; --soft: #f1f2f4; --blue-soft: #e6f2fe; --blue-deep: #5b75d2; --blue-ink: #4656b9;
+  --red-soft: #ffebee; --danger: #c10616;
+}
+.panel-page .workspace-nav { background: var(--paper); }
+.panel-page .workspace-nav button { padding: 9px; border-bottom: 0; border-radius: 8px; color: var(--muted); font-size: 12px; font-weight: 500; }
+.panel-page .workspace-nav button:hover { color: var(--ink); background: var(--soft); }
+.panel-page .workspace-nav button[aria-pressed=true] { color: var(--blue-ink); background: var(--blue-soft); font-weight: 600; }
+.panel-page #taskCount:not(:empty) { background: var(--blue-ink); }
+.panel-page [data-page="workspaces"] { padding: 16px 24px 30px; }
+.panel-page [data-page="workspaces"] .work-section { margin-top: 0; }
+
+/* The shell (S3): one header row with the brand, the three tabs, the three dots and the window buttons; the ask bar
+   on its own row under it; the page fills the rest. */
+.panel-page .panel-shell { grid-template-rows: auto auto minmax(0, 1fr); }
+.panel-page .panel-header { display: flex; align-items: center; gap: 14px; min-height: 56px; padding: 0 12px 0 16px; background: var(--paper); border-bottom: 1px solid var(--line); }
+.panel-page .brand { flex: none; display: flex; gap: 6px; align-items: center; padding: 4px 6px; border: 0; border-radius: 8px; background: transparent; color: var(--ink); font-size: 15px; font-weight: 700; cursor: pointer; }
+.panel-page .brand-mark { color: var(--blue-ink); }
+.panel-page .panel-header .workspace-nav { flex: 1; min-width: 0; display: flex; gap: 4px; padding: 0; border: 0; background: transparent; }
+.panel-page .header-actions { flex: none; margin-left: auto; gap: 4px; }
+.panel-page .composer { position: static; max-width: none; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--paper); }
+.panel-page .header-actions .settings-button[aria-pressed="true"] { background: var(--blue-soft); color: var(--blue-ink); }
+.ask-results { margin-top: 8px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; max-height: 40vh; overflow: auto; }
+.ask-results[hidden] { display: none; }
+.ask-results-head { display: flex; align-items: center; justify-content: space-between; }
+.ask-results-head h2 { margin: 0; font-size: 12px; font-weight: 600; color: var(--muted); }
+.panel-page [data-page="settings"] { padding: 22px 22px 40px; }
+.panel-page .header-actions { background: transparent; border: 0; box-shadow: none; }
+.panel-page [data-page="today"] .section-heading:has(#workstreamStatus:empty):has(#usageLine[hidden]) { display: none; }
+.panel-page .today-head { margin-top: 0; }
+
+/* Settings (S4): the mock-up's type scale. */
+.panel-page [data-page="settings"] .page-heading h1 { font-size: 15px; font-weight: 600; margin: 0 0 4px; }
+.panel-page [data-page="settings"] .page-heading p { font-size: 12px; color: var(--muted); }
+.panel-page [data-page="settings"] h2 { font-size: 13px; font-weight: 600; }
+.panel-page [data-page="settings"] p, .panel-page [data-page="settings"] .settings-row { font-size: 12px; }
+.panel-page [data-page="settings"] button { font-size: 12px; }
+.panel-page [data-page="settings"] .permission-card, .panel-page [data-page="settings"] .settings-group { border: 0; border-radius: 12px; background: #fff; }
+.panel-page [data-page="settings"] .permission-card h3 { font-size: 13px; }
+.panel-page [data-page="settings"] .permission-card button, .panel-page [data-page="settings"] .connect-button { min-height: 28px; padding: 5px 11px; border-radius: 7px; }
+
+/* Narrow windows (480 px and up): the header row keeps every control in view; the brand keeps its mark only. */
+.panel-page .panel-shell { grid-template-columns: minmax(0, 1fr); }
+.panel-page .panel-header { min-width: 0; }
+@media (max-width: 620px) {
+  .panel-page .panel-header { gap: 6px; padding: 0 6px 0 8px; }
+  .panel-page .brand > span:last-child { display: none; }
+  .panel-page .workspace-nav button { padding: 7px 7px; }
+  .panel-page .header-actions { gap: 0; }
+  .panel-page .header-actions .icon-button { width: 26px; }
+  .panel-page .composer { padding: 8px 10px; }
+}
+@media (max-height: 600px) { .ask-results { max-height: 30vh; } }
+
+/* The mock-up's shell (jess-frontend-prototype-i styles.css :40-54): the tabs centered between the brand and the
+   buttons, the brand mark in its soft-blue tile, and the ask bar as a blue-to-teal strip with ⌘ K. */
+.panel-page { --surface-head: #fbfbfc; --teal-soft: #e0f2f1; }
+.panel-page .panel-header { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 12px; min-height: 64px; padding: 0 12px 0 16px; background: var(--surface-head); border-bottom: 0; }
+.panel-page .panel-header .brand { justify-self: start; gap: 8px; font-size: 17px; font-weight: 700; color: #09090b; }
+.panel-page .brand-mark { width: 26px; height: 26px; border-radius: 9px; display: grid; place-items: center; background: var(--blue-soft); color: var(--blue-deep); }
+.panel-page .brand-mark img { display: block; object-fit: contain; }
+.panel-page .panel-header .workspace-nav { flex: none; justify-self: center; }
+.panel-page .header-actions { justify-self: end; margin-left: 0; }
+.panel-page #taskCount { display: none; }
+.panel-page .composer { padding: 0 20px; border-bottom: 0; background: linear-gradient(90deg, var(--blue-soft) 0%, var(--teal-soft) 100%); }
+.panel-page .input-row { grid-template-columns: minmax(0, 1fr) auto auto auto; gap: 10px; min-height: 56px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.panel-page .input-row:focus-within { border-color: transparent; box-shadow: none; }
+.panel-page .composer textarea { color: var(--text-secondary); }
+.panel-page .composer textarea::placeholder { color: var(--text-secondary); }
+.panel-page .ask-kbd { font: inherit; font-size: 10px; color: var(--blue-ink); background: rgb(255 255 255 / 64%); padding: 1px 4px; border-radius: 4px; }
+.panel-page .composer .voice-button { background: rgb(255 255 255 / 55%); }
+.panel-page .composer .send-button { background: var(--blue-ink); }
+.panel-page .ask-status { background: rgb(240 248 252 / 96%); }
+.panel-page .composer > .ask-under:not(:empty), .panel-page .composer > .ask-card:not([hidden]), .panel-page .composer > .ask-results:not([hidden]) { margin-bottom: 10px; }
+.panel-page .ask-under:empty { display: none; }
+@media (max-width: 620px) {
+  .panel-page .panel-header { gap: 4px; grid-template-columns: auto minmax(0, 1fr) auto; }
+  .panel-page .composer { padding: 0 12px; }
+  .panel-page .input-row { grid-template-columns: minmax(0, 1fr) auto auto; }
+  .panel-page .ask-kbd { display: none; }
+}
+
+/* The one tooltip (tooltip.js): a small dark chip above the element (below when there is no room), shown and hidden
+   in the same frame. It never moves: no fade, no transition, no animation, with or without reduced motion. */
+.loggie-tip { position: fixed; z-index: 1000; max-width: 260px; padding: 4px 8px; border-radius: 6px; background: var(--ink); color: #fff; font-family: var(--sans); font-size: 12px; font-weight: 500; line-height: 16px; white-space: normal; overflow-wrap: anywhere; box-shadow: 0 4px 12px rgb(15 23 42 / 18%); pointer-events: none; transition: none; animation: none; }
+.loggie-tip[hidden] { display: none; }

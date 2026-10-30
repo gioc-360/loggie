@@ -1,0 +1,136 @@
+{
+  "id": "N1",
+  "threads": [
+    {
+      "id": "outlook:9",
+      "sourceType": "manual",
+      "subject": "Brand question",
+      "latestTimestamp": "2026-10-01T18:00:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-901",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Ava Brooks <abrooks@agency.example>",
+          "cc": "",
+          "subject": "Brand question",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "body": "Ava, do you know anyone who does brand strategy for startups?"
+        },
+        {
+          "id": "apple-mail-902",
+          "conversation": null,
+          "from": "Ava Brooks <abrooks@agency.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "RE: Brand question",
+          "timestamp": "2026-10-01T18:00:00Z",
+          "body": "I can connect you with my friend, Liz. She did exactly that for two seed companies. I'll send a note."
+        }
+      ]
+    },
+    {
+      "id": "outlook:10",
+      "sourceType": "manual",
+      "subject": "Introductions: Gio & Liz",
+      "latestTimestamp": "2026-10-02T15:00:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-903",
+          "conversation": null,
+          "from": "Ava Brooks <abrooks@agency.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>, Liz Moreno <liz.moreno@studio.example>",
+          "cc": "",
+          "subject": "Introductions: Gio & Liz",
+          "timestamp": "2026-10-02T09:00:00Z",
+          "body": "Gio, Liz. Liz, Gio. You two should talk brand strategy.\n\nAva"
+        },
+        {
+          "id": "apple-mail-904",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Ava Brooks <abrooks@agency.example>, Liz Moreno <liz.moreno@studio.example>",
+          "cc": "",
+          "subject": "RE: Introductions: Gio & Liz",
+          "timestamp": "2026-10-02T11:00:00Z",
+          "body": "Thank you Ava! Liz, lovely to meet you. Any time Friday?"
+        },
+        {
+          "id": "apple-mail-905",
+          "conversation": null,
+          "from": "Liz Moreno <liz.moreno@studio.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "RE: Introductions: Gio & Liz",
+          "timestamp": "2026-10-02T15:00:00Z",
+          "body": "Hi Gio, Friday at 11 is perfect. Send me a calendar hold?"
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "abrooks@agency.example"
+      ],
+      "timestamp": "2026-10-01T12:00:00Z"
+    },
+    {
+      "to": [
+        "abrooks@agency.example",
+        "liz.moreno@studio.example"
+      ],
+      "timestamp": "2026-10-02T11:00:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Reply",
+        "kind": "reply",
+        "thread": 2,
+        "due": null,
+        "quote": "Friday at 11 is perfect.",
+        "steps": []
+      },
+      {
+        "title": "Email Liz",
+        "kind": "email",
+        "thread": 1,
+        "to": "Liz",
+        "ask": "",
+        "quote": "I can connect you with my friend, Liz.",
+        "steps": []
+      },
+      {
+        "title": "Email Liz Moreno",
+        "kind": "email",
+        "thread": 2,
+        "to": "Liz Moreno",
+        "ask": "",
+        "quote": "You two should talk brand strategy.",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [
+      {
+        "thread": "outlook:10",
+        "name": "Liz Moreno",
+        "address": "liz.moreno@studio.example",
+        "shape": "to"
+      }
+    ],
+    "move": {
+      "kind": "reply",
+      "thread": 2
+    }
+  }
+}

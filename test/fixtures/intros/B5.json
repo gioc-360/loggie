@@ -1,0 +1,75 @@
+{
+  "id": "B5",
+  "threads": [
+    {
+      "id": "outlook:5",
+      "sourceType": "manual",
+      "subject": "Pricing project",
+      "latestTimestamp": "2026-10-10T08:40:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-501",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Nora Quinn <nquinn@co.example>",
+          "cc": "",
+          "subject": "Pricing project",
+          "timestamp": "2026-10-09T17:20:00Z",
+          "body": "Nora, do you know anyone who has priced a subscription launch?"
+        },
+        {
+          "id": "apple-mail-502",
+          "conversation": null,
+          "from": "Nora Quinn <nquinn@co.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "RE: Pricing project",
+          "timestamp": "2026-10-10T08:40:00Z",
+          "body": "Happy to connect you with my colleague Tom. His email is tom.hale@co.example and he did exactly that last spring.\n\nNora"
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "nquinn@co.example"
+      ],
+      "timestamp": "2026-10-09T17:20:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Email Tom",
+        "kind": "email",
+        "thread": 1,
+        "to": "Tom",
+        "ask": "",
+        "quote": "Happy to connect you with my colleague Tom",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [
+      {
+        "thread": "outlook:5",
+        "name": "Tom",
+        "address": "tom.hale@co.example",
+        "shape": "body"
+      }
+    ],
+    "move": {
+      "kind": "email",
+      "to": "Tom",
+      "address": "tom.hale@co.example"
+    }
+  }
+}

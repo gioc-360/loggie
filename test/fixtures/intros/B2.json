@@ -1,0 +1,75 @@
+{
+  "id": "B2",
+  "threads": [
+    {
+      "id": "outlook:2",
+      "sourceType": "manual",
+      "subject": "Coffee chat follow-up",
+      "latestTimestamp": "2026-10-03T16:42:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-201",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Hannah Cole <hcole@fund.example>",
+          "cc": "",
+          "subject": "Coffee chat follow-up",
+          "timestamp": "2026-10-02T13:10:00Z",
+          "body": "Hi Hannah, thank you for the time today. I'd love to hear more about the credit side if anyone has a few minutes."
+        },
+        {
+          "id": "apple-mail-202",
+          "conversation": null,
+          "from": "Hannah Cole <hcole@fund.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "RE: Coffee chat follow-up",
+          "timestamp": "2026-10-03T16:42:00Z",
+          "body": "Great meeting you too, Gio. I'd like to introduce you to Priya Natarajan (pnatarajan@fund.example), who runs our credit desk and was a Johnson grad herself. Tell her I sent you.\n\nHannah"
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "hcole@fund.example"
+      ],
+      "timestamp": "2026-10-02T13:10:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Email Priya Natarajan",
+        "kind": "email",
+        "thread": 1,
+        "to": "Priya Natarajan",
+        "ask": "",
+        "quote": "I'd like to introduce you to Priya Natarajan",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [
+      {
+        "thread": "outlook:2",
+        "name": "Priya Natarajan",
+        "address": "pnatarajan@fund.example",
+        "shape": "body"
+      }
+    ],
+    "move": {
+      "kind": "email",
+      "to": "Priya Natarajan",
+      "address": "pnatarajan@fund.example"
+    }
+  }
+}

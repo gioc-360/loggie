@@ -1,0 +1,5 @@
+# The third-party imports of the transcriber code the app runs (call.py, privacy.py, byo.py, sendgate.py, wordlists.py,
+# lexicon.py, transcript.py, summary.py, nvidia_asr.py, nvidia_engine.py): numpy, and nothing else.
+# The speech itself runs in the downloaded engine, not in Python. Pinned by hash: pip refuses anything else.
+numpy==2.5.3 \
+    --hash=sha256:a72f874bc9e10e4b8f80426fb49716d5141f64442a0c8418065093ec8017fbb0

@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Larkspur Logistics",
+    "kind": "company",
+    "goal": "Build the relationship",
+    "domains": [
+      "larkspur.example"
+    ],
+    "words": [
+      "Larkspur"
+    ],
+    "cloud": "nebius"
+  },
+  {
+    "name": "Ops Case Competition",
+    "kind": "competition",
+    "goal": "Submit on time",
+    "domains": [
+      "opscase.example"
+    ],
+    "words": [
+      "Ops Case"
+    ],
+    "cloud": "nebius"
+  },
+  {
+    "name": "Supply Chain Analytics",
+    "kind": "class",
+    "goal": "Finish the project",
+    "domains": [
+      "scm.school.example"
+    ],
+    "words": [
+      "Supply Chain Analytics"
+    ],
+    "cloud": "nebius"
+  },
+  {
+    "name": "Harbor Street Housing",
+    "kind": "other",
+    "goal": "Get it done",
+    "domains": [
+      "harborstreet.example"
+    ],
+    "words": [
+      "Harbor Street"
+    ],
+    "cloud": "nebius"
+  },
+  {
+    "name": "Alumni Mentoring",
+    "kind": "company",
+    "goal": "Build the relationship",
+    "domains": [
+      "mentors.example"
+    ],
+    "words": [
+      "Mentoring"
+    ],
+    "cloud": "nebius"
+  }
+]

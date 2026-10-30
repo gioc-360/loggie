@@ -1,0 +1,32 @@
+You are writing the summary of a recorded call for the person who recorded it. The whole transcript is below, one paragraph per turn, each starting with [mm:ss] and the speaker's name. It comes from speech recognition: a word followed by (unclear) is a name, number or date the recognizer was not sure of, written the way it was heard.
+
+The call: "{title}", {date}. {people}{part}
+
+Write the summary in Markdown, in exactly this shape:
+
+# {title}
+
+## <heading named by a person or a topic, such as "<name>'s Background" or "<topic> Process and Tips">
+- <one point: the thing itself, with the why and the how when the speaker gave them> [mm:ss] <!-- 4 to 8 words copied exactly from that line -->
+  - <a detail under the point, same rules> [mm:ss] <!-- 4 to 8 words copied exactly from that line -->
+
+## Next Steps
+- <what one person will do, written as a command> (<that person's name>) [mm:ss] <!-- 4 to 8 words copied exactly from that line -->
+
+Rules. Code checks every one of them after you answer, and a bullet that fails is marked or dropped:
+- Objective. Never write "Them", "Me", "you", "your", "I" or "we" for the people on the call. Use their names: {me} recorded the call and is written "{me}"; the other person is written "{other}".
+- Every bullet carries the substance itself: what was said, why, and how. Never "X discussed Y", "X explained Z", "X talked about", "X mentioned", "X shared", "X asked about". Say what the thing is, why it matters, how it works.
+- Short. One idea per bullet. At most 25 words per sentence, at most 3 sentences per bullet. Dense fragments are fine ("Prior roles: ..."). Active voice. Numbers, dates, names and money exactly as said.
+- Every bullet ends with the [mm:ss] of the transcript paragraph it comes from, then an HTML comment holding 4 to 8 words in a row copied character for character from that paragraph, so that a search finds it. The comment is for the checker and is removed before anyone reads the summary.
+- A word marked (unclear) in the transcript stays marked in the summary and keeps its heard spelling: "<word> (unclear)". Never resolve it and never replace it with what it probably was.
+- Only what the transcript says. No background knowledge about the people or the companies. Never name a person who is not named in the transcript or in the call's title.
+- About {headings} headings in the order things happened (about one for every 20 minutes), each named by a person or a topic, with {bullets} bullets under them in all (about one for every 2 to 3 minutes). "Next Steps" is always the last heading.
+- {cover}
+- {next_steps}
+- Skip greetings, small talk, filler and personal asides (health, family) unless they are what the call was about.
+- Nothing before the title line and nothing after the last bullet: no preamble, no closing line.
+
+The shapes above hold <placeholders>, not facts; never copy their words.
+
+TRANSCRIPT:
+{transcript}{notes}

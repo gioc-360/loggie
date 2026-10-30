@@ -1,0 +1,139 @@
+/* The nine-step setup (setup.js): the steps, order and words of Gio's mock loggie-first-run-d.html, drawn in the app's
+   own look (tokens.css: the soft blue, the blue ink, white cards on the pale ground, the system font), so setup reads
+   as the first page of Loggie, not a different app (Gio, 2026-10-18). While setup is open the tabs, the dots menu
+   and the ask bar step aside: one thing to do at a time. */
+.panel-page.is-setup .panel-header .workspace-nav, .panel-page.is-setup .settings-button { visibility: hidden; }
+.panel-page.is-setup #composer { display: none; }
+.panel-page.is-setup #conversation { background: var(--paper); }
+.setup-page {
+  --su-ground: var(--paper); --su-paper: #fff; --su-ink: var(--ink); --su-soft: var(--text-secondary); --su-mute: var(--muted);
+  --su-blue: var(--blue-ink); --su-blue-wash: var(--blue-soft); --su-rose: var(--blue-ink); --su-rose-wash: var(--red-soft); --su-rule: var(--line);
+  --su-nvidia: #76b900; --su-display: inherit;
+  min-height: 100%; padding: 16px 24px 24px; background: var(--su-ground); color: var(--su-ink); display: flex; flex-direction: column; gap: 14px;
+}
+.setup-page[hidden] { display: none; }
+.setup-page button { font: inherit; font-weight: 600; font-size: 12px; border-radius: 7px; min-height: 28px; padding: 5px 12px; border: 1px solid transparent; background: var(--blue-soft); color: var(--blue-ink); cursor: pointer; }
+.setup-page button:hover { filter: brightness(.96); }
+.setup-page button:disabled { opacity: .45; cursor: default; }
+.setup-page button:focus-visible, .setup-page input:focus-visible { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
+.setup-page .su-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(9, 1fr); gap: 5px; }
+.setup-page .su-steps li { text-align: center; font-size: 11px; font-weight: 600; padding: 5px 2px; border-radius: 8px; background: var(--soft); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.setup-page .su-steps li.done { background: var(--blue-soft); color: var(--blue-ink); }
+.setup-page .su-steps li.now { background: var(--soft); color: #fff; }
+.setup-page .su-card { background: #fff; border: 0; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; max-width: 620px; width: 100%; margin: 0 auto; animation: su-in 260ms ease-out both; }
+.setup-page .su-card.is-still { animation: none; }
+.setup-page .su-card h3 { margin: 0; font-size: 20px; line-height: 24px; letter-spacing: -.02em; font-weight: 700; text-wrap: balance; }
+.setup-page .su-card .why { margin: 0; color: var(--text-secondary); font-size: 12px; line-height: 1.5; }
+.setup-page .su-k { margin: 0; font-size: 11px; font-weight: 600; color: var(--muted); }
+.setup-page .su-note { margin: 0; color: var(--su-mute); font-size: 12px; line-height: 1.45; }
+/* The Disk step's live mail check and its steps (2026-10-28): plain lines, the su-note's size, no new mark. */
+.setup-page .su-mail-check, .setup-page .su-mail-steps { margin: 0; padding-left: 18px; color: var(--text-secondary); font-size: 12px; line-height: 1.6; }
+.setup-page .su-mail-check { list-style: none; padding-left: 0; }
+.setup-page .su-strong { margin: 0; font-weight: 700; font-size: 13px; }
+.setup-page .su-label { display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 13px; }
+.setup-page .su-pay { display: flex; align-items: center; gap: 10px; background: var(--blue-soft); color: var(--blue-ink); border-radius: 10px; padding: 9px 12px; font-weight: 600; font-size: 12px; animation: su-in 260ms ease-out both; }
+.setup-page .su-pay.ok { background: #e4f7eb; color: #1f6b43; }
+.setup-page .su-pay .tick { width: 20px; height: 20px; border-radius: 50%; background: #2f7a4f; color: var(--su-paper); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex: none; }
+.setup-page .btn-big { align-self: flex-start; background: linear-gradient(135deg, var(--blue-deep), var(--blue-ink)); color: #fff; font-size: 13px; min-height: 34px; padding: 7px 20px; }
+.setup-page .btn-big:hover:not(:disabled) { filter: brightness(.94); }
+.setup-page .su-plain { background: var(--blue-soft); color: var(--blue-ink); }
+.setup-page .su-plain.small { padding: 3px 11px; font-size: 12px; }
+.setup-page .linkish { align-self: flex-start; background: none; border: none; min-height: 0; padding: 0; color: var(--blue-ink); text-decoration: underline; text-underline-offset: 2px; font-size: 12px; font-weight: 500; }
+.setup-page .linkish:hover { background: none; }
+.setup-page .su-name { font: inherit; font-size: 13px; font-weight: 400; padding: 7px 10px; border-radius: 7px; border: 1px solid var(--line); background: #fff; color: var(--su-ink); max-width: 280px; }
+.setup-page .su-name:focus { border-color: var(--su-blue); outline: none; box-shadow: 0 0 0 3px var(--su-blue-wash); }
+.setup-page .choice-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.setup-page .choice { border-radius: 10px; border: 1px solid var(--line); background: #fff; color: var(--ink); padding: 10px 8px; font-size: 13px; }
+.setup-page .choice[aria-pressed="true"] { border-color: var(--blue-ink); background: var(--blue-soft); color: var(--blue-ink); }
+.setup-page .rowx-plain { display: flex; justify-content: space-between; align-items: center; gap: 14px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; }
+.setup-page .rowx-plain > div { display: flex; flex-direction: column; gap: 2px; font-size: 13px; }
+:is(.setup-page, .mac-check) .switch { width: 40px; height: 22px; min-height: 0; border-radius: 999px; border: none; background: var(--line); position: relative; padding: 0; flex: none; }
+:is(.setup-page, .mac-check) .switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fbfbf9; transition: transform 180ms ease-out; }
+:is(.setup-page, .mac-check) .switch[aria-checked="true"] { background: var(--blue-ink); }
+:is(.setup-page, .mac-check) .switch[aria-checked="true"]::after { transform: translateX(18px); }
+.setup-page .keys { display: flex; flex-direction: column; gap: 10px; }
+.setup-page .keybox { display: flex; flex-direction: column; gap: 4px; }
+.setup-page .keyrow { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.setup-page .keyrow input { flex: 1; min-width: 0; font: inherit; font-family: ui-monospace, Menlo, monospace; font-size: 13px; padding: 7px 10px; border-radius: 7px; border: 1px solid var(--line); background: #fff; color: var(--su-ink); }
+.setup-page .keyrow input:focus { border-color: var(--su-blue); outline: none; box-shadow: 0 0 0 3px var(--su-blue-wash); }
+.setup-page .keyrow input[readonly] { opacity: .6; }
+.setup-page .keyrow .state { font-size: 12px; font-weight: 700; color: var(--su-mute); min-width: 9ch; }
+.setup-page .keyrow .state.ok { color: #1f6b43; }
+.setup-page .su-yes-block { display: flex; flex-direction: column; gap: 4px; border-top: 1px solid var(--su-rule); padding-top: 10px; }
+.setup-page .su-foot { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+:is(.setup-page, .mac-check) .checklist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+:is(.setup-page, .mac-check) .checklist li { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; padding: 7px 12px; border-top: 1px solid var(--line); font-size: 12px; }
+:is(.setup-page, .mac-check) .checklist li:first-child { border-top: none; }
+:is(.setup-page, .mac-check) .checklist .st { font-size: 11px; font-weight: 700; border-radius: 999px; padding: 2px 8px; min-width: 9ch; text-align: center; flex: none; }
+:is(.setup-page, .mac-check) .checklist .st.on { background: #e4f7eb; color: #1f6b43; }
+:is(.setup-page, .mac-check) .checklist .st.off { background: var(--red-soft); color: var(--danger); }
+:is(.setup-page, .mac-check) .checklist .st.after-reopen { background: var(--blue-soft); color: var(--blue-ink); }
+:is(.setup-page, .mac-check) .checklist .st.note { background: var(--soft); color: var(--muted); }
+:is(.setup-page, .mac-check) .checklist .lbl { flex: 1; min-width: 0; }
+:is(.setup-page, .mac-check) .checklist .su-note { flex-basis: 100%; padding-left: calc(9ch + 26px); }
+/* Ready's foot stays pinned to the bottom of the visible scroll area, so Done is in view however long the list is (it
+   was at -18px, which left Done below the fold at 760 x 540). */
+.setup-page .su-ready-foot { position: sticky; bottom: 0; display: flex; flex-direction: column; gap: 8px; padding: 10px 0 12px; background: #fff; }
+.setup-page .reopening { margin: auto; text-align: center; font-size: 20px; font-weight: 600; color: var(--text-secondary); animation: su-in 260ms ease-out both; }
+/* The marks (first-run-polish B2.1-B2.3): each card's app icon or Loggie's own, the Email tiles' icons,
+   a grant's tick on the mark, and Disk's mirror beside the waiting line. */
+.setup-page .su-top { display: flex; align-items: center; gap: 8px; }
+/* Back (2026-10-28): the link setup already uses, on the card's top line before its mark. */
+.setup-page .su-top > .linkish { align-self: center; margin-right: 4px; }
+.setup-page .su-logo { position: relative; width: 24px; height: 24px; flex: none; }
+.setup-page .su-logo img, .setup-page .su-logo svg, .setup-page .su-tile-icon img { width: 24px; height: 24px; display: block; }
+.setup-page .su-logo svg { fill: none; stroke: var(--blue-ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.setup-page .su-logo-small { width: 16px; height: 16px; }
+.setup-page .su-logo-small + .su-logo-small { margin-left: -4px; }
+.setup-page .su-tick { position: absolute; right: -3px; bottom: -3px; width: 12px; height: 12px; border-radius: 50%; background: #2f7a4f; color: #fff; font-size: 8px; display: grid; place-items: center; }
+.setup-page .choice { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.setup-page .su-tile-note { font-size: 11px; font-weight: 500; color: var(--muted); }
+.setup-page .choice.is-missing { opacity: .45; }
+.setup-page .su-wait { display: flex; align-items: center; gap: 10px; }
+.setup-page .su-wait > .su-pay { flex: 1; }
+.setup-page .su-mirror[data-on="true"] { background: var(--blue-ink); }
+.setup-page .su-mirror[data-on="true"]::after { transform: translateX(18px); }
+/* The now pill's gradient lives in ::before (the pill before keeps it at 0), and Yes fills through its ::before once
+   both keys work. Motion was cut for everyone (Gio's answer B, first-run-polish B2.6): every piece draws its end look
+   at once, as the rules after su-in say. */
+.setup-page .su-steps li { position: relative; isolation: isolate; }
+.setup-page .su-steps li.now::before, .setup-page .su-steps li.was-now::before { content: ''; position: absolute; inset: 0; border-radius: inherit; z-index: -1; background: linear-gradient(135deg, var(--blue-deep), var(--blue-ink)); }
+.setup-page .su-steps li.was-now::before { opacity: 0; }
+.setup-page .su-yes { position: relative; isolation: isolate; }
+.setup-page .su-yes::before { content: ''; position: absolute; inset: 0; border-radius: inherit; z-index: -1; background: linear-gradient(135deg, var(--blue-deep), var(--blue-ink)); opacity: 0; }
+.setup-page .su-yes.is-lifted { color: #fff; }
+.setup-page .su-yes.is-lifted::before { opacity: 1; }
+.setup-page .su-fill { height: 4px; border-radius: 2px; background: var(--soft); overflow: hidden; }
+.setup-page .su-fill > i { display: block; height: 100%; background: var(--blue-ink); transform-origin: left; transform: scaleX(0); }
+/* The Calls step's NVIDIA word (first-run-polish B5.2), and the speech row's bar under its label on Ready. */
+.setup-page .su-nvidia { color: var(--su-nvidia); font-weight: 700; }
+:is(.setup-page, .mac-check) .checklist .su-fill { flex: 0 0 calc(100% - 9ch - 26px); margin-left: calc(9ch + 26px); }
+/* The Found step (first-run-polish B4.7): one row per workspace Loggie found, a dismissed row dimmed until Keep or
+   Later, and a call that failed said in one line at the card's foot. */
+.setup-page .su-found { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 10px; }
+.setup-page .su-found li { display: flex; flex-direction: column; gap: 4px; padding: 9px 12px; border-top: 1px solid var(--line); }
+.setup-page .su-found li:first-child { border-top: none; }
+.setup-page .su-found li.is-dismissed { opacity: .45; }
+.setup-page .su-error { margin: 0; color: var(--danger); font-size: 12px; }
+@keyframes su-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+/* No motion on the setup page, for everyone (B2.6 answer B): what was the reduced-motion block now always applies. */
+.setup-page .su-card, .setup-page .su-pay, .setup-page .reopening, .setup-page .su-tick, .setup-page .st.on.is-cascade { animation: none; }
+.setup-page .su-steps li.now, .setup-page .su-steps li.now::before, .setup-page .su-steps li.was-now, .setup-page .su-steps li.was-now::before { animation: none; }
+.setup-page .switch::after, .setup-page .btn-big:not(:disabled), .setup-page .su-yes.is-lifted::before, .setup-page .su-fill > i { transition: none; }
+@media (max-width: 620px) { .setup-page { padding: 12px; } .setup-page .su-steps { grid-template-columns: repeat(5, 1fr); } .setup-page .choice-row { grid-template-columns: 1fr; } }
+
+/* Settings, Your Mac (loggie-diagnostics): the checklist as on Ready, still (no switch slide, no pill cascade). */
+.mac-check .switch::after { transition: none; }
+.mac-check .checklist .st.optional { background: var(--soft); color: var(--muted); }
+.mac-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.mac-head h2 { flex: 1; margin: 0; }
+.mac-checked { color: var(--muted); font-size: 12px; }
+.mac-summary { margin: 0 0 8px; padding: 7px 10px; border-radius: 8px; background: var(--red-soft); color: var(--danger); font-size: 12px; line-height: 1.45; }
+.mac-summary.is-ok { background: #e4f7eb; color: #1f6b43; }
+.mac-summary:empty { display: none; }
+/* The mail app's Change (loggie-mail-app-switch): setup's three choices, row-sized, on a line of their own under the row. */
+.mac-check .mac-choices { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 0 3px calc(9ch + 26px); }
+.mac-check .mac-choices[hidden] { display: none; }
+.mac-check .mac-choices .choice { border-radius: 8px; border: 1px solid var(--line); background: #fff; color: var(--ink); padding: 4px 11px; font: inherit; font-size: 12px; cursor: pointer; }
+.mac-check .mac-choices .choice[aria-pressed="true"] { border-color: var(--blue-ink); background: var(--blue-soft); color: var(--blue-ink); cursor: default; }
+.mac-check .mac-choices .choice:disabled:not([aria-pressed="true"]) { opacity: .45; cursor: default; }

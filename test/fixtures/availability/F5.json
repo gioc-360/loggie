@@ -1,0 +1,51 @@
+{
+  "id": "F5",
+  "now": "2026-10-26T13:00:00Z",
+  "macZone": "America/New_York",
+  "settings": {},
+  "status": "granted",
+  "typed": "email lee my availability wednesday",
+  "line": "My availability wednesday",
+  "email": "",
+  "emailAt": null,
+  "draft": "Hi,\n\n[your times]\n\nBest,",
+  "events": [
+    {
+      "start": "2026-10-28T04:00:00Z",
+      "end": "2026-10-29T04:00:00Z",
+      "allDay": true,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange",
+      "title": "DUE 5:00pm"
+    },
+    {
+      "start": "2026-10-28T16:00:00Z",
+      "end": "2026-10-28T18:00:00Z",
+      "allDay": false,
+      "writable": false,
+      "attendees": [],
+      "calendar": "School feed",
+      "account": "Exchange"
+    }
+  ],
+  "throws": null,
+  "expect": {
+    "asked": "typed",
+    "window": {
+      "days": [
+        "2026-10-28"
+      ],
+      "startMinute": 540,
+      "endMinute": 1020,
+      "minutes": 30
+    },
+    "read": "read",
+    "text": "Wed Oct 28: 9am to 5pm ET",
+    "how": "line",
+    "note": "",
+    "body": "Hi,\n\nWed Oct 28: 9am to 5pm ET\n\nBest,",
+    "readerCalls": 1
+  }
+}

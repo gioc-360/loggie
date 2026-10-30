@@ -1,0 +1,6 @@
+/* The preview page only: a panel-width frame (?w=460 by default) so the screen can be looked at and checked
+   without the app. Not loaded by the app. */
+body { margin: 0; padding: 16px; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif; color: var(--ink); }
+.preview-frame { max-width: var(--w, 460px); margin: 0 auto; }
+.preview-frame h2 { margin: 0 0 6px; font-size: 16px; }
+.preview-log { color: var(--muted); font-size: 11px; min-height: 1.5em; }

@@ -1,0 +1,73 @@
+{
+  "id": "D2",
+  "threads": [
+    {
+      "id": "outlook:14",
+      "sourceType": "manual",
+      "subject": "Fall mixer",
+      "latestTimestamp": "2026-10-01T12:00:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-1201",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Events Team <events@clubhub.example>",
+          "cc": "",
+          "subject": "Fall mixer",
+          "timestamp": "2026-09-30T12:00:00Z",
+          "body": "Count me in for the mixer."
+        },
+        {
+          "id": "apple-mail-1202",
+          "conversation": null,
+          "from": "Club Digest <digest@clubhub.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "RE: Fall mixer",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "body": "This week: meet our new officers! Contact Jamie Fox: jfox@clubhub.example for sponsorships, and talk to Riley Chen, rchen@clubhub.example about the trek."
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "events@clubhub.example"
+      ],
+      "timestamp": "2026-09-30T12:00:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Email Jamie Fox",
+        "kind": "email",
+        "thread": 1,
+        "to": "Jamie Fox",
+        "ask": "",
+        "quote": "Contact Jamie Fox",
+        "steps": []
+      },
+      {
+        "title": "Email Riley Chen",
+        "kind": "email",
+        "thread": 1,
+        "to": "Riley Chen",
+        "ask": "",
+        "quote": "talk to Riley Chen",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [],
+    "move": null
+  }
+}

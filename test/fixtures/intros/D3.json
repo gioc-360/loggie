@@ -1,0 +1,73 @@
+{
+  "id": "D3",
+  "threads": [
+    {
+      "id": "outlook:15",
+      "sourceType": "manual",
+      "subject": "Seed decks",
+      "latestTimestamp": "2026-10-13T12:00:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-1301",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Theo Grant <tgrant@vc.example>",
+          "cc": "",
+          "subject": "Seed decks",
+          "timestamp": "2026-10-12T12:00:00Z",
+          "body": "Theo, happy to look at decks for the class project."
+        },
+        {
+          "id": "apple-mail-1302",
+          "conversation": null,
+          "from": "Theo Grant <tgrant@vc.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "FW: Seed decks",
+          "timestamp": "2026-10-13T12:00:00Z",
+          "body": "FYI, below.\n\nFounders on this one:\nKai Chen, kai@seedco.example\nMira Patel, mira@seedco.example\nThey are raising $2M and want feedback on the deck by Friday."
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "tgrant@vc.example"
+      ],
+      "timestamp": "2026-10-12T12:00:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Email Kai Chen",
+        "kind": "email",
+        "thread": 1,
+        "to": "Kai Chen",
+        "ask": "",
+        "quote": "Kai Chen, kai@seedco.example",
+        "steps": []
+      },
+      {
+        "title": "Email Mira Patel",
+        "kind": "email",
+        "thread": 1,
+        "to": "Mira Patel",
+        "ask": "",
+        "quote": "Mira Patel, mira@seedco.example",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [],
+    "move": null
+  }
+}

@@ -1,0 +1,16 @@
+You are joining the notes of one recorded call into one summary for the person who recorded it. The call was too long to write in one go, so its notes were written in {parts} parts, one for each stretch of minutes, in time order. They are below, each inside <part> with the minutes it covers.
+
+The call: "{title}", {date}, {minutes} minutes. {people}
+
+Write the joined summary in Markdown, in the same shape as the parts: the title line "# {title}", then the headings in the order things happened, each with its bullets, then one "## Next Steps" heading last.
+
+Rules. Code checks every bullet against the transcript after you answer, and a bullet that fails is marked or dropped:
+- Join by topic. Headings from different parts about the same company, person, case or idea become one heading (a guest company discussed across several parts gets one or two headings, never five). Headings are ordered by the time of their first bullet; bullets under a heading stay in the order of their [mm:ss].
+- About {headings} headings in all and at most {bullets_max} bullets, covering the whole call from {span}, the last 30 minutes as much as the first. To fit, keep the bullets that carry a number, a name, a decision, a reason or an example, and drop repeats and the thinner of two bullets on the same point. Never drop the only bullet on a part of the call.
+- A bullet you keep stays word for word, with its [mm:ss] and its HTML comment exactly as written. Never rewrite, shorten or join the words of a bullet. A heading is named by a person or a topic, as in the parts.
+- One "Next Steps" heading, last, holding the Next Steps of every part in time order, repeats taken out.{class_steps}
+- Labels such as "Student 3" and marks such as "(unclear)" stay exactly as written. Add nothing that is not in a part.
+- Nothing before the title line and nothing after the last bullet: no preamble, no closing line.
+
+PARTS:
+{parts_text}

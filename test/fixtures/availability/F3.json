@@ -1,0 +1,106 @@
+{
+  "id": "F3",
+  "now": "2026-10-15T12:00:00Z",
+  "macZone": "America/New_York",
+  "settings": {},
+  "status": "granted",
+  "typed": "email sam my availability friday",
+  "line": "My availability friday",
+  "email": "",
+  "emailAt": null,
+  "draft": "Hi,\n\n[your times]\n\nBest,",
+  "events": [
+    {
+      "start": "2026-10-16T11:00:00Z",
+      "end": "2026-10-16T22:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "MBA I",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-16T13:00:00Z",
+      "end": "2026-10-16T13:45:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-16T15:00:00Z",
+      "end": "2026-10-16T16:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "MBA I",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-16T16:00:00Z",
+      "end": "2026-10-16T17:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "MBA I",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-16T17:00:00Z",
+      "end": "2026-10-16T19:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-16T18:00:00Z",
+      "end": "2026-10-16T18:30:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [
+        "person@example.com"
+      ],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-16T19:15:00Z",
+      "end": "2026-10-16T20:45:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-16T21:00:00Z",
+      "end": "2026-10-16T21:30:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    }
+  ],
+  "throws": null,
+  "expect": {
+    "asked": "typed",
+    "window": {
+      "days": [
+        "2026-10-16"
+      ],
+      "startMinute": 540,
+      "endMinute": 1020,
+      "minutes": 30
+    },
+    "read": "read",
+    "text": "Fri Oct 16: 9:45 to 11am ET",
+    "how": "line",
+    "note": "",
+    "body": "Hi,\n\nFri Oct 16: 9:45 to 11am ET\n\nBest,",
+    "readerCalls": 1
+  }
+}

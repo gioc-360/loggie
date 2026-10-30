@@ -1,0 +1,89 @@
+.panel-page { --paper:#f7f8f4; --surface:#fff; --ink:#253129; --muted:#637066; --line:#dce3da; --pink:var(--blue-ink); --soft-pink:var(--blue-soft); --lime:var(--blue-soft); background:var(--paper); }
+.panel-shell { background:var(--paper); grid-template-rows:auto auto auto minmax(0,1fr); }
+.panel-header { padding:20px 22px; background:var(--paper); }
+.brand-mark { color:var(--blue-ink); }
+.workspace-nav { display:flex; gap:5px; padding:8px 18px 14px; border-bottom:1px solid var(--line); }
+.workspace-nav button { flex:none; min-width:0; padding:10px 14px; min-height:40px; border:0; border-radius:10px; background:transparent; color:var(--muted); font-size:13px; }
+.workspace-nav button[aria-pressed=true] { background:var(--blue-soft); color:var(--blue-ink); font-weight:600; }
+.workspace-nav .rec-dot { display:inline-block; width:7px; height:7px; margin-right:6px; border-radius:50%; background:#d93a3a; vertical-align:1px; animation:rec-pulse 1.2s infinite; }
+.workspace-nav .rec-dot[hidden] { display:none; }
+@keyframes rec-pulse { 50% { opacity:.3; } }
+@media (prefers-reduced-motion: reduce) { .workspace-nav .rec-dot { animation:none; } }
+.conversation { padding:26px 22px; }
+.page-heading p { color:var(--muted); font-size:14px; line-height:1.6; }
+.page-heading { margin-bottom:26px; }
+.composer { background:var(--paper); padding:16px 18px; border-top:0; border-bottom:1px solid var(--line); }
+.input-row { border-radius:16px; background:var(--surface); border-color:var(--line); }
+.send-button,.primary { background:var(--blue-ink); color:#fff; }
+.task-card,.settings-group { background:var(--surface); border-color:var(--line); }
+button:focus-visible { outline:3px solid var(--blue-deep); outline-offset:3px; }
+.task-actions button,.connect-button { background:var(--soft); color:var(--blue-ink); min-height:34px; }
+.task-actions button.primary { background:var(--blue-ink); color:white; }
+.section-note { color:var(--muted); }
+.input-row { grid-template-columns:minmax(0,1fr) auto auto; }
+.voice-button { display:grid; place-items:center; width:34px; height:34px; padding:0; border:0; border-radius:50%; background:var(--blue-soft); color:var(--blue-ink); }
+.voice-button:hover { background:#d6e8fc; }.voice-button:disabled { opacity:.45; cursor:default; }
+.voice-status { margin:10px 3px 0; color:var(--muted); font-size:12px; line-height:1.5; }
+
+.permission-card { background:var(--soft); border:1px solid var(--line); border-radius:14px; padding:16px; margin:14px 0; }
+.permission-card h3 { margin:0 0 8px; font-size:15px; }
+.permission-card p { font-size:13px; line-height:1.6; color:var(--muted); }
+.permission-card button { padding:9px 12px; border-radius:9px; margin:4px 0; }
+
+/* Mock e (loggie-meetings-tab, workspace/tasks-and-notes-redesign/mockup-e.html): one row for the brand, the ask box and
+   the window buttons; the tabs as underlined words; each page fills the space under them. The ask box's examples, its
+   status and its card open under the box, over the page. */
+.panel-page .panel-shell { position: relative; }
+.panel-page .panel-header { min-height: 56px; padding: 0 14px 0 18px; background: var(--paper); border-bottom: 1px solid var(--line); }
+.panel-page .brand { font-size: 15px; font-weight: 700; }
+.panel-page .header-actions .icon-button { color: var(--muted); }
+.panel-page .input-row { min-height: 36px; padding: 2px 4px 2px 12px; align-items: center; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); box-shadow: none; }
+.panel-page #message { font-size: 13px; line-height: 1.4; padding: 6px 0; }
+.panel-page .voice-button, .panel-page .send-button { width: 28px; height: 28px; min-height: 0; }
+.panel-page .ask-under:not(:empty), .panel-page .ask-card:not([hidden]), .panel-page .voice-status:not([hidden]) { margin-top: 6px; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); box-shadow: 0 8px 22px rgb(18 28 20 / 14%); }
+/* Mock e has no example chips under the box; the box's placeholder says what it is for. */
+.panel-page .ask-under[data-state="examples"] { display: none; }
+.panel-page .composer-meta { display: none; }
+.panel-page .composer-meta:has(#composerHint:not(:empty)) { display: block; margin: 6px 2px 0; }
+.panel-page .workspace-nav { gap: 2px; padding: 0 16px; background: var(--paper); border-bottom: 1px solid var(--line); }
+.panel-page .workspace-nav button { padding: 10px 14px 9px; min-height: 0; border-radius: 0; border-bottom: 2px solid transparent; background: transparent; font-size: 13px; font-weight: 500; }
+.panel-page .workspace-nav button[aria-pressed=true] { background: transparent; color: var(--blue-ink); font-weight: 600; border-bottom-color: var(--blue-ink); }
+.panel-page #taskCount:not(:empty) { margin-left: 5px; padding: 0 6px; border-radius: 9px; background: var(--blue-ink); color: #fff; font-size: 10px; font-weight: 700; }
+.panel-page .conversation { padding: 0; }
+
+.panel-page .usage-line { display: none; }
+.panel-page #workstreamStatus:empty { display: none; }
+.panel-page .qrow { font-size: 13px; min-height: 30px; }
+.panel-page .qrow.is-guess, .panel-page .qrow.is-guess:hover { background: #fff2b3; }
+
+/* Compact desktop workspace: balanced header, quiet cards and consistent controls. */
+.panel-page .panel-header { min-height:64px; padding:0 14px; }
+.panel-page .brand { font-size:14px; gap:7px; }
+.panel-page .header-actions { gap:4px; padding:4px; border:1px solid var(--line); border-radius:10px; background:var(--soft); }
+.panel-page .header-actions .icon-button { display:grid; place-items:center; width:28px; height:28px; font-size:21px; line-height:1; border-radius:6px; transition:background .12s,color .12s; }
+.panel-page .header-actions .icon-button:hover { background:var(--blue-soft); color:var(--blue-ink); }
+.panel-page .header-actions #hide:hover { background:#f8e6e4; color:#a43737; }
+.panel-page .header-actions .icon-button:focus-visible { outline:2px solid var(--blue-ink); outline-offset:2px; }
+.panel-page .composer { top:12px; left:104px; right:126px; max-width:none; }
+.panel-page .input-row { min-height:40px; border-radius:10px; }
+.panel-page .input-row:focus-within { border-color:var(--blue-deep); box-shadow:0 0 0 3px rgb(70 86 185 / 10%); }
+.panel-page .workspace-nav { padding:0 14px; gap:6px; }
+.panel-page .workspace-nav button { padding:10px 12px; font-size:12px; }
+.panel-page .workspace-nav button:hover { background:var(--soft); color:var(--blue-ink); }
+.panel-page .conversation { padding:0; }
+.panel-page h1 { font-size:23px; line-height:1.25; }
+.panel-page .page-heading { margin-bottom:20px; }
+.panel-page .page-heading p { margin-top:8px; font-size:13px; }
+.panel-page .permission-card { padding:16px; margin:12px 0; border-radius:12px; background:var(--soft); }
+.panel-page .permission-card h3 { font-size:14px; margin-bottom:6px; }
+.panel-page .permission-card p { font-size:12px; line-height:1.5; margin:8px 0 12px; }
+.panel-page .permission-card button { min-height:34px; padding:7px 12px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--ink); font-size:12px; font-weight:500; margin:3px 4px 3px 0; transition:background .12s,transform .12s; }
+.panel-page .permission-card button.primary { background:var(--blue-ink); border-color:var(--blue-ink); color:#fff; }
+.panel-page .permission-card button:hover { background:var(--soft); }
+.panel-page .permission-card button.primary:hover { background:var(--blue-deep); }
+.panel-page button:active:not(:disabled) { transform:translateY(1px); }
+.panel-page button:disabled { cursor:not-allowed; opacity:.5; }
+@media (max-width:620px) {
+  .panel-page .workspace-nav { gap:0; padding:0 6px; }
+  .panel-page .workspace-nav button { padding:10px 9px; }
+}

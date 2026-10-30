@@ -1,0 +1,178 @@
+[
+  {
+    "id": "demo-event-01",
+    "title": "Supply Chain Analytics lecture",
+    "start": "2026-10-14T09:00:00-04:00",
+    "end": "2026-10-14T10:30:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-02",
+    "title": "Team lunch",
+    "start": "2026-10-14T10:30:00-04:00",
+    "end": "2026-10-14T13:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-03",
+    "title": "Case team working session",
+    "start": "2026-10-14T13:00:00-04:00",
+    "end": "2026-10-14T17:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-04",
+    "title": "Statistics section",
+    "start": "2026-10-15T09:00:00-04:00",
+    "end": "2026-10-15T11:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-05",
+    "title": "Library study block",
+    "start": "2026-10-15T11:00:00-04:00",
+    "end": "2026-10-15T14:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-06",
+    "title": "Seminar",
+    "start": "2026-10-15T14:00:00-04:00",
+    "end": "2026-10-15T17:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-07",
+    "title": "Operations lecture",
+    "start": "2026-10-16T09:00:00-04:00",
+    "end": "2026-10-16T11:30:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-08",
+    "title": "Gym",
+    "start": "2026-10-16T11:30:00-04:00",
+    "end": "2026-10-16T12:30:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-09",
+    "title": "Group project meeting",
+    "start": "2026-10-16T12:30:00-04:00",
+    "end": "2026-10-16T14:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-10",
+    "title": "Career center workshop",
+    "start": "2026-10-16T15:00:00-04:00",
+    "end": "2026-10-16T17:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-11",
+    "title": "Supply Chain Analytics lecture",
+    "start": "2026-10-19T09:00:00-04:00",
+    "end": "2026-10-19T10:30:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-12",
+    "title": "Study group",
+    "start": "2026-10-19T10:30:00-04:00",
+    "end": "2026-10-19T13:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-13",
+    "title": "Case team working session",
+    "start": "2026-10-19T13:00:00-04:00",
+    "end": "2026-10-19T17:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-14",
+    "title": "Statistics section",
+    "start": "2026-10-20T09:00:00-04:00",
+    "end": "2026-10-20T12:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-15",
+    "title": "Office hours",
+    "start": "2026-10-20T12:00:00-04:00",
+    "end": "2026-10-20T14:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  },
+  {
+    "id": "demo-event-16",
+    "title": "Seminar",
+    "start": "2026-10-20T14:00:00-04:00",
+    "end": "2026-10-20T17:00:00-04:00",
+    "allDay": false,
+    "calendar": "Calendar",
+    "account": "nadia.feldman@example.com",
+    "writable": true,
+    "attendees": []
+  }
+]

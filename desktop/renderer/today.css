@@ -1,0 +1,54 @@
+/* The Today page in the mock-up's look (jess-frontend-prototype-i styles.css:63-72, :258-276; spec-b). One filled
+   button on the page: the first card's (or, with no picks, the first live card's). Everything else is outlined. */
+.panel-page [data-page="today"] { padding: 16px 24px 24px; font-size: 12px; }
+.today-head { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin: 12px 0; }
+.today-head h2 { margin: 0; font-size: 13px; line-height: 16px; font-weight: 600; color: var(--ink); }
+.today-list { display: grid; gap: 10px; list-style: none; margin: 0; padding: 0; }
+
+.today-card { border-radius: 12px; background: #fff; padding: 12px 16px; }
+.today-card.is-first { box-shadow: inset 3px 0 0 var(--blue-ink); }
+.today-card.is-unsure { background: #fffde7; }
+.today-card header { display: flex; align-items: baseline; gap: 12px; }
+.today-title { flex: 1; min-width: 0; text-align: left; font-size: 13px; font-weight: 600; color: var(--ink); border: 0; background: transparent; padding: 0; cursor: pointer; }
+.today-meta { color: var(--muted); font-size: 10px; white-space: nowrap; }
+.today-meta.is-late { color: var(--danger); }
+.today-why { margin: 6px 0 0; font-size: 11px; color: var(--text-secondary); }
+.today-quote { display: block; margin-top: 6px; padding: 0; text-align: left; font-size: 11px; color: var(--text-secondary); border: 0; background: transparent; }
+.today-quote:disabled { cursor: default; opacity: 1; }
+.today-quote small { color: var(--muted); font-size: 10px; }
+.today-card footer { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+
+.panel-page [data-page="today"] button.primary,
+.panel-page [data-page="today"] .task-actions button { min-height: 25px; border-radius: 7px; padding: 5px 11px; font-size: 11px; font-weight: 600; background: var(--blue-soft); color: var(--blue-ink); border: 1px solid transparent; }
+.panel-page [data-page="today"] .today-card.is-first button.primary,
+.panel-page [data-page="today"]:not([data-first]) #liveCards > :first-child button.primary { background: linear-gradient(135deg, var(--blue-deep), var(--blue-ink)); color: #fff; }
+.panel-page [data-page="today"] button.primary:disabled { opacity: .55; }
+.today-not { border: 0; background: transparent; color: var(--blue-ink); font-size: 11px; font-weight: 600; padding: 5px 9px; border-radius: 7px; }
+.today-not:hover { background: var(--blue-soft); }
+
+.today-card .ws-marks { margin-left: auto; opacity: 0; }
+.today-card:hover .ws-marks, .today-card:focus-within .ws-marks { opacity: 1; }
+
+.today-box { display: flex; gap: 6px; margin-top: 8px; }
+.today-say, .today-date { flex: 1; border: 1px solid var(--line); border-radius: 16px; padding: 6px 11px; font: inherit; }
+.today-send { border: 0; background: var(--blue-soft); color: var(--blue-ink); border-radius: 50%; width: 28px; height: 28px; display: grid; place-items: center; }
+
+.today-line-open, .today-ready, .today-row .qrow { display: flex; align-items: center; gap: 8px; width: 100%; background: #fff; border: 0; border-radius: 8px; padding: 8px 12px; font-size: 12px; text-align: left; color: var(--ink); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.today-line-open { display: block; }
+.today-ready span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.today-row .qtext { overflow: hidden; text-overflow: ellipsis; }
+.today-row-card { margin-top: 6px; }
+.today-empty { color: var(--muted); font-size: 12px; }
+.panel-page [data-page="today"] .move-status { margin: 6px 0 0; font-size: 11px; color: var(--text-secondary); }
+.panel-page [data-page="today"] #liveCards:empty { display: none; }
+.today-ready button { flex: none; min-height: 25px; border-radius: 7px; padding: 4px 11px; font-size: 11px; font-weight: 600; background: var(--blue-soft); color: var(--blue-ink); border: 1px solid transparent; }
+.panel-page [data-page="today"] #liveCards:not(:empty) { margin-bottom: 14px; }
+p.today-quote { margin: 6px 0 0; }
+.today-quote.is-call { cursor: pointer; }
+.today-quote.is-call:hover span { text-decoration: underline; text-underline-offset: 2px; }
+.today-line-open.is-asking { color: var(--blue-ink); font-weight: 600; }
+.today-do .today-mark { width: 14px; height: 14px; margin-right: 6px; vertical-align: -2px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* A pick's workspace name opens its card (loggie-workspaces-integration F7): it reads as the meta text, underlined on hover. */
+.today-ws { all: unset; cursor: pointer; }
+.today-ws:hover, .today-ws:focus-visible { text-decoration: underline; text-underline-offset: 3px; }

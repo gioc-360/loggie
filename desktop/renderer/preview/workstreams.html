@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:" />
+    <title>Loggie workstreams preview</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="../workspace.css" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <link rel="stylesheet" href="../workspaces.css" />
+    <link rel="stylesheet" href="preview.css" />
+  </head>
+  <body class="panel-page">
+    <main class="preview-frame">
+            <div id="workstreamView"></div>
+      <p class="preview-log" id="log" aria-live="polite"></p>
+    </main>
+    <script type="module" src="preview.js"></script>
+  </body>
+</html>

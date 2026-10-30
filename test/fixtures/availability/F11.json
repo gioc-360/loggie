@@ -1,0 +1,41 @@
+{
+  "id": "F11",
+  "now": "2026-10-30T13:00:00Z",
+  "macZone": "America/New_York",
+  "settings": {},
+  "status": "granted",
+  "typed": "email kim my availability monday",
+  "line": "My availability monday",
+  "email": "",
+  "emailAt": null,
+  "draft": "Hi,\n\n[your times]\n\nBest,",
+  "events": [
+    {
+      "start": "2026-11-02T17:00:00Z",
+      "end": "2026-11-02T18:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    }
+  ],
+  "throws": null,
+  "expect": {
+    "asked": "typed",
+    "window": {
+      "days": [
+        "2026-11-02"
+      ],
+      "startMinute": 540,
+      "endMinute": 1020,
+      "minutes": 30
+    },
+    "read": "read",
+    "text": "Mon Nov 2: 9am to 12pm, 1 to 5pm ET",
+    "how": "line",
+    "note": "",
+    "body": "Hi,\n\nMon Nov 2: 9am to 12pm, 1 to 5pm ET\n\nBest,",
+    "readerCalls": 1
+  }
+}

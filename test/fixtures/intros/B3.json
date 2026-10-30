@@ -1,0 +1,75 @@
+{
+  "id": "B3",
+  "threads": [
+    {
+      "id": "outlook:3",
+      "sourceType": "manual",
+      "subject": "Case competition question",
+      "latestTimestamp": "2026-09-29T09:15:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-301",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Omar Haddad <ohaddad@lab.example>",
+          "cc": "",
+          "subject": "Case competition question",
+          "timestamp": "2026-09-28T18:00:00Z",
+          "body": "Omar, quick question: who would know how the judging went last year?"
+        },
+        {
+          "id": "apple-mail-302",
+          "conversation": null,
+          "from": "Omar Haddad <ohaddad@lab.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "Re: Case competition question",
+          "timestamp": "2026-09-29T09:15:00Z",
+          "body": "Good question. You should reach out to Marcus Bell, mbell@lab.example, he ran it last year and kept all the scoring sheets.\n\nOmar"
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "ohaddad@lab.example"
+      ],
+      "timestamp": "2026-09-28T18:00:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Email Marcus Bell",
+        "kind": "email",
+        "thread": 1,
+        "to": "Marcus Bell",
+        "ask": "",
+        "quote": "You should reach out to Marcus Bell",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [
+      {
+        "thread": "outlook:3",
+        "name": "Marcus Bell",
+        "address": "mbell@lab.example",
+        "shape": "body"
+      }
+    ],
+    "move": {
+      "kind": "email",
+      "to": "Marcus Bell",
+      "address": "mbell@lab.example"
+    }
+  }
+}

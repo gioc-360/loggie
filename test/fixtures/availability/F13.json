@@ -1,0 +1,61 @@
+{
+  "id": "F13",
+  "now": "2026-10-21T16:00:00Z",
+  "macZone": "America/New_York",
+  "settings": {
+    "availability": {
+      "daysAhead": 3
+    }
+  },
+  "status": "granted",
+  "typed": "email kim my availability",
+  "line": "My availability",
+  "email": "",
+  "emailAt": null,
+  "draft": "Hi,\n\n[your times]\n\nBest,",
+  "events": [
+    {
+      "start": "2026-10-21T17:00:00Z",
+      "end": "2026-10-21T17:30:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-22T13:00:00Z",
+      "end": "2026-10-22T21:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [
+        "person@example.com"
+      ],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    }
+  ],
+  "throws": null,
+  "expect": {
+    "asked": "typed",
+    "window": {
+      "days": [
+        "2026-10-21",
+        "2026-10-22",
+        "2026-10-23"
+      ],
+      "startMinute": 540,
+      "endMinute": 1020,
+      "minutes": 30,
+      "from": {
+        "days": "settings"
+      }
+    },
+    "read": "read",
+    "text": "Wed Oct 21: 1:30 to 5pm\nFri Oct 23: 9am to 5pm ET",
+    "how": "line",
+    "note": "",
+    "body": "Hi,\n\nWed Oct 21: 1:30 to 5pm\nFri Oct 23: 9am to 5pm ET\n\nBest,",
+    "readerCalls": 1
+  }
+}

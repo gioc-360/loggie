@@ -1,0 +1,45 @@
+// Made-up cards in the exact shape `hikyaku:workstreams` returns, for the preview page and the screen's checks. No
+// real person, company or class appears here: this folder ships in a public repo.
+export const TODAY = '2026-10-10';
+
+export const CARDS = [
+  { name: 'Bank Offer', kind: 'company', recordings: [{ id: '2026-10-09-1300-weekly-sync', title: 'Weekly sync with Lena', start: '2026-10-09T17:00:00Z', minutes: 33, state: 'done', workstream: 'Bank Offer', steps: 1 }], retired: [{ id: 'task_r1', title: 'Ask the recruiter for an interview slot', why: 'settled', proof: 'interview booked for October 16' }], goal: 'Get an offer', goalText: 'Get an Executive Associate offer', goalConfirmed: true,
+    priority: { rank: 1, due: '2026-10-15', idle: false, stake: 'normal' }, quiet: false, cloud: 'nebius', current: false, unread: 2,
+    asOf: '2026-10-08T16:53:50.000Z', summary: 'Applied to two tracks in late September. A recruiter call happened on Oct 9; the HR interview is Oct 16.',
+    milestones: [{ at: '2026-10-16T18:00:00.000Z', title: 'Video interview', source: 'calendar' }], windowEnd: '2026-11-11',
+    news: [{ id: 'call:a', source: 'call', title: 'Call with the recruiter', at: '2026-10-09T17:00:00.000Z' }, { id: 'outlook:b', source: 'outlook', title: 'RE: Introductions', at: '2026-10-09T15:00:00.000Z' }],
+    asks: [], estimateUsd: 0.0007, threads: 15, sent: 12,
+    active: [{ id: 'task_ty', title: 'Thank the recruiter for the referral', phase: 'ready', at: '2026-10-10T09:00:00.000Z' }],
+    voice: { median: 52, sends: 9, here: 3 },
+    moves: [{ also: ['email: RE: Interview time', 'WhatsApp: Prep chat'], id: 'task_a', title: 'Follow up with the recruiter on interview status', due: '2026-10-15', waiting: true, kind: 'reply', app: 'outlook', to: 'Ana Recruiter',
+      said: [{ who: 'me', name: 'You', at: '2026-10-03T00:44:07.000Z', text: 'Thank you again for the chat. I have applied to both programs.' }, { who: 'them', name: 'Ana Recruiter', at: '2026-10-05T14:16:22.000Z', text: 'Thanks for sending! I just sent the recruiter an email.' }], call: null },
+      { id: 'task_b', title: 'Send a thank-you note after the call', due: '2026-10-05', waiting: false, kind: 'call', app: 'messages', to: 'Ivy', sendable: false, said: [], call: { title: 'Me / Ivy: team chat', at: '2026-10-09', step: 'Send a thank-you (Me)', folder: '2026-10-09-1300-weekly-sync', lines: [{ section: 'Priorities', text: 'P0 = fix by end of day; target: 3 days', time: '10:46' }] }, notSure: 'quote not found in transcript' },
+      { id: 'task_c', title: 'Email Lucky Star: ask about the bar tab', due: null, waiting: false, kind: 'email', app: 'outlook', to: null, said: [{ who: 'them', name: 'Sam', at: '2026-10-10T12:00:00.000Z', text: 'did you ask Lucky Star about the bar tab?' }], call: null, askLine: 'ask about the bar tab' },
+      // A To do move (today-model.js moveGroup): nothing to draft, so Done, New date and Drop it only.
+      { id: 'task_p2', title: 'Prepare two stories for the team round', due: '2026-10-16', waiting: false, kind: 'prep', app: 'outlook', to: 'Ana Recruiter', said: [], call: null },
+      // A To do move from a person's email (move-card.js emailFromOf): Reply beside Done, New date and Drop it.
+      { id: 'task_p3', title: 'Prepare for the video interview with Dana on Tuesday', due: '2026-10-20', waiting: false, kind: 'prep', app: 'outlook', to: 'robin.park@bank.example',
+        from: { name: 'Robin Park', address: 'robin.park@bank.example', machine: false }, said: [{ who: 'them', name: 'Robin Park', at: '2026-10-09T15:00:00.000Z', text: 'Could you share a few times for the video interview next week?' }], call: null }],
+    waitingOn: ['Ana Recruiter'],
+    latest: [{ source: 'outlook', title: 'RE: Introductions', at: '2026-10-09T15:00:00.000Z', who: 'Ana Recruiter', excerpt: 'Happy to set up a chat. Could you send two times that work next week? The HR interview is confirmed for Oct 16 at 2 pm.' }],
+    callSteps: { title: 'Call with the recruiter', at: '2026-10-09T17:00:00.000Z', folder: '2026-10-09-1300-weekly-sync', lines: ['For your goal: get an offer through the HR interview', 'Send a thank-you note within a day (me)', 'Prepare two stories for the team round'] } },
+  { name: 'Hotel Hackathon', kind: 'competition', goal: 'Win or place', goalText: 'win the guest experience challenge', goalQuote: 'We are going to win the guest experience challenge this weekend.', goalConfirmed: false, priority: { rank: 2, due: '2026-10-23', idle: false, stake: 'normal' },
+    quiet: false, cloud: 'nebius', current: false, unread: 1, asOf: '2026-10-08T16:55:56.000Z',
+    summary: 'The hackathon runs Oct 23-25. The team is set; one class clashes on Oct 24.',
+    milestones: [{ at: '2026-10-23T13:00:00.000Z', title: 'Hackathon starts', source: 'calendar' }, { at: '2026-10-24T13:00:00.000Z', title: 'Class clash', source: 'calendar' }], windowEnd: '2026-10-25',
+    news: [{ id: 'whatsapp:c', source: 'whatsapp', title: 'Build day plan', at: '2026-10-10T12:00:00.000Z' }],
+    asks: [{ id: 'whatsapp:d', source: 'whatsapp', title: 'Ivy', at: '2026-10-10T12:00:00.000Z', who: [{ name: 'Ivy', handle: '+15550100' }], quote: 'want to team up for the hotel challenge?' },
+      { id: 'call:2026-10-08-0900-coffee-chat@none', source: 'call', title: 'Coffee chat with Yuki', at: '2026-10-08T13:00:00.000Z', who: [], quote: '' }], estimateUsd: 0.0007, threads: 15, sent: 5 },
+  { name: 'Pharma Case', kind: 'competition', goal: 'Win or place', priority: { rank: 3, due: '2026-11-09', idle: false, stake: 'normal' },
+    quiet: false, cloud: 'off', current: true, unread: 0, asOf: '2026-10-06T13:39:07.000Z',
+    summary: 'Registration closes Oct 23; the case comes out Oct 26; submission Nov 9.',
+    milestones: [{ at: '2026-10-23T21:00:00.000Z', title: 'Registration closes', source: 'calendar' }, { at: '2026-11-09T21:00:00.000Z', title: 'Submission', source: 'calendar' }], windowEnd: '2026-11-09',
+    news: [], asks: [], estimateUsd: 0, threads: 3, sent: 0 },
+  { name: 'App Project', kind: 'other', goal: 'Get it done', priority: { rank: 4, due: null, idle: false, stake: 'normal' },
+    quiet: false, cloud: 'nebius', current: true, unread: 0, asOf: '2026-10-10T23:26:41.000Z', summary: 'A teammate is setting up the app to try Do it.',
+    milestones: [], windowEnd: null, news: [], asks: [], estimateUsd: 0.0007, threads: 2, sent: 2 },
+  { name: 'Class A', kind: 'other', goal: 'Just keep me posted', priority: { rank: 5, due: null, idle: false, stake: 'normal' },
+    quiet: true, cloud: 'off', current: false, unread: 4, asOf: null, summary: null, milestones: [], windowEnd: null, news: [], asks: [], estimateUsd: 0, threads: null, sent: null },
+  { name: 'Class B', kind: 'other', goal: 'Just keep me posted', priority: { rank: 6, due: null, idle: false, stake: 'normal' },
+    quiet: true, cloud: 'off', current: false, unread: 7, asOf: null, summary: null, milestones: [], windowEnd: null, news: [], asks: [], estimateUsd: 0, threads: null, sent: null },
+];

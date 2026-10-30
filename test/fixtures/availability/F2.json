@@ -1,0 +1,127 @@
+{
+  "id": "F2",
+  "now": "2026-10-20T16:21:00Z",
+  "macZone": "America/New_York",
+  "settings": {},
+  "status": "granted",
+  "typed": "reply to rowena: sure, here you go",
+  "line": "Sure, here you go",
+  "email": "Hi Gio, can you share a couple of time slots that work for you on Friday? Best, Rowena",
+  "emailAt": "2026-10-20T14:29:10Z",
+  "draft": "Hi,\n\n[your times]\n\nBest,",
+  "events": [
+    {
+      "start": "2026-10-23T15:15:00Z",
+      "end": "2026-10-23T16:30:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-23T15:15:00Z",
+      "end": "2026-10-23T16:30:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Work",
+      "account": "iCloud"
+    },
+    {
+      "start": "2026-10-23T17:00:00Z",
+      "end": "2026-10-23T19:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Work",
+      "account": "iCloud"
+    },
+    {
+      "start": "2026-10-23T19:15:00Z",
+      "end": "2026-10-23T20:45:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-23T19:15:00Z",
+      "end": "2026-10-23T20:45:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Work",
+      "account": "iCloud"
+    },
+    {
+      "start": "2026-10-23T20:30:00Z",
+      "end": "2026-10-23T20:55:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [
+        "person@example.com"
+      ],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-23T21:00:00Z",
+      "end": "2026-10-23T21:30:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-23T21:00:00Z",
+      "end": "2026-10-23T21:30:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Work",
+      "account": "iCloud"
+    },
+    {
+      "start": "2026-10-24T00:00:00Z",
+      "end": "2026-10-24T01:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Calendar",
+      "account": "Exchange"
+    },
+    {
+      "start": "2026-10-24T00:00:00Z",
+      "end": "2026-10-24T01:00:00Z",
+      "allDay": false,
+      "writable": true,
+      "attendees": [],
+      "calendar": "Work",
+      "account": "iCloud"
+    }
+  ],
+  "throws": null,
+  "expect": {
+    "asked": "thread",
+    "window": {
+      "days": [
+        "2026-10-23"
+      ],
+      "startMinute": 540,
+      "endMinute": 1020,
+      "minutes": 30,
+      "from": {
+        "days": "thread"
+      }
+    },
+    "read": "read",
+    "text": "Fri Oct 23: 9 to 11:15am, 12:30 to 1pm ET",
+    "how": "line",
+    "note": "",
+    "body": "Hi,\n\nFri Oct 23: 9 to 11:15am, 12:30 to 1pm ET\n\nBest,",
+    "readerCalls": 1
+  }
+}

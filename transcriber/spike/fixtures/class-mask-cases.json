@@ -1,0 +1,13 @@
+{
+ "_why": "loggie-class-notes 1.1 to 1.3: a made-up class (every name invented) that holds one case per rule and the decoys the rules must leave. students = every classmate mention that must not leave; keep = words that must stay. Real classmates are never in the repo (spec C8).",
+ "event": { "title": "NBA 6123 Imagined Strategy", "category": "class", "me": "Gio", "names": "Pella Varin, Oskar Dunmore Teele" },
+ "own": ["gio", "gio caballero", "caballero"],
+ "transcript": "# NBA 6123 Imagined Strategy\n\nWednesday, October 21, 2026, 10:00. 30 min. Me (Gio) and Pella Varin, Oskar Dunmore Teele.\n\n[00:10] Me: Okay, let's start. Yes, Marnie. What do you think about the Rexon case?\n\n[00:40] Them: Tobin, what would you do with the second plant?\n\n[01:05] Them: Yes, go ahead, Quillan (unclear).\n\n[01:30] Them: Fennic? Uh, Harlowe.\n\n[02:00] Them: That point was made by Sorrel (unclear) and Brisk.\n\n[02:30] Them: Thank you, Ivelle (unclear; likely Ivelle).\n\n[03:00] Them: As Wrenna (unclear) said earlier, the margins matter.\n\n[03:30] Them: Pella made a good point and Varin backed it.\n\n[04:00] Them: So Dask, what do you have to say about that?\n\n[04:30] Them: People are working together, Odric. Right?\n\n[05:00] Them: Yes, Gio. And I'll see you, Gio.\n\n[05:30] Them: President Calloway (unclear) said it best, and Jack Welch (unclear) agreed.\n\n[06:00] Them: The Enron (unclear) story and the Monday deadline. Look, what matters here is cost.\n\n[06:30] Them: We met with Yelen (unclear) and Kenny Abelard about it. In Japan, Korea and China the rules differ.\n\n[07:00] Them: Yes, Rain. It may rain tomorrow, so bring a coat.\n\n[07:30] Them: Imagined is the word in our title, and Strategy too.\n\n[08:00] Them: Marnie's answer was the best one. Thanks, Tobin.",
+ "students": ["Marnie", "Tobin", "Quillan", "Fennic", "Harlowe", "Sorrel", "Brisk", "Ivelle", "Wrenna", "Pella Varin", "Pella", "Varin", "Oskar Dunmore Teele", "Dask", "Odric", "Rain"],
+ "keep": ["Gio", "Calloway", "Jack Welch", "Enron", "Monday", "Look", "Yelen", "Kenny Abelard", "Japan", "Korea", "China", "rain tomorrow", "Imagined", "Strategy", "Rexon"],
+ "labels": {
+  "Pella Varin": "invitee", "Oskar Dunmore Teele": "invitee", "Marnie": "addressed", "Tobin": "addressed", "Quillan": "addressed",
+  "Fennic": "addressed", "Harlowe": "addressed", "Sorrel": "unclear-name", "Brisk": "joined", "Ivelle": "addressed", "Wrenna": "unclear-name",
+  "Dask": "addressed", "Odric": "addressed", "Rain": "addressed"
+ }
+}

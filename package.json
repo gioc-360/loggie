@@ -1,0 +1,105 @@
+{
+  "name": "loggie",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "A desktop assistant for email, meetings, files, and project workflows.",
+  "type": "module",
+  "main": "desktop/main.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "assets",
+    "bin",
+    "desktop",
+    "src",
+    "README.md",
+    ".env.example"
+  ],
+  "bin": {
+    "loggie": "./bin/loggie.js"
+  },
+  "scripts": {
+    "desktop": "electron desktop/main.js",
+    "check:clicks": "electron desktop/renderer/preview/click-check.cjs",
+    "check:ask": "electron desktop/renderer/preview/ask-check.cjs",
+    "check:motion": "electron desktop/renderer/preview/motion-check.cjs",
+    "check:intros": "node scripts/intros/replay.mjs --days 60",
+    "check:availability": "node scripts/availability/check.mjs",
+    "desktop:smoke": "LOGGIE_DESKTOP_SMOKE_TEST=1 electron desktop/main.js",
+    "loggie": "node bin/loggie.js",
+    "doctor": "node bin/loggie.js doctor",
+    "build:native": "bash scripts/build-native.sh",
+    "test": "node --test",
+    "dist:mac": "npm run build:native && bash scripts/stage-transcriber.sh && bash scripts/bundle-python.sh && bash scripts/bundle-ffmpeg.sh && electron-builder --mac --arm64",
+    "dist:mac:signed": "test -n \"$CSC_NAME\" && test -n \"$APPLE_ID\" && npm run dist:mac -- -c.mac.identity=\"$CSC_NAME\" -c.mac.notarize=true",
+    "desktop:workspace": "LOGGIE_OPEN_WORKSPACE=1 HIKYAKU_MEETINGS=0 HIKYAKU_DISCOVER=0 electron desktop/main.js",
+    "build:voice": "bash scripts/build-voice.sh",
+    "build:icons": "bash scripts/build-icons.sh"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.2.1",
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.loggie.desktop",
+    "productName": "Loggie",
+    "asar": false,
+    "directories": {
+      "output": "dist"
+    },
+    "artifactName": "Loggie-${version}-${arch}.${ext}",
+    "afterPack": "scripts/after-pack.cjs",
+    "files": [
+      "desktop/**/*",
+      "src/**/*",
+      "bin/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "dist-native/bin",
+        "to": "bin"
+      },
+      {
+        "from": "build-cache/transcriber",
+        "to": "transcriber"
+      },
+      {
+        "from": "build-cache/python",
+        "to": "python"
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "desktop/entitlements.mac.plist",
+      "entitlementsInherit": "desktop/entitlements.mac.plist",
+      "identity": null,
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "Loggie listens to your side of a meeting you choose to transcribe. The audio stays on this Mac.",
+        "NSCalendarsFullAccessUsageDescription": "Loggie reads your calendar to offer to transcribe your meetings and to find free times.",
+        "NSCalendarsUsageDescription": "Loggie reads your calendar to offer to transcribe your meetings and to find free times.",
+        "NSAppleEventsUsageDescription": "Loggie places email drafts in your mail app. It never sends anything.",
+        "NSAudioCaptureUsageDescription": "Loggie hears the other people in a meeting you choose to transcribe. The audio stays on this Mac.",
+        "NSSpeechRecognitionUsageDescription": "Loggie converts your spoken request to text on this Mac."
+      },
+      "icon": "assets/branding/loggie.icns"
+    }
+  }
+}

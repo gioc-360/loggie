@@ -1,0 +1,31 @@
+{
+  "id": "F9",
+  "now": "2026-10-20T16:21:00Z",
+  "macZone": "America/New_York",
+  "settings": {},
+  "status": "granted",
+  "typed": "email kim my availability thursday",
+  "line": "My availability thursday",
+  "email": "",
+  "emailAt": null,
+  "draft": "Hi,\n\n[your times]\n\nBest,",
+  "events": null,
+  "throws": "hikyaku cannot read your calendars. Allow it in System Settings > Privacy & Security > Calendars.",
+  "expect": {
+    "asked": "typed",
+    "window": {
+      "days": [
+        "2026-10-22"
+      ],
+      "startMinute": 540,
+      "endMinute": 1020,
+      "minutes": 30
+    },
+    "read": "unreadable",
+    "text": "",
+    "how": "left",
+    "note": "Loggie could not read your calendar (no calendar access); [your times] is left for you.",
+    "body": "Hi,\n\n[your times]\n\nBest,",
+    "readerCalls": 1
+  }
+}

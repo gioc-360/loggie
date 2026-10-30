@@ -1,0 +1,93 @@
+{
+  "id": "T3",
+  "threads": [
+    {
+      "id": "outlook:8",
+      "sourceType": "manual",
+      "subject": "Jess Lu introduction",
+      "latestTimestamp": "2026-08-27T09:00:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-801",
+          "conversation": null,
+          "from": "Ravi Menon <rmenon@studio.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>, Lu, Jess <jess.lu@studio.example>",
+          "cc": "",
+          "subject": "Jess Lu introduction",
+          "timestamp": "2026-08-26T14:00:00Z",
+          "body": "Gio, Jess is the designer I told you about. Jess, Gio is building a meetings app and could use a second pair of eyes.\n\nRavi"
+        },
+        {
+          "id": "apple-mail-802",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Ravi Menon <rmenon@studio.example>, Jess Lu <jess.lu@studio.example>",
+          "cc": "",
+          "subject": "RE: Jess Lu introduction",
+          "timestamp": "2026-08-26T16:00:00Z",
+          "body": "Thanks Ravi! Jess, great to meet you. Would a call next week work?"
+        },
+        {
+          "id": "apple-mail-803",
+          "conversation": null,
+          "from": "Lu, Jess <jess.lu@studio.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "RE: Jess Lu introduction",
+          "timestamp": "2026-08-27T09:00:00Z",
+          "body": "Great to meet you, Gio (moving Ravi to bcc). Tuesday at 3 works for me."
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "rmenon@studio.example",
+        "jess.lu@studio.example"
+      ],
+      "timestamp": "2026-08-26T16:00:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Reply",
+        "kind": "reply",
+        "thread": 1,
+        "due": null,
+        "quote": "Tuesday at 3 works for me.",
+        "steps": []
+      },
+      {
+        "title": "Email Jess Lu",
+        "kind": "email",
+        "thread": 1,
+        "to": "Jess Lu",
+        "ask": "",
+        "quote": "Jess, Gio is building a meetings app",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [
+      {
+        "thread": "outlook:8",
+        "name": "Jess Lu",
+        "address": "jess.lu@studio.example",
+        "shape": "to"
+      }
+    ],
+    "move": {
+      "kind": "reply",
+      "thread": 1
+    }
+  }
+}

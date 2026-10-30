@@ -1,0 +1,87 @@
+<transcript>
+The call: "{title}", {date}. {people}
+One paragraph per turn, each starting with [mm:ss] and the speaker's name, from speech recognition: a word followed by (unclear) was not heard clearly and is written as heard.
+
+{transcript}
+</transcript>
+{notes}
+<goal>
+{me} recorded this call and was on it. {me}'s goal: "{goal}".
+</goal>
+
+<most_important>
+Keep every number that was said (money, percentages, counts, dates, ratios) exactly as said, written as digits, with what it measures. Write only what a speaker actually said. Connect two things only when a speaker connected them. Advice about what to do after the goal is reached (for example, once in the job) goes under "For later" and is never a Next Step.
+</most_important>
+
+<task>
+Do not repeat the transcript; answer with the notes only. Write {me}'s notes of this call. First work out what this call was and what {me} needs from it to reach the goal; then write the notes around those needs, the most useful for the goal first.
+</task>
+
+<rules>
+1. Figures and specifics are as valuable as advice: keep every one that was said, grouping figures about the same thing into one point ("Costs: rent $4.1M, staff $2.6M, software $0.3M"). Then, in order of value: advice said to {me} that applies before the goal is reached, written as a command; then what anyone asked for, promised or decided; then facts {me} can use. Leave out what does not serve the goal.
+2. {me} already knows what {me} said: {me}'s own story goes only in the "{me} covered:" line, never in the points. {me}'s questions are not points; the answers to them are.
+3. Leave out small talk: greetings, weekend plans, events, health and anything else that does not bear on the goal.
+4. Each item appears once. If the same advice belongs in a section and in Next Steps, keep the section point short and the Next Step full.
+5. A point may cite up to three moments of the call: a [mm:ss] and its copied words after the point for each moment it draws on.
+6. Use names, never "you", "your", "I", "we", "Them" or "Me".
+7. Next Steps: 2 to 5 actions {me} or someone else will take before the goal's next step (a meeting, an interview, a deadline), the most important first. Keep a day or date the way it was said ("next Friday").
+8. Only what the transcript says or the goal states. No outside knowledge, no person who is not named in the transcript or the call's title. Keep (unclear) words as heard.
+</rules>
+
+<shape>
+# {title}
+
+This call: <what kind of call it was, in a few words>. For the goal, {me} needs: <2 to 4 needs, comma-separated>.
+
+{me} covered: <what {me} said about {me}'s own background, story or reasons, as a short list of topics>
+
+## <a section named after one of the needs>
+- <one headline, about 11 words> [mm:ss]
+  - <its figures, example or why> [mm:ss] <!-- 4 to 8 words copied exactly from that paragraph -->
+
+## For later
+- <advice that applies only after the goal is reached> [mm:ss] <!-- 4 to 8 words copied exactly from that paragraph -->
+
+## Next Steps
+- <what one person will do, written as a command> (<that person's name>) [mm:ss] <!-- 4 to 8 words copied exactly from that paragraph -->
+
+Nothing before the title line and nothing after the last point. The shapes hold <placeholders>, not facts; never copy their words.
+</shape>
+
+
+<shape_rules>
+Write the notes the way the example below is written. Measured on 10 notes the user likes:
+1. About 11 words per bullet, never more than 20.
+2. Each top bullet is one headline claim; put its figures, example or why in about one nested sub-bullet (two spaces, then "- ").
+3. About a third of bullets open with a short label and a colon: "Real engine: franchise fees $2.78B".
+4. Never start a bullet with a speaker's name or "Speaker N:". Name a person inside the sentence only when it matters.
+5. 3 to 6 sections with plain topic headings, 3 to 5 headlines each; no section with a single bullet.
+6. Next Steps: short commands with the owner in parentheses, and only for real actions; no "so that".
+7. Length: about 300 to 450 words for a 1:1 or team meeting, 550 to 700 for a class or panel.
+If work was split between people, add a section "Who's doing what" in the same style.
+8. Every bullet, top and nested, still ends the way the shape does: its [mm:ss] and the <!-- 4 to 8 words copied exactly from that paragraph --> comment. The example leaves them out only to show the form; a bullet without them cannot be checked.
+</shape_rules>
+
+<example>
+Two sections from notes of a made-up class on running a bakery, to show the form only; never copy their content.
+
+## What drives the margin
+
+- Flour cost: 18% of the price of a loaf, up from 12% last year
+- Waste: unsold bread is the biggest leak; only cost that cuts both ways
+  - Day-old discount recovers about 40% of its cost
+- Break-even: 220 loaves a day at the current price
+
+## Pricing a new item
+
+- Price from the cost of one unit, then add 3x for labor and rent
+- Test at two stores first; a price change costs less than a recall
+
+## Next Steps
+
+- Bring last month's waste log to the next class (Ana)
+</example>
+
+<most_important>
+Again: every figure said, as digits; short headlines with nested details, as in the example; connections only where a speaker made them; after-the-goal advice under "For later", never as a Next Step.
+</most_important>

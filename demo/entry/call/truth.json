@@ -1,0 +1,212 @@
+[
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 1.0,
+  "end": 5.27,
+  "text": "Hi Nadia, thanks for making time. Can you hear me alright?"
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 6.17,
+  "end": 11.9,
+  "text": "Yes, loud and clear. Thanks for doing this, Omar. I know Tuesdays are busy for you."
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 12.8,
+  "end": 18.48,
+  "text": "No problem at all. So you said you wanted to hear about the product role at Larkspur Logistics."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 19.38,
+  "end": 26.42,
+  "text": "Right. I read that the team grew from six to nineteen people last year, and I wanted to know what that was like from the inside."
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 27.32,
+  "end": 34.73,
+  "text": "It was fast. When I joined on March fourteenth we had one product manager for the whole driver app. Now there are four of us."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 35.63,
+  "end": 41.31,
+  "text": "And routing is the hard one, I imagine. Something like three hundred drivers across two cities?"
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 42.21,
+  "end": 51.53,
+  "text": "Closer to four hundred and twenty now, across Boulder, Lisbon and a pilot in Tucson. The pilot is only forty drivers but it is the one everyone watches."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 52.43,
+  "end": 53.59,
+  "text": "Why Tucson?"
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 54.49,
+  "end": 62.64,
+  "text": "Heat. Batteries drop about eighteen percent faster in summer, so the routing model has to plan charging stops it never needed in Boulder."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 63.54,
+  "end": 67.53,
+  "text": "That is a good problem. Did you build that model in house or bring in a vendor?"
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 68.43,
+  "end": 79.52,
+  "text": "In house, mostly. We tried a vendor for about two months and dropped them in August because the latency was over nine seconds per plan. Drivers will not wait nine seconds at a loading dock."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 80.42,
+  "end": 87.37,
+  "text": "Let me ask the question I actually came with. What does a strong first ninety days look like for someone joining your team?"
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 88.27,
+  "end": 100.44,
+  "text": "Ship something small by week six. My first real win was a fix to the handoff screen; it cut missed pickups by eleven percent. And ride along with drivers early, nobody on the team has skipped that."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 101.34,
+  "end": 108.55,
+  "text": "I would want to do that anyway. Who shapes the product direction day to day? I want to read what they have written before I apply."
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 109.45,
+  "end": 120.86,
+  "text": "That is Saoirse Kowalczyk, our director of product. She reads every application herself, and she cares more about how you think about the driver experience than about a polished resume."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 121.76,
+  "end": 126.63,
+  "text": "That helps a lot. Is there a way to show her how I think before the formal application?"
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 127.53,
+  "end": 137.13,
+  "text": "There is. One thing would help me push for you. Send me a one page teardown of our driver handoff screen before the application closes on October thirtieth."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 138.03,
+  "end": 145.47,
+  "text": "I can do that. The public app has the handoff screen, so I can work from that. Should it focus on the flow or on the numbers?"
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 146.37,
+  "end": 153.66,
+  "text": "The flow, and what you would test first. Keep it to one page. If it is good I will put it in front of her myself."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 154.56,
+  "end": 158.82,
+  "text": "Understood. And on the data side, who would I be working with for routing?"
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 159.72,
+  "end": 170.52,
+  "text": "Dmitri Vandenboogaard runs the routing data team. If you meet anyone from the team, he is the one who will ask the hard questions, so read up on how the charging stops are planned."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 171.42,
+  "end": 183.72,
+  "text": "I will. One practical thing before I forget. You mentioned a travel stipend for the Boulder visit. My account number is 4 8 2 0 1 7 3 6 5 9, so payroll can send it directly."
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 184.62,
+  "end": 191.73,
+  "text": "Got it, thanks. I will pass that to the recruiting coordinator. Is there anything about the role that worries you?"
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 192.63,
+  "end": 200.66,
+  "text": "Honestly, the pace. Going from six to nineteen people in a year sounds exciting, but I want to be sure there is time to do the work well."
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 201.56,
+  "end": 212.49,
+  "text": "Fair. The honest answer is that it is busy, but the team protects two quiet mornings a week for deep work, and I use mine for exactly the kind of teardown I just asked you for."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 213.39,
+  "end": 218.01,
+  "text": "That is reassuring. Is there someone on the onboarding side you would introduce me to?"
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 218.91,
+  "end": 223.18,
+  "text": "Happy to, Priya runs onboarding. I will send an intro tonight."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 224.08,
+  "end": 229.56,
+  "text": "Thank you, Omar, this was really helpful. I will send you a note after I talk to Priya."
+ },
+ {
+  "who": "Omar Castellano",
+  "side": "them",
+  "start": 230.46,
+  "end": 234.0,
+  "text": "Please do. Good luck, Nadia. Talk soon."
+ },
+ {
+  "who": "Nadia Feldman",
+  "side": "me",
+  "start": 234.9,
+  "end": 235.46,
+  "text": "Bye."
+ }
+]

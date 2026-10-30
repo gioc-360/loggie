@@ -1,0 +1,20 @@
+{
+ "_why": "loggie-class-notes 1.6 / D11: privacy.unmask (Python) and class-names.js unmask (JS) must agree on every case; both tests read this file. Made-up names.",
+ "names": {
+  "Student 1": { "name": "Pella Varin", "forms": ["Pella Varin", "Pella", "Varin"], "unclear": false, "likely": null, "rule": "invitee", "at": ["header"] },
+  "Student 2": { "name": "Quillan", "forms": ["Quillan"], "unclear": true, "likely": null, "rule": "addressed", "at": ["01:05"] },
+  "Student 3": { "name": "Marnie", "forms": ["Marnie"], "unclear": false, "likely": null, "rule": "addressed", "at": ["00:10"] }
+ },
+ "cases": [
+  { "text": "Student 1 raised the cost point.", "want": "Pella Varin raised the cost point." },
+  { "text": "Student 2 asked about the plant.", "want": "Quillan (unclear) asked about the plant." },
+  { "text": "Student 3's answer was the best one.", "want": "Marnie's answer was the best one." },
+  { "text": "Students 1 and 3 disagreed.", "want": "Pella Varin and Marnie disagreed." },
+  { "text": "Students 1, 2 and 3 agreed.", "want": "Pella Varin, Quillan (unclear) and Marnie agreed." },
+  { "text": "As student 3 said, margins matter.", "want": "As Marnie said, margins matter." },
+  { "text": "Student 9 (not sure) asked a question.", "want": "Student 9 (not sure) asked a question." },
+  { "text": "Students 1 and 9 spoke.", "want": "Students 1 and 9 spoke." },
+  { "text": "No labels here at all.", "want": "No labels here at all." },
+  { "text": "Student 12 is not Student 1.", "want": "Student 12 is not Pella Varin." }
+ ]
+}

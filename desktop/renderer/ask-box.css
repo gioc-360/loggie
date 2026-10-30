@@ -1,0 +1,111 @@
+/* The ask box (loggie-ask-box): the action line under the box, the status line that takes the box's place while
+   Loggie works, and the card that says where the draft is. Colors are the panel's own (workspace.css). */
+.input-row { position: relative; }
+.ask-status { position: absolute; inset: 0; z-index: 2; display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; grid-template-rows: 1fr auto; align-items: center; gap: 0 10px; padding: 6px 8px 4px 14px; border-radius: inherit; background: var(--surface); }
+.ask-status-label { font-size: 14px; color: var(--ink); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ask-status-count { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ask-stop { border: 0; border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 600; background: #f3e3e1; color: #8a2f25; }
+.ask-stop:hover { background: #ecd3cf; }
+.ask-steps { grid-column: 1 / -1; display: flex; gap: 3px; height: 3px; }
+.ask-steps span { flex: 1; border-radius: 2px; background: var(--line); }
+.ask-steps span.on { background: var(--blue-ink); }
+.ask-dots { display: inline-flex; gap: 3px; }
+.ask-dots i { width: 5px; height: 5px; border-radius: 50%; background: var(--blue-ink); animation: ask-pulse 1s infinite; }
+.ask-dots i:nth-child(2) { animation-delay: .15s; } .ask-dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes ask-pulse { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .ask-dots i { animation: none; opacity: .7; } }
+
+.ask-under { margin: 8px 2px 0; min-height: 26px; font-size: 12px; color: var(--muted); display: grid; gap: 6px; }
+.ask-under[data-state="examples"] { display: flex; flex-wrap: wrap; gap: 6px; }
+.ask-chip { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 5px 10px; font-size: 12px; }
+.ask-chip:hover { background: var(--soft); }
+.ask-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 10px; background: var(--blue-soft); color: var(--ink); font-size: 12.5px; }
+.ask-line.ask-muted, .ask-under[data-state="none"] .ask-line, .ask-under[data-state="unknown"] .ask-line { background: transparent; padding-left: 2px; color: var(--muted); }
+.ask-muted { color: var(--muted); }
+.ask-app { font-size: 10.5px; font-weight: 600; padding: 2px 7px; border-radius: 6px; color: #fff; background: #637066; }
+.ask-app-messages { background: #2a9d48; } .ask-app-whatsapp { background: #1a7f57; } .ask-app-outlook { background: #0f6cbd; }
+.ask-choices { display: flex; flex-wrap: wrap; gap: 6px; }
+.ask-choice { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 6px 10px; font-size: 12.5px; }
+.ask-choice:hover { border-color: var(--blue-ink); }
+.ask-choice.ask-primary { background: var(--blue-ink); border-color: var(--blue-ink); color: #fff; }
+
+.ask-card { margin-top: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: grid; gap: 8px; font-size: 13px; }
+.ask-card[data-outcome="failed"], .ask-card[data-outcome="question"] { background: #fff8e6; border-color: #efd99a; }
+.ask-card-head { margin: 0; font-size: 14px; }
+.ask-card p { margin: 0; line-height: 1.45; }
+.ask-to { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 10px; margin: 0; align-items: center; }
+.ask-to dd { margin: 0; overflow-wrap: anywhere; }
+.ask-did { font-size: 12px; color: var(--muted); }
+.ask-did summary { cursor: pointer; }
+.ask-did ol { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 2px; }
+.ask-close { justify-self: start; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 6px 12px; font-size: 12.5px; }
+.composer-meta #composerHint:empty { display: none; }
+.composer-meta { justify-content: flex-end; }
+.ask-said { display: grid; gap: 4px; }
+.ask-said-head { display: flex; align-items: center; gap: 6px; }
+.ask-said-line { margin: 0; line-height: 1.45; overflow-wrap: anywhere; }
+.ask-said-line.ask-mine { color: var(--muted); }
+
+/* The word map (loggie-ask-wordmap, mock https://claude.ai/artifact/Qj9k6p9QVpDDf6hCKPBUiR): each word underlined in
+   its role's color in a transparent copy of the box laid under the text, and one slot per role under the box. The
+   copy must wrap exactly like the box: same font, size, line height, padding and width. The line height leaves room
+   for the role's name under the first word of each part. */
+.ask-field { position: relative; min-width: 0; display: grid; }
+.ask-mirror-clip { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.panel-page .ask-field #message, .ask-mirror { font-size: 13px; line-height: 27px; padding: 3px 0 7px; margin: 0; letter-spacing: normal; word-spacing: normal; white-space: pre-wrap; overflow-wrap: break-word; }
+.panel-page .ask-field #message { position: relative; z-index: 1; min-height: 37px; max-height: 104px; overflow-y: auto; background: transparent; }
+.ask-mirror { color: transparent; }
+.ask-u { position: relative; border-bottom: 2px solid var(--ask-role); }
+.ask-u[data-label]::after { content: attr(data-label); position: absolute; left: 0; top: calc(100% + 1px); color: var(--ask-role); font: 600 8px/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+.ask-u-action { --ask-role: var(--blue-ink); }
+.ask-u-who { --ask-role: #2463c4; }
+.ask-u-when { --ask-role: #b26b12; }
+.ask-u-where { --ask-role: #0e8274; }
+.ask-u-about { --ask-role: #7b49b8; }
+.ask-u-message { --ask-role: #c23b68; }
+.ask-u-app { --ask-role: #637066; }
+.ask-u-unused { --ask-role: #98a39a; border-bottom-style: dotted; }
+
+.ask-slots { display: flex; flex-wrap: wrap; align-items: stretch; gap: 5px; }
+.ask-act { display: inline-flex; align-items: center; gap: 6px; border: 0; border-radius: 8px; padding: 4px 9px; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #fff; background: var(--blue-ink); }
+button.ask-act:hover { background: var(--blue-ink); }
+.ask-act-app { text-transform: none; letter-spacing: 0; font-weight: 600; padding: 1px 6px; border-radius: 5px; background: rgb(255 255 255 / 22%); }
+.ask-act-caret { opacity: .8; font-size: 9px; }
+.ask-slot { --ask-role: #637066; display: inline-flex; align-items: baseline; gap: 6px; min-width: 0; max-width: 100%; border: 1.5px dashed var(--line); border-radius: 8px; padding: 3px 8px; font-size: 12px; color: var(--muted); }
+.ask-slot b { font-size: 9px; letter-spacing: .07em; text-transform: uppercase; font-weight: 700; color: var(--ask-role); }
+.ask-slot-v { overflow-wrap: anywhere; }
+.ask-slot-on { border-style: solid; border-color: var(--ask-role); background: var(--surface); color: var(--ink); }
+.ask-slot-quiet { border-style: solid; border-color: color-mix(in srgb, var(--ask-role) 45%, transparent); }
+.ask-slot-quiet .ask-slot-v { font-style: italic; color: var(--muted); }
+.ask-slot-empty b { color: var(--muted); }
+.ask-slot-listen { border-style: solid; border-color: var(--ask-role); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ask-role) 16%, transparent); }
+.ask-slot-who { --ask-role: #2463c4; } .ask-slot-when { --ask-role: #b26b12; } .ask-slot-where { --ask-role: #0e8274; }
+.ask-slot-about { --ask-role: #7b49b8; } .ask-slot-message { --ask-role: #c23b68; }
+.ask-hint { font-size: 12px; color: var(--ink); background: var(--blue-soft); border-radius: 8px; padding: 4px 9px; }
+.ask-flag { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; color: #8a5a1c; background: #fdf1d6; border: 1px solid #efd99a; border-radius: 8px; padding: 5px 9px; }
+.ask-fix { border: 1px solid #efd99a; background: var(--surface); color: var(--ink); border-radius: 7px; padding: 2px 8px; font-size: 11.5px; }
+.ask-fix:hover { border-color: var(--blue-ink); }
+.ask-fix[aria-pressed="true"] { background: var(--blue-ink); border-color: var(--blue-ink); color: #fff; }
+.ask-keys { align-self: center; font-size: 11.5px; color: var(--muted); }
+.send-button:disabled { opacity: .35; cursor: default; }
+.ask-map { flex-basis: 100%; font-size: 12px; color: var(--ink); }
+.ask-map summary { cursor: pointer; color: var(--muted); font-size: 11.5px; }
+.ask-map table { margin-top: 6px; border-collapse: collapse; width: 100%; }
+.ask-map th { text-align: left; white-space: nowrap; font-weight: 600; font-family: var(--mono); font-size: 11px; padding: 4px 10px 4px 0; vertical-align: top; }
+.ask-map td { padding: 4px 10px 4px 0; border-top: 1px solid var(--line); vertical-align: top; }
+.ask-map th { border-top: 1px solid var(--line); }
+/* The thread an email answers (loggie-ask-thread): the In slot is a button that opens the thread choices. */
+.ask-in { display: inline-flex; align-items: baseline; gap: 5px; border: 0; padding: 0; background: none; font: inherit; color: inherit; font-style: inherit; text-align: left; cursor: pointer; overflow-wrap: anywhere; }
+.ask-in:focus-visible { outline: 2px solid #7b49b8; outline-offset: 2px; border-radius: 4px; }
+.ask-why { font-size: 12px; color: var(--muted); padding: 0 2px; }
+.ask-choice[aria-pressed="true"] { border-color: var(--blue-ink); box-shadow: inset 0 0 0 1px var(--blue-ink); }
+.ask-draft { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12.5px; max-height: 9.5em; overflow-y: auto; padding: 6px 9px; border-left: 3px solid #c23b68; background: var(--surface); border-radius: 4px; }
+.ask-in .ask-act-caret { font-style: normal; font-size: 10px; opacity: 1; color: #7b49b8; }
+/* A question answered from email and calendar (assistant-service.js): the answer as written, then its sources. */
+.ask-answer { margin: 0; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ask-sources { margin: 0; padding-left: 18px; display: grid; gap: 2px; color: var(--muted); font-size: 12px; }
+/* A draft held for a time (loggie-reply-yes): the time box beside its one button, still, like the row's. */
+.ask-time { flex: 1; min-width: 140px; border: 1px solid #e0b84a; border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 12.5px; background: var(--surface); color: var(--ink); }
+.ask-time:focus-visible { outline: 2px solid var(--blue-ink, #4656b9); outline-offset: 2px; }
+/* What to look at before Send (the helper's read-back of the reply window): amber like a held line, still. */
+.ask-check { margin: 6px 0 0; padding: 6px 10px; border-radius: 8px; background: #fff7e0; color: #6b4e00; font-size: 12.5px; line-height: 1.45; }

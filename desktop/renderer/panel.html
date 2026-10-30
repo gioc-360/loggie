@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:" />
+    <title>Loggie</title>
+    <link rel="stylesheet" href="shared.css" />
+    <link rel="stylesheet" href="workspace.css" />
+    <link rel="stylesheet" href="workspaces.css" />
+    <link rel="stylesheet" href="ask-box.css" />
+    <link rel="stylesheet" href="meetings.css" />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="today.css" />
+    <link rel="stylesheet" href="setup.css" />
+  </head>
+  <body class="panel-page">
+    <main class="panel-shell">
+      <header class="panel-header drag-region">
+        <button class="brand no-drag" id="brandHome" type="button" aria-label="Go to Today"><span class="brand-mark"><img src="marks/loggie-logo.png" width="20" height="20" alt="" aria-hidden="true" /></span><span>loggie</span></button>
+        <nav class="workspace-nav no-drag" aria-label="Assistant sections">
+          <button type="button" data-view="today" aria-pressed="true">Today <span id="taskCount"></span></button>
+          <button type="button" data-view="workspaces" aria-pressed="false">Workspaces</button>
+          <button type="button" data-view="meetings" aria-pressed="false"><span class="rec-dot" id="meetingsDot" hidden></span>Meetings</button>
+        </nav>
+        <div class="header-actions no-drag">
+          <button class="icon-button settings-button" id="settingsButton" type="button" data-view="settings" aria-pressed="false" aria-label="Settings" title="Settings"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          <button class="icon-button" id="minimize" type="button" aria-label="Minimize Loggie" title="Minimize to Dock">
+            <span aria-hidden="true">−</span>
+          </button>
+          <button class="icon-button fullscreen-button" id="fullscreen" type="button" aria-label="Enter full screen" aria-pressed="false" title="Enter full screen">
+            <span aria-hidden="true">⛶</span>
+          </button>
+          <button class="icon-button" id="hide" type="button" aria-label="Hide Loggie" title="Hide Loggie"><span aria-hidden="true">×</span></button>
+        </div>
+      </header>
+
+      <form class="composer" id="composer">
+        <div class="input-row">
+          <div class="ask-field"><div class="ask-mirror-clip" aria-hidden="true"><div class="ask-mirror" id="askMirror"></div></div><textarea id="message" rows="1" maxlength="500" aria-label="Tell Loggie what to do" placeholder="Tell Loggie what to do, e.g. ask Sam for the deck"></textarea></div>
+          <kbd class="ask-kbd" aria-hidden="true">⌘ K</kbd>
+          <button class="voice-button" id="voiceButton" type="button" aria-label="Dictate a request" aria-describedby="voiceStatus" title="Dictate a request with Mac Dictation">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></svg>
+          </button>
+          <button class="send-button" id="searchButton" type="submit" aria-label="Submit request" title="Submit request"><span aria-hidden="true">↑</span></button>
+          <div class="ask-status" id="askStatus" role="status" aria-live="polite" hidden><span class="ask-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="ask-status-label"></span><span class="ask-status-count"></span><button class="ask-stop" type="button">Stop</button><div class="ask-steps" aria-hidden="true"></div></div>
+        </div>
+        <div class="ask-under" id="askUnder" aria-live="polite"></div>
+        <section class="ask-card" id="askCard" aria-live="polite" hidden></section>
+        <div class="ask-results" id="askResults" hidden>
+          <div class="ask-results-head"><h2 id="command-heading">Recent</h2><button class="text-button" id="clearCommands" type="button">Clear</button></div>
+          <div class="command-history" id="commandHistory" aria-live="polite"></div>
+        </div>
+        <div class="composer-meta"><span id="composerHint"></span></div>
+        <p id="voiceStatus" class="voice-status" role="status" aria-live="polite" hidden></p>
+      </form>
+      <section class="conversation" id="conversation" aria-live="polite">
+        <div data-page="setup" class="setup-page" hidden></div>
+        <div data-page="today">
+          <section class="decision-list" id="liveCards" aria-live="polite"></section>
+          <div class="today-head"><h2 id="todayHeading">First today</h2><div class="task-actions" id="batchActions"></div></div>
+          <div class="section-heading"><div><p id="workstreamStatus" aria-live="polite"></p><p class="usage-line" id="usageLine" hidden></p></div></div>
+          <ul class="today-list" id="todayView" aria-labelledby="todayHeading"></ul>
+        </div><div data-page="workspaces" hidden>
+        <section class="work-section" id="workstreamSection" aria-labelledby="workstream-heading">
+          <div id="workstreamView"></div>
+        </section>
+        </div><div data-page="meetings" id="viewMeetings" hidden></div><div data-page="settings" hidden><div class="page-heading"><h1>Settings</h1></div><section class="settings-section mac-check" id="macCheck" aria-labelledby="mac-heading"><div class="mac-head"><h2 id="mac-heading">Your Mac</h2><span class="mac-checked" id="macChecked" role="status" aria-live="polite"></span><button id="macAgain" type="button">Check again</button><button id="setupAgain" type="button">Set up again</button></div><p class="mac-summary" id="macSummary" role="status"></p><ul class="checklist" id="macRows"></ul></section><section class="settings-section"><h2>Set up Loggie on this Mac</h2><div class="permission-card"><h3>Find your files</h3><p>Let Loggie search Documents, Desktop and Downloads, or choose specific project folders.</p><button id="allowFolders" type="button" class="primary">Enable file search</button> <button id="chooseFolders" type="button">Choose other folders…</button><p id="folderStatus" role="status" aria-live="polite"></p><button id="folderSettings" type="button" hidden>Open folder permissions</button><button id="recheckFolders" type="button">Check access again</button></div><div class="permission-card"><h3>Speak your requests</h3><p>Allow microphone and speech recognition access. This setup step does not record audio.</p><button id="enableVoice" type="button" class="primary">Enable voice input</button><p id="voiceSetupStatus" role="status" aria-live="polite">Optional — you can keep typing.</p><button id="voiceSettings" type="button" hidden>Open permission settings</button></div></section>
+
+        <section class="settings-section" id="keySection" aria-labelledby="key-heading">
+          <h2 id="key-heading">Cloud analysis</h2>
+          <div class="settings-group">
+            <div class="settings-row key-row">
+              <div class="row-copy"><strong>Nebius Token Factory key</strong><span id="keyStatus" aria-live="polite">Not saved</span></div>
+              <form class="compact-form key-form" id="keyForm">
+                <input id="cloudKey" type="password" autocomplete="off" spellcheck="false" maxlength="500" aria-label="Cloud analysis" placeholder="Paste your key" />
+                <button class="connect-button" id="saveKey" type="submit">Save</button>
+                <button class="connect-button" id="testKey" type="button">Test key</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section" id="timesSection" aria-labelledby="times-heading">
+          <h2 id="times-heading">Your free times</h2>
+          
+          <div class="settings-group">
+            <div class="settings-row times-row">
+              <div class="row-copy"><strong>Working hours</strong><span class="times-said" id="timesHoursSaid" aria-live="polite"></span></div>
+              <div class="times-control"><select id="timesStart" aria-label="Working hours start"></select><select id="timesEnd" aria-label="Working hours end"></select></div>
+            </div>
+            <div class="settings-row times-row">
+              <div class="row-copy"><strong>Time zone</strong><span class="times-said" id="timesZoneSaid" aria-live="polite"></span></div>
+              <div class="times-control"><select id="timesZone" aria-label="Time zone"></select></div>
+            </div>
+            <div class="settings-row times-row">
+              <div class="row-copy"><strong>Shortest opening</strong><span class="times-said" id="timesShortestSaid" aria-live="polite"></span></div>
+              <div class="times-control"><select id="timesShortest" aria-label="Shortest opening"></select></div>
+            </div>
+            <div class="settings-row times-row">
+              <div class="row-copy"><strong>Days ahead</strong><span class="times-said" id="timesDaysSaid" aria-live="polite"></span></div>
+              <div class="times-control"><select id="timesDays" aria-label="Days ahead"></select></div>
+            </div>
+            <div class="settings-row times-row">
+              <div class="row-copy"><strong>Events with no one invited</strong><span class="times-said" id="timesSelfSaid" aria-live="polite"></span></div>
+              <label class="times-control"><input type="checkhouse" id="timesSelf" /> Count as busy</label>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section" id="recordSection" aria-labelledby="record-heading">
+          <h2 id="record-heading">Calendar</h2>
+          <div class="settings-group" id="recordCalendars"></div>
+          <p class="times-said" id="recordCalendarsSaid" aria-live="polite"></p>
+        </section>
+
+        </div>
+
+        <section class="notice" id="notice" hidden></section>
+
+      </section>
+
+
+    </main>
+    <script type="module" src="workspace.js"></script>
+    <script type="module" src="panel.js"></script>
+  </body>
+</html>

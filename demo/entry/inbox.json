@@ -1,0 +1,700 @@
+[
+  {
+    "id": "th-lark-intro",
+    "historyId": "1013",
+    "subject": "Intro from Omar: Larkspur onboarding",
+    "snippet": "Hi Nadia, Omar passed along your name after your chat today.",
+    "latestTimestamp": "2026-10-13T22:40:00.000Z",
+    "participants": [
+      "Priya Nambiar <priya.nambiar@larkspur.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m001",
+        "threadId": "th-lark-intro",
+        "messageId": "<m001@larkspur.example>",
+        "from": "Priya Nambiar <priya.nambiar@larkspur.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Intro from Omar: Larkspur onboarding",
+        "timestamp": "2026-10-13T22:40:00.000Z",
+        "body": "Hi Nadia, Omar passed along your name after your chat today.\n\nI run onboarding for the driver app teams at Larkspur Logistics. Happy to answer questions about the first weeks if that helps your application.\n\nMy direct line is +1 303 555 0187 if a call is easier than email. Omar said you are working on a teardown first, so there is no rush and nothing you need to do.\n\nPriya",
+        "snippet": "Hi Nadia, Omar passed along your name after your chat today.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-lark-portal",
+    "historyId": "1014",
+    "subject": "Your application draft is saved",
+    "snippet": "Your draft application for Associate Product Manager has been saved.",
+    "latestTimestamp": "2026-10-09T13:10:00.000Z",
+    "participants": [
+      "Larkspur Careers <careers@larkspur.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m002",
+        "threadId": "th-lark-portal",
+        "messageId": "<m002@larkspur.example>",
+        "from": "Larkspur Careers <careers@larkspur.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Your application draft is saved",
+        "timestamp": "2026-10-09T13:10:00.000Z",
+        "body": "Your draft application for Associate Product Manager has been saved.\n\nDrafts stay in your account for sixty days. You can return to it at any time from the careers page.\n\nThe Larkspur Careers team",
+        "snippet": "Your draft application for Associate Product Manager has been saved.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-case-pitch",
+    "historyId": "1013",
+    "subject": "Pitch run-through",
+    "snippet": "Hi Nadia, the final pitch is coming up and I think we are still too long on the cost slide.",
+    "latestTimestamp": "2026-10-13T14:05:00.000Z",
+    "participants": [
+      "Ravi Menon <ravi.menon@opscase.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m003",
+        "threadId": "th-case-pitch",
+        "messageId": "<m003@opscase.example>",
+        "from": "Ravi Menon <ravi.menon@opscase.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Pitch run-through",
+        "timestamp": "2026-10-13T14:05:00.000Z",
+        "body": "Hi Nadia, the final pitch is coming up and I think we are still too long on the cost slide.\n\nCould you offer me a time for a thirty minute run-through of the pitch this week?\n\nI am flexible on mornings and afternoons.\n\nRavi",
+        "snippet": "Hi Nadia, the final pitch is coming up and I think we are still too long on the cost slide.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-case-format",
+    "historyId": "1014",
+    "subject": "Ops Case final round: format and logistics",
+    "snippet": "Welcome to the final round of the Ops Case Competition.",
+    "latestTimestamp": "2026-10-10T16:30:00.000Z",
+    "participants": [
+      "Ops Case Organizers <organizers@opscase.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m004",
+        "threadId": "th-case-format",
+        "messageId": "<m004@opscase.example>",
+        "from": "Ops Case Organizers <organizers@opscase.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Ops Case final round: format and logistics",
+        "timestamp": "2026-10-10T16:30:00.000Z",
+        "body": "Welcome to the final round of the Ops Case Competition.\n\nEach team gets ten minutes to present and five for questions. Slides are due the evening before your slot.\n\nQuestions about the format can go to judges-desk@opscase.example.\n\nOps Case Organizers",
+        "snippet": "Welcome to the final round of the Ops Case Competition.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-scm-topic",
+    "historyId": "1012",
+    "subject": "Supply Chain Analytics: project topics",
+    "snippet": "Hello Nadia, I am collecting project topics this week.",
+    "latestTimestamp": "2026-10-12T15:20:00.000Z",
+    "participants": [
+      "Prof. Ines Halvorsen <i.halvorsen@scm.school.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m005",
+        "threadId": "th-scm-topic",
+        "messageId": "<m005@scm.school.example>",
+        "from": "Prof. Ines Halvorsen <i.halvorsen@scm.school.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Supply Chain Analytics: project topics",
+        "timestamp": "2026-10-12T15:20:00.000Z",
+        "body": "Hello Nadia, I am collecting project topics this week.\n\nPlease tell me which of the three topics you want for your project: the port delay model, the returns forecast, or the supplier risk map.\n\nI will confirm groups after I hear from everyone.\n\nProf. Halvorsen",
+        "snippet": "Hello Nadia, I am collecting project topics this week.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-scm-notes",
+    "historyId": "1012",
+    "subject": "Supply Chain Analytics: dataset notes",
+    "snippet": "Hi Nadia, I cleaned the shipment file and left my notes in the shared folder.",
+    "latestTimestamp": "2026-10-11T19:45:00.000Z",
+    "participants": [
+      "Chidi Obi <chidi.obi@scm.school.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m006",
+        "threadId": "th-scm-notes",
+        "messageId": "<m006@scm.school.example>",
+        "from": "Chidi Obi <chidi.obi@scm.school.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Supply Chain Analytics: dataset notes",
+        "timestamp": "2026-10-11T19:45:00.000Z",
+        "body": "Hi Nadia, I cleaned the shipment file and left my notes in the shared folder.\n\nNo action needed from you. I will flag anything odd before we meet.\n\nChidi",
+        "snippet": "Hi Nadia, I cleaned the shipment file and left my notes in the shared folder.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-housing-addendum",
+    "historyId": "1019",
+    "subject": "Lease addendum for the second bedroom",
+    "snippet": "Hi Marguerite, the signed addendum is attached.",
+    "latestTimestamp": "2026-10-12T13:00:00.000Z",
+    "participants": [
+      "Marguerite Oyelaran <m.oyelaran@harborstreet.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m007",
+        "threadId": "th-housing-addendum",
+        "messageId": "<m007@harborstreet.example>",
+        "from": "Marguerite Oyelaran <m.oyelaran@harborstreet.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Lease addendum for the second bedroom",
+        "timestamp": "2026-10-08T14:00:00.000Z",
+        "body": "Hello Nadia, the lease addendum for the second bedroom is attached.\n\nPlease sign it and send it back when you can.\n\nMarguerite Oyelaran\nHarbor Street Property Management",
+        "snippet": "Hello Nadia, the lease addendum for the second bedroom is attached.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [
+          {
+            "name": "lease-addendum.pdf",
+            "type": "application/pdf",
+            "size": 48211,
+            "attachmentId": "att-addendum",
+            "inline": false
+          }
+        ],
+        "rawLinks": []
+      },
+      {
+        "id": "m008",
+        "threadId": "th-housing-addendum",
+        "messageId": "<m008@example.com>",
+        "from": "Nadia Feldman <nadia.feldman@example.com>",
+        "to": "Marguerite Oyelaran <m.oyelaran@harborstreet.example>",
+        "cc": "",
+        "subject": "Lease addendum for the second bedroom",
+        "timestamp": "2026-10-12T13:00:00.000Z",
+        "body": "Hi Marguerite, the signed addendum is attached.\n\nCould you countersign and send me the final copy when you have it?\n\nThanks,\nNadia",
+        "snippet": "Hi Marguerite, the signed addendum is attached.",
+        "labels": [
+          "SENT"
+        ],
+        "attachments": [
+          {
+            "name": "lease-addendum-signed.pdf",
+            "type": "application/pdf",
+            "size": 51877,
+            "attachmentId": "att-signed",
+            "inline": false
+          }
+        ],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-housing-parking",
+    "historyId": "1018",
+    "subject": "Parking permit renewal",
+    "snippet": "Thank you, the permit is charged and your receipt is attached.",
+    "latestTimestamp": "2026-10-13T16:10:00.000Z",
+    "participants": [
+      "Harbor Street Parking Office <parking@harborstreet.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m009",
+        "threadId": "th-housing-parking",
+        "messageId": "<m009@harborstreet.example>",
+        "from": "Harbor Street Parking Office <parking@harborstreet.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Parking permit renewal",
+        "timestamp": "2026-10-09T15:00:00.000Z",
+        "body": "Hi Nadia, your residential parking permit renews at the start of next month.\n\nRent continues to go to account number 7730 5521 08 as before. For the permit fee, reply with a card to charge or pay at the office.\n\nHarbor Street Parking Office",
+        "snippet": "Hi Nadia, your residential parking permit renews at the start of next month.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      },
+      {
+        "id": "m010",
+        "threadId": "th-housing-parking",
+        "messageId": "<m010@example.com>",
+        "from": "Nadia Feldman <nadia.feldman@example.com>",
+        "to": "Harbor Street Parking Office <parking@harborstreet.example>",
+        "cc": "",
+        "subject": "Parking permit renewal",
+        "timestamp": "2026-10-11T12:30:00.000Z",
+        "body": "Hello, thanks for the reminder.\n\nPlease charge the permit to my card 4111 1111 1111 1111.\n\nThanks,\nNadia",
+        "snippet": "Hello, thanks for the reminder.",
+        "labels": [
+          "SENT"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      },
+      {
+        "id": "m011",
+        "threadId": "th-housing-parking",
+        "messageId": "<m011@harborstreet.example>",
+        "from": "Harbor Street Parking Office <parking@harborstreet.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Parking permit renewal",
+        "timestamp": "2026-10-13T16:10:00.000Z",
+        "body": "Thank you, the permit is charged and your receipt is attached.\n\nNothing else is needed from you.\n\nHarbor Street Parking Office",
+        "snippet": "Thank you, the permit is charged and your receipt is attached.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [
+          {
+            "name": "permit-receipt.pdf",
+            "type": "application/pdf",
+            "size": 20450,
+            "attachmentId": "att-receipt",
+            "inline": false
+          }
+        ],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-mentor-note",
+    "historyId": "1014",
+    "subject": "Thoughts after our call",
+    "snippet": "Hi Nadia, I enjoyed our call and wanted to leave you with a few thoughts.",
+    "latestTimestamp": "2026-10-12T20:15:00.000Z",
+    "participants": [
+      "Hana Brandvold <hana.brandvold@mentors.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m012",
+        "threadId": "th-mentor-note",
+        "messageId": "<m012@mentors.example>",
+        "from": "Hana Brandvold <hana.brandvold@mentors.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Thoughts after our call",
+        "timestamp": "2026-10-12T20:15:00.000Z",
+        "body": "Hi Nadia, I enjoyed our call and wanted to leave you with a few thoughts.\n\nThe short guide below is worth reading before any interview in logistics. It covers how teams measure a routing change and what a first quarter looks like.\n\nhttps://mentors.example/notes/routing-careers\n\nNo reply is needed. Good luck with the applications.\n\nHana",
+        "snippet": "Hi Nadia, I enjoyed our call and wanted to leave you with a few thoughts.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": [
+          {
+            "text": "",
+            "href": "https://mentors.example/notes/routing-careers"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "th-mentor-match",
+    "historyId": "1015",
+    "subject": "Mentoring match confirmed",
+    "snippet": "Your match with Hana Brandvold is confirmed.",
+    "latestTimestamp": "2026-10-07T17:00:00.000Z",
+    "participants": [
+      "Alumni Mentoring Program <program@mentors.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m013",
+        "threadId": "th-mentor-match",
+        "messageId": "<m013@mentors.example>",
+        "from": "Alumni Mentoring Program <program@mentors.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Mentoring match confirmed",
+        "timestamp": "2026-10-07T17:00:00.000Z",
+        "body": "Your match with Hana Brandvold is confirmed.\n\nSessions are monthly and you arrange the time directly with your mentor. Questions about the program can go to program-desk@mentors.example.\n\nThe Alumni Mentoring Program",
+        "snippet": "Your match with Hana Brandvold is confirmed.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-fyi-library",
+    "historyId": "1014",
+    "subject": "Your hold is ready for pickup",
+    "snippet": "Your hold is ready at the front desk.",
+    "latestTimestamp": "2026-10-09T11:00:00.000Z",
+    "participants": [
+      "City Library <holds@library.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m014",
+        "threadId": "th-fyi-library",
+        "messageId": "<m014@library.example>",
+        "from": "City Library <holds@library.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Your hold is ready for pickup",
+        "timestamp": "2026-10-09T11:00:00.000Z",
+        "body": "Your hold is ready at the front desk.\n\nIt will be kept for seven days.\n\nCity Library",
+        "snippet": "Your hold is ready at the front desk.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-fyi-parcel",
+    "historyId": "1013",
+    "subject": "Your package was delivered",
+    "snippet": "Your package was delivered to the front door today at 2:15 PM.",
+    "latestTimestamp": "2026-10-13T18:30:00.000Z",
+    "participants": [
+      "Parcel Tracker <updates@parcel.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m015",
+        "threadId": "th-fyi-parcel",
+        "messageId": "<m015@parcel.example>",
+        "from": "Parcel Tracker <updates@parcel.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Your package was delivered",
+        "timestamp": "2026-10-13T18:30:00.000Z",
+        "body": "Your package was delivered to the front door today at 2:15 PM.\n\nNo signature was needed.\n\nParcel Tracker",
+        "snippet": "Your package was delivered to the front door today at 2:15 PM.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-fyi-registrar",
+    "historyId": "1016",
+    "subject": "Room change for your Thursday seminar",
+    "snippet": "The Thursday seminar has moved to Room 214 for this week only.",
+    "latestTimestamp": "2026-10-10T09:00:00.000Z",
+    "participants": [
+      "Registrar <registrar@college.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m016",
+        "threadId": "th-fyi-registrar",
+        "messageId": "<m016@college.example>",
+        "from": "Registrar <registrar@college.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Room change for your Thursday seminar",
+        "timestamp": "2026-10-10T09:00:00.000Z",
+        "body": "The Thursday seminar has moved to Room 214 for this week only.\n\nThe start time is unchanged.\n\nOffice of the Registrar",
+        "snippet": "The Thursday seminar has moved to Room 214 for this week only.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-fyi-calendar",
+    "historyId": "1015",
+    "subject": "Accepted: Study group",
+    "snippet": "Dev Sandoval accepted your invitation to Study group.",
+    "latestTimestamp": "2026-10-12T10:00:00.000Z",
+    "participants": [
+      "Calendar <calendar-noreply@example.com>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m017",
+        "threadId": "th-fyi-calendar",
+        "messageId": "<m017@example.com>",
+        "from": "Calendar <calendar-noreply@example.com>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Accepted: Study group",
+        "timestamp": "2026-10-12T10:00:00.000Z",
+        "body": "Dev Sandoval accepted your invitation to Study group.\n\nIt is on your calendar.",
+        "snippet": "Dev Sandoval accepted your invitation to Study group.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-mkt-shoplane",
+    "historyId": "1015",
+    "subject": "Fall sale: 30 percent off boots",
+    "snippet": "Our fall sale starts today.",
+    "latestTimestamp": "2026-10-08T12:00:00.000Z",
+    "participants": [
+      "Shoplane <deals@shoplane.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m018",
+        "threadId": "th-mkt-shoplane",
+        "messageId": "<m018@shoplane.example>",
+        "from": "Shoplane <deals@shoplane.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Fall sale: 30 percent off boots",
+        "timestamp": "2026-10-08T12:00:00.000Z",
+        "body": "Our fall sale starts today.\n\nTake 30 percent off boots and jackets until Sunday.\n\nUnsubscribe: https://news.shoplane.example/unsubscribe?id=lane",
+        "snippet": "Our fall sale starts today.",
+        "labels": [
+          "INBOX",
+          "CATEGORY_PROMOTIONS"
+        ],
+        "attachments": [],
+        "rawLinks": [
+          {
+            "text": "Unsubscribe",
+            "href": "https://news.shoplane.example/unsubscribe?id=lane"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "th-mkt-trailrun",
+    "historyId": "1015",
+    "subject": "Five autumn routes worth the drive",
+    "snippet": "This week we map five autumn routes within an hour of the city.",
+    "latestTimestamp": "2026-10-11T08:00:00.000Z",
+    "participants": [
+      "Trailrun Weekly <deals@trailrun.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m019",
+        "threadId": "th-mkt-trailrun",
+        "messageId": "<m019@trailrun.example>",
+        "from": "Trailrun Weekly <deals@trailrun.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Five autumn routes worth the drive",
+        "timestamp": "2026-10-11T08:00:00.000Z",
+        "body": "This week we map five autumn routes within an hour of the city.\n\nRead the full list on our site.\n\nUnsubscribe: https://news.trailrun.example/unsubscribe?id=lrun",
+        "snippet": "This week we map five autumn routes within an hour of the city.",
+        "labels": [
+          "INBOX",
+          "CATEGORY_PROMOTIONS"
+        ],
+        "attachments": [],
+        "rawLinks": [
+          {
+            "text": "Unsubscribe",
+            "href": "https://news.trailrun.example/unsubscribe?id=lrun"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "th-mkt-bistrobox",
+    "historyId": "1016",
+    "subject": "Your first meal kit is half price",
+    "snippet": "Try a Bistro Box this week.",
+    "latestTimestamp": "2026-10-13T07:30:00.000Z",
+    "participants": [
+      "Bistro Box <deals@bistrobox.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m020",
+        "threadId": "th-mkt-bistrobox",
+        "messageId": "<m020@bistrobox.example>",
+        "from": "Bistro Box <deals@bistrobox.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Your first meal kit is half price",
+        "timestamp": "2026-10-13T07:30:00.000Z",
+        "body": "Try a Bistro Box this week.\n\nYour first kit is half price with this offer.\n\nUnsubscribe: https://news.bistrobox.example/unsubscribe?id=obox",
+        "snippet": "Try a Bistro Box this week.",
+        "labels": [
+          "INBOX",
+          "CATEGORY_PROMOTIONS"
+        ],
+        "attachments": [],
+        "rawLinks": [
+          {
+            "text": "Unsubscribe",
+            "href": "https://news.bistrobox.example/unsubscribe?id=obox"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "th-chore-insurance",
+    "historyId": "1018",
+    "subject": "Renters policy renewal",
+    "snippet": "Your renters policy renews on November 1.",
+    "latestTimestamp": "2026-10-09T10:15:00.000Z",
+    "participants": [
+      "Hearthside Insurance <service@hearthside.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m021",
+        "threadId": "th-chore-insurance",
+        "messageId": "<m021@hearthside.example>",
+        "from": "Hearthside Insurance <service@hearthside.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Renters policy renewal",
+        "timestamp": "2026-10-09T10:15:00.000Z",
+        "body": "Your renters policy renews on November 1.\n\nPlease review the coverage summary and reply if anything has changed.\n\nHearthside Insurance",
+        "snippet": "Your renters policy renews on November 1.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-chore-gym",
+    "historyId": "1012",
+    "subject": "Confirm your membership freeze",
+    "snippet": "We received your request to freeze your membership next month.",
+    "latestTimestamp": "2026-10-10T12:45:00.000Z",
+    "participants": [
+      "Northside Gym <desk@northsidegym.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m022",
+        "threadId": "th-chore-gym",
+        "messageId": "<m022@northsidegym.example>",
+        "from": "Northside Gym <desk@northsidegym.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Confirm your membership freeze",
+        "timestamp": "2026-10-10T12:45:00.000Z",
+        "body": "We received your request to freeze your membership next month.\n\nReply YES to confirm the freeze.\n\nNorthside Gym",
+        "snippet": "We received your request to freeze your membership next month.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  },
+  {
+    "id": "th-chore-return",
+    "historyId": "1015",
+    "subject": "Your return label",
+    "snippet": "Your return label is attached.",
+    "latestTimestamp": "2026-10-12T09:20:00.000Z",
+    "participants": [
+      "Fieldwear Returns <returns@fieldwear.example>",
+      "Nadia Feldman <nadia.feldman@example.com>"
+    ],
+    "messages": [
+      {
+        "id": "m023",
+        "threadId": "th-chore-return",
+        "messageId": "<m023@fieldwear.example>",
+        "from": "Fieldwear Returns <returns@fieldwear.example>",
+        "to": "Nadia Feldman <nadia.feldman@example.com>",
+        "cc": "",
+        "subject": "Your return label",
+        "timestamp": "2026-10-12T09:20:00.000Z",
+        "body": "Your return label is attached.\n\nDrop the parcel at any carrier location within fourteen days.\n\nFieldwear Returns",
+        "snippet": "Your return label is attached.",
+        "labels": [
+          "INBOX"
+        ],
+        "attachments": [],
+        "rawLinks": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "id": "T1",
+  "threads": [
+    {
+      "id": "outlook:6",
+      "sourceType": "manual",
+      "subject": "Risk roles",
+      "latestTimestamp": "2026-09-16T15:30:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-601",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Sam Whitaker <swhitaker@firm.example>",
+          "cc": "",
+          "subject": "Risk roles",
+          "timestamp": "2026-09-15T12:00:00Z",
+          "body": "Sam, would you know anyone in risk I could learn from?"
+        },
+        {
+          "id": "apple-mail-602",
+          "conversation": null,
+          "from": "Sam Whitaker <swhitaker@firm.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>, Lena Park <lena.park@firm.example>",
+          "cc": "",
+          "subject": "Introduction: Gio <> Lena Park",
+          "timestamp": "2026-09-16T15:30:00Z",
+          "body": "Lena, meet Gio, a first-year MBA I met at the trek. Gio, Lena leads model risk here. I'll let you two take it from here.\n\nSam"
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "swhitaker@firm.example"
+      ],
+      "timestamp": "2026-09-15T12:00:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Reply",
+        "kind": "reply",
+        "thread": 1,
+        "due": null,
+        "quote": "I'll let you two take it from here.",
+        "steps": []
+      },
+      {
+        "title": "Email Lena Park",
+        "kind": "email",
+        "thread": 1,
+        "to": "Lena Park",
+        "ask": "",
+        "quote": "Lena, meet Gio",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [
+      {
+        "thread": "outlook:6",
+        "name": "Lena Park",
+        "address": "lena.park@firm.example",
+        "shape": "to"
+      }
+    ],
+    "move": {
+      "kind": "reply",
+      "thread": 1
+    }
+  }
+}

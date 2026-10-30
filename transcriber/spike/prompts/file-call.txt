@@ -1,0 +1,16 @@
+You are filing one recorded call so {me} can find it later. Read the transcript, then answer with exactly these four lines and nothing else:
+
+Because: [mm:ss] <!-- 4 to 8 words copied exactly from the transcript at that minute, the words that best show what the call was about -->
+Title: <what the call was about, 3 to 8 words, the way {me} would name it in a list of calls>
+Workstream: <exactly one name from the list below, or none>
+Calendar title: <fits, or does not fit>
+
+Pick the quote first, then name the call from it. Spell names the way the workstream list spells them, even where the transcript mishears them. Pick a workstream only when the call is plainly about it; when unsure, answer none.
+
+The calendar's title for this call: {calendar}
+
+{me}'s workstreams (name: goal):
+{streams}
+
+TRANSCRIPT:
+{transcript}

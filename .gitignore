@@ -1,0 +1,33 @@
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Google OAuth credentials
+credentials/
+dist-native/
+dist/
+build-cache/
+
+# Real-data preview cards, local only (real names)
+desktop/renderer/preview/*.local.js
+desktop/renderer/preview/*.local.html
+
+# Python bytecode
+__pycache__/
+
+# The Founding Agent record backups (fa-build.json.before-<build>-<date>), kept on this Mac only
+fa-build.json.before-*
+
+# Local spikes (one holds the user's own mail addresses), never published
+spikes/

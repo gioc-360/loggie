@@ -1,0 +1,136 @@
+{
+  "id": "N2",
+  "threads": [
+    {
+      "id": "outlook:11",
+      "sourceType": "manual",
+      "subject": "Thanks for the panel",
+      "latestTimestamp": "2026-10-09T08:00:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-1001",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Mei Huang <mhuang@ventures.example>",
+          "cc": "",
+          "subject": "Thanks for the panel",
+          "timestamp": "2026-10-08T20:00:00Z",
+          "body": "Mei, thanks for the panel tonight. Loved the part on seed pricing."
+        },
+        {
+          "id": "apple-mail-1002",
+          "conversation": null,
+          "from": "Mei Huang <mhuang@ventures.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "RE: Thanks for the panel",
+          "timestamp": "2026-10-09T08:00:00Z",
+          "body": "Glad you came! You'd get along with Sam, he is obsessed with pricing too."
+        }
+      ]
+    },
+    {
+      "id": "outlook:12",
+      "sourceType": "manual",
+      "subject": "Quick hello",
+      "latestTimestamp": "2026-10-09T17:00:00Z",
+      "messages": [
+        {
+          "id": "apple-mail-1003",
+          "conversation": null,
+          "from": "Mei Huang <mhuang@ventures.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "Sam Ortiz <sam.ortiz@ventures.example>",
+          "subject": "Quick hello",
+          "timestamp": "2026-10-09T12:00:00Z",
+          "body": "I'm introducing you to Sam Ortiz, cc'd. Sam, Gio is the MBA asking great questions at the panel.\n\nMei"
+        },
+        {
+          "id": "apple-mail-1004",
+          "conversation": null,
+          "from": "Gio Tanaka <gio.tanaka@school.example>",
+          "to": "Mei Huang <mhuang@ventures.example>, Sam Ortiz <sam.ortiz@ventures.example>",
+          "cc": "",
+          "subject": "RE: Quick hello",
+          "timestamp": "2026-10-09T13:00:00Z",
+          "body": "Thanks Mei! Sam, would you be up for coffee next week?"
+        },
+        {
+          "id": "apple-mail-1005",
+          "conversation": null,
+          "from": "Sam Ortiz <sam.ortiz@ventures.example>",
+          "to": "Gio Tanaka <gio.tanaka@school.example>",
+          "cc": "",
+          "subject": "RE: Quick hello",
+          "timestamp": "2026-10-09T17:00:00Z",
+          "body": "Absolutely. Wednesday morning near campus?"
+        }
+      ]
+    }
+  ],
+  "own": [
+    "gio.tanaka@school.example"
+  ],
+  "sent": [
+    {
+      "to": [
+        "mhuang@ventures.example"
+      ],
+      "timestamp": "2026-10-08T20:00:00Z"
+    },
+    {
+      "to": [
+        "mhuang@ventures.example",
+        "sam.ortiz@ventures.example"
+      ],
+      "timestamp": "2026-10-09T13:00:00Z"
+    }
+  ],
+  "model": {
+    "summary": "Where this stands.",
+    "promised": [],
+    "open": [],
+    "actions": [
+      {
+        "title": "Reply",
+        "kind": "reply",
+        "thread": 2,
+        "due": null,
+        "quote": "Wednesday morning near campus?",
+        "steps": []
+      },
+      {
+        "title": "Email Sam",
+        "kind": "email",
+        "thread": 1,
+        "to": "Sam",
+        "ask": "",
+        "quote": "You'd get along with Sam",
+        "steps": []
+      },
+      {
+        "title": "Email Sam Ortiz",
+        "kind": "email",
+        "thread": 2,
+        "to": "Sam Ortiz",
+        "ask": "",
+        "quote": "I'm introducing you to Sam Ortiz, cc'd.",
+        "steps": []
+      }
+    ]
+  },
+  "expect": {
+    "pairs": [
+      {
+        "thread": "outlook:12",
+        "name": "Sam Ortiz",
+        "address": "sam.ortiz@ventures.example",
+        "shape": "to"
+      }
+    ],
+    "move": {
+      "kind": "reply",
+      "thread": 2
+    }
+  }
+}
