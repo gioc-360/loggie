@@ -2,14 +2,6 @@
 
 Loggie is a desktop assistant for macOS. It reads your email, chats, calendar and calls, keeps each piece of work as a workspace, takes notes on your meetings, and turns one typed sentence into a draft in the right app. Loggie never sends anything: every reply, message and invite opens in its own app, unsent, and you press Send. Press `⌘⇧L` to summon the assistant while Loggie runs in the background. Terminal utilities remain available as legacy tools.
 
-## Team and repository history
-
-Loggie was developed by Jess Lu, Gio Caballero, and Amritha P for the Nebius x NVIDIA Global AI Hackathon (Personal AI track).
-
-Development took place in a separate private repository. For the public submission, we created this repository after removing private design documents and replacing personal information in test fixtures with synthetic data.
-
-The public copy was imported by one team member, so its commit history and GitHub contributor list do not reflect the full team's development contributions.
-
 ## How Loggie is built
 
 **Speech stays on the Mac. Only screened text reaches NVIDIA Nemotron on Nebius Token Factory, and nothing is ever sent for you.**
@@ -207,6 +199,14 @@ Click the composer microphone to grant Speech Recognition and Microphone access 
 
 ### Guided permission setup
 On a fresh Mac, Connections opens the setup cards. **Enable file search** checks Documents, Desktop and Downloads, triggering native macOS access prompts for protected locations whose permission is undecided. **Choose other folders** opens the native folder picker. Blocked access reveals **Open folder permissions**, with **Check access again** after changing it. **Enable voice input** requests Speech Recognition followed by Microphone access without recording. Denial reveals a button for the specific Settings pane. macOS controls whether a consent prompt appears; an already denied permission requires Settings rather than another prompt.
+
+## Team and repository history
+
+Loggie was developed by Jess Lu, Gio Caballero, and Amritha P for the Nebius x NVIDIA Global AI Hackathon (Personal AI track).
+
+Development took place in a separate private repository. For the public submission, we created this repository after removing private design documents and replacing personal information in test fixtures with synthetic data.
+
+The public copy was imported by one team member, so its commit history and GitHub contributor list do not reflect the full team's development contributions.
 
 ## License
 
