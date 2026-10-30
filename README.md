@@ -4,24 +4,56 @@ Loggie is a desktop assistant for macOS. It reads your email, chats, calendar an
 
 Built by Jess Lu, Gio Caballero and Amritha P for the Nebius x NVIDIA Global AI Hackathon (Personal AI track). This is the public copy of the team's private working repo, with the private design docs left out and real contacts in tests replaced by made-up ones.
 
-## How Loggie uses NVIDIA models on Nebius Token Factory
+## How Loggie is built
 
-Every cloud step in Loggie is an NVIDIA Nemotron model on Nebius Token Factory, and the listening happens on the Mac
-with NVIDIA's open speech models. Nothing goes to the cloud until you say yes, and only screened text goes.
+**Speech stays on the Mac. Only screened text reaches NVIDIA Nemotron on Nebius Token Factory, and nothing is ever sent for you.**
 
-| Job | Model | Where it runs |
-|---|---|---|
-| Live words while a call records | `nvidia/nemotron-3.5-asr-streaming-0.6b` (NeMo-Speech.cpp) | on the Mac |
-| The call's transcript after Stop | `nvidia/parakeet-tdt-0.6b-v3` | on the Mac |
-| Sorting each new email, text and chat into its workspace, drafting replies, the next move | `nvidia/nemotron-3-super-120b-a12b` | Nebius Token Factory |
-| Call notes with a quote and minute behind every point, and the name check | `nvidia/Nemotron-3-Ultra-550b-a55b` | Nebius Token Factory |
-| Checking a company or product name on the web | Tavily search | Tavily (Nebius) |
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/architecture-dark.svg">
+  <img src="assets/architecture-light.svg" alt="Loggie architecture in three swim lanes. User: call audio, and the user's mail, messages and calendar; at the end the user sends. Client (macOS, on-device): speech-to-text with NVIDIA Parakeet TDT 0.6B v3 and Nemotron ASR 0.6B, then rule-based PII redaction, then a draft handed to the native app unsent. A dashed trust boundary lets only redacted text cross to Inference on Nebius Token Factory, where Nemotron 3 Super classifies and drafts and Nemotron 3 Ultra summarizes calls; parsed results come back. Tavily checks organization names only, never persons." width="100%">
+</picture>
 
-Token Factory's OpenAI-compatible endpoint (`https://api.tokenfactory.nebius.com/v1`, `src/hikyaku/nebius.js`) let
-one transport serve both models: Super for the fast, everyday calls and Ultra where the notes need reasoning, chosen
-per job (the comment at `src/hikyaku/nebius.js:15` records the measurement behind using Ultra for the name check).
-Each call's cost is counted from Token Factory's published prices (`src/hikyaku/usage.js`), and the cloud re-reads stop
-for the day at a limit you set.
+*Read the numbers 1 to 6. Dashed boxes sit outside Loggie. Only two arrows cross the trust boundary, and both carry text.*
+
+### What runs where, and why that size
+
+| Job | Model | Runs | Why this one |
+|---|---|---|---|
+| Live words while a call records | `nvidia/nemotron-3.5-asr-streaming-0.6b` (NeMo-Speech.cpp) | Mac | Small enough to stream on a laptop |
+| The transcript after Stop | `nvidia/parakeet-tdt-0.6b-v3` | Mac | More accurate; replaces the live words. Where the two models hear a name, number or date differently, the word is marked "unclear" instead of guessed |
+| Sort every message, draft replies, pick the next move | `nvidia/nemotron-3-super-120b-a12b` | Token Factory | 12B active of 120B: 30 of 34 calls answered in 1.4 to 3.9 s |
+| Call notes with a quote and minute behind every point; name checks | `nvidia/Nemotron-3-Ultra-550b-a55b` | Token Factory | On three real calls it cut false "this is a name" flags from 4 to 1 and never took a person for a company |
+
+All four run through one OpenAI-compatible endpoint, `https://api.tokenfactory.nebius.com/v1` (`src/hikyaku/nebius.js`), so choosing a model is one field in the request. Loggie started fully local, with Nemotron 3.5 Lightning 30B on the Mac; it needed about 19 GB of memory, which an 8 GB MacBook Air cannot hold, so the language work moved to Token Factory and speech stayed on the device.
+
+### The privacy boundary
+
+- **Audio never leaves the Mac.** Both speech models run locally.
+- **Text is screened by code before any request is built** (`src/hikyaku/cloud-screen.js`). Addresses, links and phone numbers are cut; any sentence holding a card, account, routing, IBAN, SSN or tax number, or a password, is replaced whole with "[kept on this Mac]". Health lines are not screened, and the consent screen says so.
+- **The cloud runs only after a yes**, given per workspace and per path and stored in `settings.json`. Without it, that path does nothing.
+- **People are never searched on the web.** Only unclear company and product names go to Tavily (`src/hikyaku/name-check.js`).
+- **Nothing is sent for you.** Drafts open unsent in Mail or Messages, and invites open unsent in the calendar app.
+
+### Three loops that keep it cheap, fast and improving
+
+| Loop | Watches | Does | Set by |
+|---|---|---|---|
+| **Spend cap** (balancing) | Today's cost, counted on every call from Nebius's published prices: Super $0.30 / $0.90 and Ultra $1.00 / $3.00 per million input / output tokens (`src/hikyaku/usage.js`) | Stops the day's background re-reads once the limit is reached | $3 a day by default; the user can change it (`cloudDailyLimitUsd`) |
+| **Slow-queue backup** (balancing) | How long a request has waited | After 6 s sends the same request once more; the first answer wins and the other is cancelled | 6 s sits past every normal answer: 30 of 34 measured calls finished within 3.9 s, and the other 4 took 32 to 92 s in Token Factory's queue |
+| **Your edits teach the next draft** (reinforcing) | What you changed between Loggie's draft and what you actually sent (`src/hikyaku/delta.js`), and names you confirm in call notes | Recent edits and your usual length shape the next draft; a confirmed name is added to `my-words.txt` and spelled right from then on | Every send and every confirmed name |
+
+Every request also runs at temperature 0 and its answer is saved on the Mac under a hash of the request, so asking the same thing twice costs $0.
+
+### What we measured
+
+| Check | Result |
+|---|---|
+| Note lines backed by a quote, on one test call | 0 of 24 before teaching the parser Ultra's nested-quote layout, 15 of 15 after |
+| Name check, Super vs Ultra, A/B on three real recordings | False name flags 4 vs 1; real fixes 4 vs 4; $0.0015 vs $0.0053 per recording |
+| Nemotron 3 Super response time | 1.4 to 3.9 s on 30 of 34 calls |
+| Background cost, measured over 16 days of real mail and chats | $0.024 a day: sorting about 45 messages, next moves, ranking |
+| Cost per recorded call, measured | about $0.034: notes on Ultra $0.013, the quote check $0.017, filing $0.003, names $0.001 |
+| A month for a student recording 5 calls a week | about $1.83 to serve with web search, a 63% margin at $4.99 ([full cost model](docs/tokenomics.md)) |
 
 ## For judges: testing Loggie
 
