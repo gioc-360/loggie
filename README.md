@@ -2,7 +2,13 @@
 
 Loggie is a desktop assistant for macOS. It reads your email, chats, calendar and calls, keeps each piece of work as a workspace, takes notes on your meetings, and turns one typed sentence into a draft in the right app. Loggie never sends anything: every reply, message and invite opens in its own app, unsent, and you press Send. Press `⌘⇧L` to summon the assistant while Loggie runs in the background. Terminal utilities remain available as legacy tools.
 
-Built by Jess Lu, Gio Caballero and Amritha P for the Nebius x NVIDIA Global AI Hackathon (Personal AI track). This is the public copy of the team's private working repo, with the private design docs left out and real contacts in tests replaced by made-up ones.
+## Team and repository history
+
+Loggie was developed by Jess Lu, Gio Caballero, and Amritha P for the Nebius x NVIDIA Global AI Hackathon (Personal AI track).
+
+Development took place in a separate private repository. For the public submission, we created this repository after removing private design documents and replacing personal information in test fixtures with synthetic data.
+
+The public copy was imported by one team member, so its commit history and GitHub contributor list do not reflect the full team's development contributions.
 
 ## How Loggie is built
 
