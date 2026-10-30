@@ -11,7 +11,7 @@ Sources: Nebius Token Factory's published model catalog (checked live on 2026-10
 | Model | Used for | Input, $ per 1M tokens | Cached input | Output, $ per 1M tokens |
 |---|---|---:|---:|---:|
 | NVIDIA Nemotron 3 Super 120B-A12B | sorting, drafting, filing | 0.30 | 0.06 | 0.90 |
-| NVIDIA Nemotron 3 Ultra 550B-A55B | call notes, quote check, name check | 1.00 | 0.12 | 3.00 |
+| NVIDIA Nemotron 3 Ultra 550B-A55B | call notes, quote check, name check, request-box emails, web errands | 1.00 | 0.12 | 3.00 |
 
 The cost of one request is
 
@@ -107,7 +107,7 @@ Each extra recorded call costs about 3.4 cents, so a heavier user lowers the mar
 
 | Mechanism | Effect | Where |
 |---|---|---|
-| The right model per job | Sorting runs on Super at a fraction of a cent; only notes and checks use Ultra | `src/hikyaku/nebius.js` |
+| The right model per job | Sorting runs on Super at a fraction of a cent; Ultra handles notes, checks, request-box emails and web errands | `src/hikyaku/nebius.js` |
 | On-device cache, temperature 0 | A repeated request costs $0 (329 in 16 days) | `src/hikyaku/nebius.js` |
 | Daily spend limit | Background re-reads stop once the day's cost reaches the limit ($3 by default; a $4.99 plan would set it lower) | `cloudDailyLimitUsd` |
 | Speech on the Mac | Transcription has no per-call cost | NVIDIA Parakeet, Nemotron ASR |

@@ -23,7 +23,7 @@ Loggie is a desktop assistant for macOS. It reads your email, chats, calendar an
 | Call notes with a quote and minute behind every point; name checks | `nvidia/Nemotron-3-Ultra-550b-a55b` | Token Factory | On three real calls it cut false "this is a name" flags from 4 to 1 and never took a person for a company |
 | Emails you ask for in the request box; web errands from a call | `nvidia/Nemotron-3-Ultra-550b-a55b` | Token Factory | On five test requests Super misread intent ("can i get 2 more days" became "I can get 2 more days"); Ultra got all five right at the same speed, about $0.0005 a draft |
 
-All four run through one OpenAI-compatible endpoint, `https://api.tokenfactory.nebius.com/v1` (`src/hikyaku/nebius.js`), so choosing a model is one field in the request. Loggie started fully local, with Nemotron 3.5 Lightning 30B on the Mac; it needed about 19 GB of memory, which an 8 GB MacBook Air cannot hold, so the language work moved to Token Factory and speech stayed on the device.
+The three Token Factory jobs run through one OpenAI-compatible endpoint, `https://api.tokenfactory.nebius.com/v1` (`src/hikyaku/nebius.js`), so choosing a model is one field in the request. Loggie started fully local, with Nemotron 3.5 Lightning 30B on the Mac; it needed about 19 GB of memory, which an 8 GB MacBook Air cannot hold, so the language work moved to Token Factory and speech stayed on the device.
 
 ### The privacy boundary
 
@@ -56,8 +56,8 @@ Every request also runs at temperature 0 and its answer is saved on the Mac unde
 
 ## For judges: testing Loggie
 
-Loggie is a macOS app for Apple silicon Macs. Install it from the test build linked on the Devpost
-submission, or run it from source with [Teammates: first run](#teammates-first-run). The setup page asks for a Nebius
+Loggie is a macOS app for Apple silicon Macs. Install it from the test build, https://github.com/gioc-360/loggie/releases/tag/v0.1.0 (also linked on the Devpost
+submission), or run it from source with [Teammates: first run](#teammates-first-run). The setup page asks for a Nebius
 Token Factory key and a Tavily key; the submission's testing instructions include keys for judges. Loggie never sends
 anything: every draft and invite opens unsent in its own app.
 
@@ -198,3 +198,5 @@ The public copy was imported by one team member, so its commit history and GitHu
 ## License
 
 Loggie is released under the MIT License: see [LICENSE](LICENSE).
+
+App icons for Mail, Outlook, Messages, WhatsApp and other apps belong to their owners and are shown only to identify the app a draft opens in.
