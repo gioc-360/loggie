@@ -102,12 +102,12 @@ test('a first name that is one contact\'s whole name and another\'s first name i
 test('a sending service is not a person to email: "KHouse" is the venue, not its invoice mailer', async () => {
   const { buildWhoIndex, resolveWho } = await import('../src/hikyaku/ask-who.js');
   const inbox = [
-    { from: 'K-HOUSE Karaoke <khousekaraoke@gmail.com>', to: 'gio@school.edu', subject: 'Re: October 22nd | Karaoke event', timestamp: '2026-10-08T00:23:17Z' },
+    { from: 'K-HOUSE Karaoke <bookings@khouse.example>', to: 'gio@school.edu', subject: 'Re: October 22nd | Karaoke event', timestamp: '2026-10-08T00:23:17Z' },
     { from: 'K-HOUSE Karaoke & Arts Hub <messenger@messaging.squareup.com>', to: 'gio@school.edu', subject: 'Payment due: Invoice #014', timestamp: '2026-10-12T00:00:00Z' },
   ];
   const result = resolveWho('KHouse', buildWhoIndex({ inbox, own: ['gio@school.edu'] }), { action: 'reply', app: 'outlook' });
   assert.equal(result.status, 'one');
-  assert.equal(result.pick.email, 'khousekaraoke@gmail.com');
+  assert.equal(result.pick.email, 'bookings@khouse.example');
 });
 
 // D1 (loggie-intros 1.6, 1.7): the ask box reads the kept workspaces' people, so a person saved from an introduction

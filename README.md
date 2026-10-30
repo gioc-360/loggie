@@ -19,8 +19,9 @@ Loggie is a desktop assistant for macOS. It reads your email, chats, calendar an
 |---|---|---|---|
 | Live words while a call records | `nvidia/nemotron-3.5-asr-streaming-0.6b` (NeMo-Speech.cpp) | Mac | Small enough to stream on a laptop |
 | The transcript after Stop | `nvidia/parakeet-tdt-0.6b-v3` | Mac | More accurate; replaces the live words. Where the two models hear a name, number or date differently, the word is marked "unclear" instead of guessed |
-| Sort every message, draft replies, pick the next move | `nvidia/nemotron-3-super-120b-a12b` | Token Factory | 12B active of 120B: 30 of 34 calls answered in 1.4 to 3.9 s |
+| Sort every message, draft the replies on Today, pick the next move | `nvidia/nemotron-3-super-120b-a12b` | Token Factory | 12B active of 120B: 30 of 34 calls answered in 1.4 to 3.9 s |
 | Call notes with a quote and minute behind every point; name checks | `nvidia/Nemotron-3-Ultra-550b-a55b` | Token Factory | On three real calls it cut false "this is a name" flags from 4 to 1 and never took a person for a company |
+| Emails you ask for in the request box; web errands from a call | `nvidia/Nemotron-3-Ultra-550b-a55b` | Token Factory | On five test requests Super misread intent ("can i get 2 more days" became "I can get 2 more days"); Ultra got all five right at the same speed, about $0.0005 a draft |
 
 All four run through one OpenAI-compatible endpoint, `https://api.tokenfactory.nebius.com/v1` (`src/hikyaku/nebius.js`), so choosing a model is one field in the request. Loggie started fully local, with Nemotron 3.5 Lightning 30B on the Mac; it needed about 19 GB of memory, which an 8 GB MacBook Air cannot hold, so the language work moved to Token Factory and speech stayed on the device.
 
@@ -47,7 +48,7 @@ Every request also runs at temperature 0 and its answer is saved on the Mac unde
 | Check | Result |
 |---|---|
 | Note lines backed by a quote, on one test call | 0 of 24 before teaching the parser Ultra's nested-quote layout, 15 of 15 after |
-| Name check, Super vs Ultra, A/B on three real recordings | False name flags 4 vs 1; real fixes 4 vs 4; $0.0015 vs $0.0053 per recording |
+| Name check, Super vs Ultra, A/B on three real recordings | False name flags 4 vs 1; real fixes 4 vs 4; $0.0015 vs $0.0053 per recording (long A/B recordings; in daily use a name check averages about $0.001) |
 | Nemotron 3 Super response time | 1.4 to 3.9 s on 30 of 34 calls |
 | Background cost, measured over 16 days of real mail and chats | $0.024 a day: sorting about 45 messages, next moves, ranking |
 | Cost per recorded call, measured | about $0.034: notes on Ultra $0.013, the quote check $0.017, filing $0.003, names $0.001 |
@@ -72,14 +73,14 @@ anything: every draft and invite opens unsent in its own app.
 
 While a call records, a local NVIDIA streaming model (Nemotron 3.5 ASR Streaming, in NeMo-Speech.cpp on 127.0.0.1) writes the newest words, and every 30 seconds the more accurate Parakeet reader replaces them; the transcript after Stop is built from Parakeet as before. Each call's `live/stream-check.json` records how far behind the words were and how often they matched. `LOGGIE_LIVE_STREAM=0` turns the stream off.
 
-The cloud AI runs only after your yes, for this time or always. The build contracts are in `AGENTS.md`; the team's working design docs stay in the private repo.
+The cloud AI runs only after your yes, for this time or always.
 
 ## Teammates: first run
 
 You need a Mac with your mail in Apple Mail (Outlook, Gmail and other accounts all work there), Node.js 20 or newer,
 the Xcode command line tools, and your own Nebius and Tavily keys.
 
-    git clone https://github.com/Gumball0110/Loggie.git loggie && cd loggie
+    git clone https://github.com/gioc-360/loggie.git loggie && cd loggie
     npm ci
     xcode-select -p || xcode-select --install
     npm run build:native
@@ -107,7 +108,7 @@ New workspace…, seeded from that meeting. Loggie reads Gmail, school and work 
 Apple Mail: add each account in System Settings > Internet Accounts. Calls record in this copy; the Calls step's switch downloads the NVIDIA
 speech models (1.46 GB) for their transcripts, which also need python3 with numpy (python3 -m pip install numpy).
 
-Workspaces stay current on their own. Every 10 minutes, and when the app opens with `HIKYAKU_REFRESH_ON_START=1`, Loggie checks your mail in Apple Mail, Messages, WhatsApp, the calendar and recorded calls for anything new since it last looked. That check costs nothing. Each new item is filed to one workspace, by its thread, a filed call, a domain or a word, or a person you confirmed; anything else stays unsure. Only workspaces with something new are re-read, with just the new items and the old summary, at most once a day each on the timer. The re-reads stop for the day at `cloudDailyLimitUsd` in settings.json (default 3). A workspace you mark "matters more" sorts first, and one you park comes back on its date. `HIKYAKU_REFRESH=0` turns the timer off. The details are in `AGENTS.md`.
+Workspaces stay current on their own. Every 10 minutes, and when the app opens with `HIKYAKU_REFRESH_ON_START=1`, Loggie checks your mail in Apple Mail, Messages, WhatsApp, the calendar and recorded calls for anything new since it last looked. That check costs nothing. Each new item is filed to one workspace, by its thread, a filed call, a domain or a word, or a person you confirmed; anything else stays unsure. Only workspaces with something new are re-read, with just the new items and the old summary, at most once a day each on the timer. The re-reads stop for the day at `cloudDailyLimitUsd` in settings.json (default 3). A workspace you mark "matters more" sorts first, and one you park comes back on its date. `HIKYAKU_REFRESH=0` turns the timer off.
 
 ## Requirements
 
@@ -135,8 +136,6 @@ Closing the window, pressing `⌘W`, or using **Hide Loggie** keeps the app and 
 
 The blue L logo PNGs, app icon and monochrome menu bar marks are built from `assets/branding/loggie-logo.svg`. Run `npm run build:icons` on macOS to regenerate their PNG sizes and the packaged `.icns` icon with the system tools; no extra dependency is required.
 
-The desktop uses a command-first interface. Ask Loggie to open a local file, folder, or project in Visual Studio Code, Finder, Terminal, or its default app—for example, `Open AI Terminal Tool in VS Code`. Loggie searches known projects plus Documents, Desktop, and Downloads; it opens a unique match directly and asks you to choose when names are ambiguous. Commands run locally and structured process arguments are used instead of passing natural language to a shell.
-
 Email content is rendered as inert text. Background behavior depends on settings and launch flags. Review approvals before sharing selected content with cloud AI.
 
 Quick desktop verification:
@@ -146,15 +145,6 @@ npm run desktop:smoke
 ```
 
 The smoke check opens the secure assistant window, verifies hiding and restoring it, then quits automatically. On macOS you may be asked to allow the global keyboard shortcut the first time you use it.
-
-### Manual Milestone 1 test
-
-1. Run `npm install`, then `npm run desktop`.
-2. After setup, confirm Loggie waits in the background with a blue L Dock icon and no floating character.
-3. From another app, press `Command+Shift+L` and confirm Loggie opens with the request box focused; press again to hide it.
-4. Minimize the assistant, then summon it again; confirm the page and unsent text are preserved. Also check Close / `⌘W`, the Dock, and the menu bar.
-5. Summon on another display or Space, check full screen and return, then quit and relaunch; confirm the chosen window size is retained.
-6. Ask a question about your email and confirm Loggie says it cannot search email there rather than claiming to read it.
 
 ## Invites and replies in seconds
 
@@ -197,14 +187,11 @@ Start with [Teammates: first run](#teammates-first-run): the setup page asks for
 
 Click the composer microphone to grant Speech Recognition and Microphone access and start on-device speech. Click again to stop; text is never submitted automatically. Denied access and unavailable microphones produce visible errors. On-device speech requires an available language model; Fn-twice Dictation remains a fallback. Source users must run `npm run build:voice`; `npm run dist:mac` bundles the helper in the installed app. Teammates must install a newly built app to receive these fixes.
 
-### Guided permission setup
-On a fresh Mac, Connections opens the setup cards. **Enable file search** checks Documents, Desktop and Downloads, triggering native macOS access prompts for protected locations whose permission is undecided. **Choose other folders** opens the native folder picker. Blocked access reveals **Open folder permissions**, with **Check access again** after changing it. **Enable voice input** requests Speech Recognition followed by Microphone access without recording. Denial reveals a button for the specific Settings pane. macOS controls whether a consent prompt appears; an already denied permission requires Settings rather than another prompt.
-
 ## Team and repository history
 
 Loggie was developed by Jess Lu, Gio Caballero, and Amritha P for the Nebius x NVIDIA Global AI Hackathon (Personal AI track).
 
-Development took place in a separate private repository. For the public submission, we created this repository after removing private design documents and replacing personal information in test fixtures with synthetic data.
+Development took place in the team's private repository (Gumball0110/Loggie), about 600 commits since Sept 23, 2026, from all three of us. For the public submission, we created this repository after removing private design documents and replacing personal information in test fixtures with synthetic data.
 
 The public copy was imported by one team member, so its commit history and GitHub contributor list do not reflect the full team's development contributions.
 

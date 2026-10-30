@@ -63,7 +63,7 @@ const placedBy = (home, lines = []) => async (text) => {
   lines.push(text);
   const folder = join(home, 'asks', 'a1');
   await mkdir(folder, { recursive: true });
-  await writeFile(join(folder, 'REPLY.json'), JSON.stringify({ to: 'khousekaraoke@gmail.com', subject: 'Re: October 22nd', account: 'gio@school.edu', original: { from: 'khousekaraoke@gmail.com', subject: 'October 22nd' } }));
+  await writeFile(join(folder, 'REPLY.json'), JSON.stringify({ to: 'bookings@khouse.example', subject: 'Re: October 22nd', account: 'gio@school.edu', original: { from: 'bookings@khouse.example', subject: 'October 22nd' } }));
   await writeFile(join(folder, 'DRAFT.md'), 'Hi K-HOUSE,\n\nCould we set up a $500 bar tab?\n\nBest,');
   await writeFile(join(folder, 'THREAD.md'), '# October 22nd\n');
   return { askId: 'a1', outcome: 'placed', did: ['Answering "October 22nd"'], results: [{ to: 'K-HOUSE Karaoke', app: 'outlook', outcome: 'placed' }] };
@@ -80,14 +80,14 @@ test('Do it runs the line through the ask box, keeps the draft as the move\'s ow
   assert.match(result.text, /^The email to K-HOUSE Karaoke is open in Outlook, unsent\./);
   assert.equal(memory.task.status, 'running', 'a placed move is running, as a drafted one is');
   const reply = JSON.parse(await readFile(join(taskDirectory, 'REPLY.json'), 'utf8'));
-  assert.equal(reply.to, 'khousekaraoke@gmail.com', 'an email move now: sent mail to K-House closes it');
+  assert.equal(reply.to, 'bookings@khouse.example', 'an email move now: sent mail to K-House closes it');
   assert.deepEqual(reply.fromChat, fromChat, 'the chat it came from is kept');
   assert.match(await readFile(join(taskDirectory, 'DRAFT.md'), 'utf8'), /\$500 bar tab/);
 
   const again = await doIt({ core: memory, taskId: 'task_1', home, options: { ask: async () => assert.fail('never a second draft of the same email') }, startImpl: never });
   assert.equal(again.phase, 'in-mail-app');
 
-  await writeFile(join(taskDirectory, 'DELTA.md'), 'Sent 2026-10-17 to khousekaraoke@gmail.com.\n');
+  await writeFile(join(taskDirectory, 'DELTA.md'), 'Sent 2026-10-17 to bookings@khouse.example.\n');
   const closed = await closeSent({ core: memory, taskDirectories: [taskDirectory] });
   assert.equal(closed.length, 1);
   assert.equal(memory.task.status, 'done', 'the sent email closes the move');

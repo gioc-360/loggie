@@ -107,7 +107,7 @@ test('fill: a time with its own word keeps it, and a draft no run held is refuse
 
 test('the guard leaves numbers that are not times alone, and takes out a date and an unread day with its time', async () => {
   const { guardTimes } = await import('../src/hikyaku/draft-times.js');
-  const plain = 'Can I get 2 more days? The $500 bar tab is for 20-30 people. Call me at +1 818 854 2596. We met in 2026 for 3 hours.';
+  const plain = 'Can I get 2 more days? The $500 bar tab is for 20-30 people. Call me at +1 555 010 2596. We met in 2026 for 3 hours.';
   assert.deepEqual(guardTimes(plain, { thread: '', typed: 'can i get 2 more days' }), { text: plain, removed: [], note: '' });
   const out = guardTimes('Hi,\n\nHow about Thursday, Oct 24 at 3:30 pm or 4pm? I can also do Friday morning.\n\nBest,', { thread: 'Can we meet this week?', typed: 'email jamie ask to meet friday' });
   assert.equal(out.text, 'Hi,\n\nHow about [your times]? I can also do Friday morning.\n\nBest,');

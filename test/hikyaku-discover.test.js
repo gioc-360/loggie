@@ -10,7 +10,7 @@ import { readWorkstreams } from '../src/hikyaku/workstreams.js';
 const ME = 'ana@school.example.com';
 const mail = (id, from, subject, body, timestamp) => ({ id, subject, latestTimestamp: timestamp, messages: [{ id: `${id}m`, from, to: ME, subject, timestamp, body }] });
 const TRAINING = mail('t1', 'Ops <ops1@school.example.com>', 'CA Canvas Training', "You have been asked to CA for Professor Kato & Lund's MGMT 5090 course. Before hiring, you are required to complete training.", '2026-10-05T20:28:00Z');
-const WORKDAY = mail('t2', 'school@myworkday.com', 'A Task Awaits You: Student Appointment Letter - Start Additional Job: Ana Lee', 'Business Process: Review Documents for Start Additional Job: Ana Lee', '2026-10-06T13:31:00Z');
+const WORKDAY = mail('t2', 'notifications@workday.example', 'A Task Awaits You: Student Appointment Letter - Start Additional Job: Ana Lee', 'Business Process: Review Documents for Start Additional Job: Ana Lee', '2026-10-06T13:31:00Z');
 const LETTER = mail('t3', 'Payroll <payroll@school.example.com>', 'Timecard procedures', 'You have been hired to work with Ken Kato as a Course Assistant effective 2026-10-07. Your Start Additional Job is in Workday.', '2026-10-06T13:31:40Z');
 const NEWS = mail('t4', 'news@school.example.com', 'This week on campus', 'Concerts, talks and a food truck.', '2026-10-06T09:00:00Z');
 const BANK = mail('t5', 'Lena <lena@acmebank.com>', 'Coffee chat', 'Friday works.', '2026-10-06T10:00:00Z');
